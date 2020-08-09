@@ -2,7 +2,7 @@ function createAnalytics() {
   let counter = 0
   let isDestroyed = false
 
-  const listener = () => counter++
+  const listener = () => counter = counter + 1
   document.addEventListener('click', listener)
 
   return {
@@ -19,4 +19,5 @@ function createAnalytics() {
     }
   }
 }
+
 window.analytics = createAnalytics()
