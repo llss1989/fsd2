@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/llss1989/fsd2#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
