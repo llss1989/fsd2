@@ -8,6 +8,14 @@ module.exports = {
     main: './index.js',
     analytics: './analytics.js'
   },
+  optimization:{
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
+  devServer:{
+    port: 4200
+  },
   output:{
     filename:'[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist')
