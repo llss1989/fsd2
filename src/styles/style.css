@@ -1,3 +1,10 @@
+@import '../assets/fonts/fonts.css';
+
+
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
 .container {
   background: red;
   width: 300px;
@@ -5,4 +12,11 @@
 }
 h1 {
   color: blue;
+}
+.logo{
+  background-image: url('../assets/flag.png');
+  width: 300px;
+  height: 200px;
+  background-size: cover;
+  margin: 0 auto;
 }
