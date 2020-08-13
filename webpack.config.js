@@ -2,6 +2,7 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 
 module.exports = {
   context: path.resolve(__dirname,'src'),
@@ -19,7 +20,7 @@ module.exports = {
     port: 4200
   },
   output:{
-    filename:'[name].[contenthash].bundle.js',
+    filename:'[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
@@ -37,6 +38,9 @@ module.exports = {
          to: path.resolve(__dirname, 'dist/assets') }
       ]
     }),
+    new MiniCssExtractPlugin({
+      filename:'[name].[contenthash].css',
+    })
   ],
     
   
@@ -44,7 +48,10 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use:['style-loader','css-loader']
+        use:[{
+          loader: MiniCssExtractPlugin.loader,
+          options: {},
+        },'css-loader']
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
