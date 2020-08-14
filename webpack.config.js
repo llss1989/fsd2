@@ -6,6 +6,7 @@ const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin =require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const loader = require('sass-loader')
+var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -62,15 +63,16 @@ module.exports = {
   plugins:[
     new HTMLWebpackPlugin({
       filename: './index.html',
-      template: './index.html',
+      template: './index.pug',
       minify:{
         collapseWhitespace:isProd
       }
     }),
     new HTMLWebpackPlugin({
       filename: './pages/colours.html',
-      template: './pages/colours.html'
+      template: './pages/colours.pug'
     }),
+    new HtmlWebpackPugPlugin(),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
@@ -119,6 +121,10 @@ module.exports = {
             '@babel/preset-env'
           ]
         }
+      },
+      { 
+        test: /\.pug$/,
+        use: ["pug-loader"]
       }
     ]
   }  

@@ -148,7 +148,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./index.js","vendors~main"]);
+/******/ 	deferredModules.push([0,"vendors~main"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -209,18 +209,18 @@ eval("var hi = \"Hello, motherfucker!\";\n\n//# sourceURL=webpack:///./babel.js?
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_test_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/test.json */ \"./assets/test.json\");\nvar _assets_test_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/test.json */ \"./assets/test.json\", 1);\n/* harmony import */ var _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/flag.png */ \"./assets/flag.png\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/general.scss */ \"./styles/general.scss\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_general_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./babel */ \"./babel.js\");\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\nvar post = new _Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString());\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_test_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/test.json */ \"./assets/test.json\");\nvar _assets_test_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/test.json */ \"./assets/test.json\", 1);\n/* harmony import */ var _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/flag.png */ \"./assets/flag.png\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/_general.scss */ \"./styles/_general.scss\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_general_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./babel */ \"./babel.js\");\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
-/***/ "./styles/general.scss":
-/*!*****************************!*\
-  !*** ./styles/general.scss ***!
-  \*****************************/
+/***/ "./styles/_general.scss":
+/*!******************************!*\
+  !*** ./styles/_general.scss ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/general.scss?");
+eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/_general.scss?");
 
 /***/ }),
 
@@ -232,6 +232,17 @@ eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n    if(false) { var cssReload; }\n  \n\n//# sourceURL=webpack:///./styles/style.css?");
+
+/***/ }),
+
+/***/ 0:
+/*!****************************************!*\
+  !*** multi @babel/polyfill ./index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! ./index.js */\"./index.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./index.js?");
 
 /***/ })
 
