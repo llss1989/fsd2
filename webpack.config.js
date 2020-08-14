@@ -3,6 +3,26 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
+const OptimizeCssAssetWebpackPlugin =require('optimize-css-assets-webpack-plugin')
+const TerserWebpackPlugin = require('terser-webpack-plugin')
+
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
+  if(isProd) {
+    config.minimizer = [
+      new OptimizeCssAssetWebpackPlugin(),
+      new TerserWebpackPlugin()
+    ]
+  }
+  return config
+}
 
 module.exports = {
   context: path.resolve(__dirname,'src'),
@@ -11,13 +31,10 @@ module.exports = {
     main: './index.js',
     analytics: './analytics.js'
   },
-  optimization:{
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
+  optimization: optimization(),
   devServer:{
-    port: 4200
+    port: 4200,
+    hot:isDev
   },
   output:{
     filename:'[name].[contenthash].js',
@@ -29,7 +46,10 @@ module.exports = {
   plugins:[
     new HTMLWebpackPlugin({
       filename: './index.html',
-      template: './index.html'
+      template: './index.html',
+      minify:{
+        collapseWhitespace:isProd
+      }
     }),
     new HTMLWebpackPlugin({
       filename: './pages/colours.html',
@@ -54,7 +74,10 @@ module.exports = {
         test: /\.css$/,
         use:[{
           loader: MiniCssExtractPlugin.loader,
-          options: {},
+          options: {
+            hmr:isDev,
+            reloadAll:true
+          },
         },'css-loader']
       },
       {
