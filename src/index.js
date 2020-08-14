@@ -3,6 +3,7 @@ import Post from './Post'
 import './styles/style.css'
 import json from './assets/test.json'
 import flag from './assets/flag.png'
+import './styles/general.scss'
 
 const post = new Post  ('Webpack Post Title', flag)
 
