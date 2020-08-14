@@ -28,8 +28,12 @@ module.exports = {
   },
   plugins:[
     new HTMLWebpackPlugin({
-      title: 'TestPage',
+      filename: './index.html',
       template: './index.html'
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/colours.html',
+      template: './pages/colours.html'
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
