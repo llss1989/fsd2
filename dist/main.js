@@ -148,7 +148,7 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./index.js","vendors~analytics~main"]);
+/******/ 	deferredModules.push(["./index.js","vendors~main"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
@@ -163,7 +163,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nclass Post {\n  constructor (title, img) {\n    this.title = title\n    this.date = new Date()\n  }\n  toString() {\n    return JSON.stringify( {\n      title: this.title,\n      date:this.date.toJSON(),\n      img: this.img\n    }, null, 2)\n  }\n}\n\n//# sourceURL=webpack:///./Post.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Post; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Post = /*#__PURE__*/function () {\n  function Post(title, img) {\n    _classCallCheck(this, Post);\n\n    this.title = title;\n    this.date = new Date();\n  }\n\n  _createClass(Post, [{\n    key: \"toString\",\n    value: function toString() {\n      return JSON.stringify({\n        title: this.title,\n        date: this.date.toJSON(),\n        img: this.img\n      }, null, 2);\n    }\n  }]);\n\n  return Post;\n}();\n\n\n\n//# sourceURL=webpack:///./Post.js?");
 
 /***/ }),
 
@@ -190,6 +190,17 @@ eval("module.exports = JSON.parse(\"{\\\"title\\\":\\\" i am JSON title\\\"}\");
 
 /***/ }),
 
+/***/ "./babel.js":
+/*!******************!*\
+  !*** ./babel.js ***!
+  \******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var hi = \"Hello, motherfucker!\";\n\n//# sourceURL=webpack:///./babel.js?");
+
+/***/ }),
+
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
@@ -198,7 +209,7 @@ eval("module.exports = JSON.parse(\"{\\\"title\\\":\\\" i am JSON title\\\"}\");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_test_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/test.json */ \"./assets/test.json\");\nvar _assets_test_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/test.json */ \"./assets/test.json\", 1);\n/* harmony import */ var _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/flag.png */ \"./assets/flag.png\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/general.scss */ \"./styles/general.scss\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_general_scss__WEBPACK_IMPORTED_MODULE_5__);\n\n\n\n\n\n\n\nconst post = new _Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]  ('Webpack Post Title', _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__[\"default\"])\n\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString())\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Post */ \"./Post.js\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/style.css */ \"./styles/style.css\");\n/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _assets_test_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/test.json */ \"./assets/test.json\");\nvar _assets_test_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./assets/test.json */ \"./assets/test.json\", 1);\n/* harmony import */ var _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/flag.png */ \"./assets/flag.png\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles/general.scss */ \"./styles/general.scss\");\n/* harmony import */ var _styles_general_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_general_scss__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./babel */ \"./babel.js\");\n/* harmony import */ var _babel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel__WEBPACK_IMPORTED_MODULE_6__);\n\n\n\n\n\n\n\nvar post = new _Post__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('Webpack Post Title', _assets_flag_png__WEBPACK_IMPORTED_MODULE_4__[\"default\"]);\njquery__WEBPACK_IMPORTED_MODULE_0__('pre').html(post.toString());\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
