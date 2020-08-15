@@ -69,17 +69,17 @@ module.exports = {
       }
     }),
     new HTMLWebpackPlugin({
-      filename: './pages/colours.html',
-      template: './pages/colours.pug'
+      filename: './pages/UI_kit/colours.html',
+      template: './pages//UI_kit/colours.pug'
     }),
     new HtmlWebpackPugPlugin(),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {from: path.resolve(__dirname, 'src/assets/favicon.ico'),
-         to: path.resolve(__dirname, 'dist/assets') }
-      ]
-    }),
+    //new CopyWebpackPlugin({
+      //patterns: [
+        //{from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+         //to: path.resolve(__dirname, 'dist/assets') }
+      //]
+    //}),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     })
