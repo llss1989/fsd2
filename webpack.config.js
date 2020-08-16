@@ -58,8 +58,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
+    alias: {
+      Img: path.join(__dirname, './src/assets/img/')
+    },
     extensions:['.js']
   },
+  
   plugins:[
     new HTMLWebpackPlugin({
       filename: './index.html',
@@ -69,17 +73,20 @@ module.exports = {
       }
     }),
     new HTMLWebpackPlugin({
-      filename: './pages/UI_kit/colours.html',
-      template: './pages//UI_kit/colours.pug'
+      filename: './pages/UI_kit/coloursAndType/colours.html',
+      template: './pages//UI_kit/coloursAndType/colours.pug',
+      minify:{
+        collapseWhitespace:isProd
+      }
     }),
     new HtmlWebpackPugPlugin(),
     new CleanWebpackPlugin(),
-    //new CopyWebpackPlugin({
-      //patterns: [
-        //{from: path.resolve(__dirname, 'src/assets/favicon.ico'),
-         //to: path.resolve(__dirname, 'dist/assets') }
-      //]
-    //}),
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: path.resolve(__dirname, './src/assets/img/bird-icon.png'),
+         to: path.resolve(__dirname, 'dist/assets/img')}
+      ]
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     })
@@ -124,7 +131,15 @@ module.exports = {
       },
       { 
         test: /\.pug$/,
-        use: ["pug-loader"]
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty:true
+            }
+          }
+        ]
+        
       }
     ]
   }  
