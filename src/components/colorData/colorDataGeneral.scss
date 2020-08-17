@@ -1,0 +1,22 @@
+.color-data{
+  display: flex;
+  margin-bottom: 20px;
+}
+.color-data__color-view{
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+  border-radius: 6px;
+}
+.color-info{
+  margin-top: 5px;
+}
+.color-info__color-name, .color-info__color-number{
+  font-family: Quicksand;
+  font-style: normal;
+  font-size: 19px;
+  line-height: 29px;
+}
+.color-info__color-name{
+  font-weight: bold;
+}

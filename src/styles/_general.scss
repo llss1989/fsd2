@@ -1,3 +1,4 @@
 @import '../assets/fonts/fonts.css';
-@import '../pages/UI_kit/coloursAndType/colours-general-style.scss';
-@import './reset.scss'
+@import '../pages/UI_kit/coloursAndType/_colours-general-style.scss';
+@import './_reset.scss';
+@import '../components/_components.scss'
