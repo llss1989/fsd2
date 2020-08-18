@@ -58,9 +58,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    alias: {
-      Img: path.join(__dirname, './src/assets/img/')
-    },
+    //alias: {
+     // Img: path.join(__dirname, './src/assets/img/')
+    //},
     extensions:['.js']
   },
   
@@ -105,7 +105,12 @@ module.exports = {
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
-        use:['file-loader']
+        use:[    {
+          loader: 'file-loader',
+          options: {
+            name: './assets/fonts/[name].[ext]',
+          }
+        }]
       },
       {
         test: /\.xml$/,

@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Montserrat Regular'), local('Montserrat-Regular'),
-       url(ac8743d7ab8cec661cac6900c4dbaa8e.woff2) format('woff2'), 
-       url(45d5dab44e3b5aaa53bf2749072126a1.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(./assets/fonts/montserrat-v14-latin-ext_cyrillic-ext-regular.woff2) format('woff2'), 
+       url(./assets/fonts/montserrat-v14-latin-ext_cyrillic-ext-regular.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* quicksand-regular - latin-ext */
 @font-face {
@@ -13,8 +13,8 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url(2b19b4572f14077118cf276fd9a56749.woff2) format('woff2'), 
-       url(f50d093974351866436470a9cd0ae697.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url(./assets/fonts/quicksand-v21-latin-ext-regular.woff2) format('woff2'), 
+       url(./assets/fonts/quicksand-v21-latin-ext-regular.woff) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 html, body {
   height: 100%; }
@@ -115,7 +115,7 @@ table {
   font-weight: bold; }
 
 .color-data__color-view_dark100 {
-  background: #1F2041; }
+  background: #1f2041; }
 
 .color-data__color-view_dark75 {
   background: rgba(31, 32, 65, 0.75); }

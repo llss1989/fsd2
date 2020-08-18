@@ -1,21 +1,23 @@
+@import '../../assets/vars/varsColours.scss';
+
 .color-data__color-view_dark100 {
-  background: #1F2041;
+  background: $textColor100;
 }
 .color-data__color-view_dark75{
-  background: rgba(31, 32, 65, 0.75);
+  background: $textColor75;
 }
 .color-data__color-view_dark50{
-  background: rgba(31, 32, 65, 0.5);
+  background: $textColor50;
 }
 .color-data__color-view_dark25{
-  background: rgba(31, 32, 65, 0.25);
+  background: $textColor25;
 }
 .color-data__color-view_dark5{
-  background: rgba(31, 32, 65, 0.05);
+  background: $textColor5;
 }
 .color-data__color-view_purple{
-  background: #BC9CFF;
+  background: $mainColor;
 }
 .color-data__color-view_green{
-  background: #6FCF97;
+  background: $secondaryColor;
 }
