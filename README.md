@@ -1,2 +1,2 @@
 # fsd2
-Landing projects with use Webpack, pug and SaSS
+Landing projects with use Webpack, pug and SaSS, jquery.
