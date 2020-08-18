@@ -7,4 +7,5 @@
 
 /src/.gitignore/
 /node_modules/
+/dist/
 
