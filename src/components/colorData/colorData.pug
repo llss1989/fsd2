@@ -1,0 +1,6 @@
+mixin colorData(colorName, colorNumber,colorNameCssClass)
+  .color-data
+    div(class= "color-data__color-view color-data__color-view_"+colorNameCssClass)
+    .color-info
+      h1(class= "color-info__color-name color-info__color-name_" + colorNameCssClass)= colorName
+      p(class= 'color-info__color-number color-info__color-number_' + colorNumber)= colorNumber
