@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin =  require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin =require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
-const loader = require('sass-loader')
 var HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -50,9 +49,10 @@ module.exports = {
   },
   optimization: optimization(),
   devServer:{
-    port: 4200,
+    port: 8082,
     hot:isDev,
-    openPage: './src/pages/UI_kit/colours.pug'
+    index: '../dist/pages/UI_kit/coloursAndType/colours.html',
+    //openPage:['/different/page1', '../dist/'] 
   },
   output:{
     filename: filename('js'),
