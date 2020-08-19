@@ -51,7 +51,8 @@ module.exports = {
   optimization: optimization(),
   devServer:{
     port: 4200,
-    hot:isDev
+    hot:isDev,
+    openPage: './src/pages/UI_kit/colours.pug'
   },
   output:{
     filename: filename('js'),
