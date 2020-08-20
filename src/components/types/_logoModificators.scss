@@ -1,0 +1,61 @@
+@import './src/styles/_fonts.scss';
+.type-info__tag_H1{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+}
+.type-info__text_H1{
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.type-info__tag_H2{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  line-height: 23px;
+
+}
+.type-info__text_H2{
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  margin-right: 54px;
+}
+
+.type-info__tag_H3{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+.type-info__text_H3{
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-right: 150px;
+}
+
+.type-info__tag_Body{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+}
+.type-info__text_Body{
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 35px;
+}

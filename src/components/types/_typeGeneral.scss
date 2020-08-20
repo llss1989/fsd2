@@ -1,0 +1,15 @@
+@import './src/styles/fonts';
+
+.type-info{
+  display: flex;
+  font-style: normal;
+}
+.type-info__tag{
+  text-align: right;
+  font-family: $secondaryFont;
+  box-sizing: border-box;
+}
+.type-info__text{
+  margin-bottom: 50px;
+  margin-left: 30px;
+}

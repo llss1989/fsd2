@@ -1,6 +1,9 @@
 html, body{
   height: 100%;
 }
+.colour-items{
+  margin-top: 97px;
+}
 .page{
   height: 100%;
   display: flex;
@@ -13,7 +16,6 @@ html, body{
 .types{
   width: 50%;
   min-height: 100%;
-  background: brown;
 }
 .colour-items{
   width: 270px;
