@@ -51,7 +51,7 @@ module.exports = {
   devServer:{
     port: 8082,
     hot:isDev,
-    index: '../dist/pages/UI_kit/form-elements/formElementsGeneralStyle.html',
+    index: './pages/UI_kit/form-elements/form-elements.html',
     //openPage:['/different/page1', '../dist/'] 
   },
   output:{
@@ -76,6 +76,13 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: './pages/UI_kit/coloursAndType/colours.html',
       template: './pages//UI_kit/coloursAndType/colours.pug',
+      minify:{
+        collapseWhitespace:isProd
+      }
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/UI_kit/form-elements/form-elements.html',
+      template: './pages//UI_kit/form-elements/form-elements.pug',
       minify:{
         collapseWhitespace:isProd
       }
