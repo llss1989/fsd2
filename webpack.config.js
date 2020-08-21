@@ -51,7 +51,7 @@ module.exports = {
   devServer:{
     port: 8082,
     hot:isDev,
-    index: '../dist/pages/UI_kit/coloursAndType/colours.html',
+    index: '../dist/pages/UI_kit/form-elements/formElementsGeneralStyle.html',
     //openPage:['/different/page1', '../dist/'] 
   },
   output:{
@@ -102,10 +102,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
+        exclude: /fonts/,
       },
       {
-        test: /\.(ttf|woff|woff2|eot)$/,
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
         use:[    {
           loader: 'file-loader',
           options: {
