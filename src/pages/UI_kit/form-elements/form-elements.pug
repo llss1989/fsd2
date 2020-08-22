@@ -1,9 +1,14 @@
 include /components/logo/logo.pug
+include /components/input/input.pug
 
 doctype html
 html
   head
-    title Colours and Types
+    title Form Elements
     
   body
     +logo('theme-UI')
+    .input-form-email
+      span.input-form_email-text Text field
+      span.input-form_email-status Default
+      +input('email', 'Email', 'theme-UIkit')

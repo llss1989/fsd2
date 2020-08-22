@@ -1,0 +1,3 @@
+mixin input( inputType, textOfInput, modificator)
+  form(class= 'input')
+    input(class= `input__${inputType} input__${inputType}_${modificator}` type= inputType placeholder= textOfInput)
