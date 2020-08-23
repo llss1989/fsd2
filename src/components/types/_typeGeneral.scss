@@ -1,4 +1,5 @@
-@import './src/styles/fonts';
+@import './src/styles/_fonts.scss';
+@import './src/styles/_varsColours.scss';
 
 .type-info{
   display: flex;
@@ -15,4 +16,61 @@
 }
 .type-info__tag, .type-info__text{
   font-style: normal;
+}
+
+
+.type-info__tag_H1, .type-info__text_H1{
+  font-size: 24px;
+}
+.type-info__tag_H1, .type-info__tag_H2, .type-info__tag_H3, .type-info__tag_Body{
+  color: $textColor25;
+  font-weight: normal;
+}
+.type-info__text_H1, .type-info__text_H2, .type-info__text_H3{
+  font-weight: bold;
+}
+.type-info__text_H3, .type-info__text_Body{
+  font-family: $secondaryFont;
+}
+.type-info__tag_H1{
+  line-height: 29px;
+  margin-left: 8px;
+}
+.type-info__text_H1{
+  font-family: $mainFont;
+  line-height: 30px;
+}  
+.type-info__tag_H2, .type-info__text_H2{
+  font-size: 19px;
+}
+.type-info__tag_H2{
+  line-height: 23px;
+  margin-left: 10px;
+}
+.type-info__text_H2{
+  font-family: $mainFont;
+  line-height: 24px;
+  margin-right: 54px;
+}
+.type-info__tag_H3{
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 20px;
+}
+.type-info__text_H3{
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  margin-right: 150px;
+}
+.type-info__tag_Body{
+  font-size: 14px;
+  line-height: 24px;
+}
+.type-info__text_Body{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 35px;
+  color: $textColor75;
 }
