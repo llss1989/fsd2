@@ -1,4 +1,35 @@
-.input-form-email{
-  width: 320px;
-  height: 64px;
+@import './src/styles/mixins.scss';
+@import './src/styles/fonts.scss';
+@import './src/styles/varsColours.scss';
+
+.input-email{
+  box-sizing: border-box;
+}
+.input-email__email{
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+    @include placeholder{
+    color: red;
+    padding-left: 100px;
+    }
+}
+.input-form-email__email-text{
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $textColor100;
+}
+.input-form-email__email-status{
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  color: $textColor50;
 }
