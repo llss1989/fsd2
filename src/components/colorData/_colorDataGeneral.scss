@@ -1,47 +1,53 @@
 @import './src/styles/_varsColours.scss';
+@import './src/styles/fonts.scss';
 
 .color-data{
   display: flex;
   margin-bottom: 20px;
+
+  &__color-view{
+    width: 70px;
+    height: 70px;
+    margin-right: 40px;
+    border-radius: 6px;
+    
+    &_dark100{
+      background: $textColor100;
+    }
+    &_dark75{
+      background: $textColor75;
+    }
+    &_dark50{
+      background: $textColor50;
+    }
+    &_dark25{
+      background: $textColor25;  
+    }
+    &_dark5{
+      background: $textColor5;
+    }
+    &_purple{
+      background: $mainColor;
+    }
+    &_green{
+      background: $secondaryColor;
+    }
+  }
 }
-.color-data__color-view{
-  width: 70px;
-  height: 70px;
-  margin-right: 40px;
-  border-radius: 6px;
-}
+
 .color-info{
-  margin-top: 5px;
-}
-.color-info__color-name, .color-info__color-number{
-  font-family: Quicksand;
-  font-style: normal;
-  font-size: 19px;
-  line-height: 29px;
-}
-.color-info__color-name{
-  font-weight: bold;
+    margin-top: 5px;
+
+  &__color-name, &__color-number{
+    font-family: $mainFont;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 29px;
+  }
+
+  &__color-name{
+    font-weight: bold;
+  }
 }
 
 
-.color-data__color-view_dark100 {
-  background: $textColor100;
-}
-.color-data__color-view_dark75{
-  background: $textColor75;
-}
-.color-data__color-view_dark50{
-  background: $textColor50;
-}
-.color-data__color-view_dark25{
-  background: $textColor25;
-}
-.color-data__color-view_dark5{
-  background: $textColor5;
-}
-.color-data__color-view_purple{
-  background: $mainColor;
-}
-.color-data__color-view_green{
-  background: $secondaryColor;
-}
