@@ -21,7 +21,7 @@ html, body{
   width: 270px;
   height: 610px;
   margin-left: 150px;
-  margin-bottom: 145px;
+  margin-top: 98px;
 }
 .types-item {
   display: flex;
@@ -30,4 +30,11 @@ html, body{
   height: 321px;
   margin-top: 145px;
   margin-right: 191px;
+  margin-left: 127px;
+}
+
+@media only screen and (max-width: 1100px){
+  .types-item {
+    margin-left: 0px;
+  }
 }
