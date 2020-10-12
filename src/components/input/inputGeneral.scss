@@ -50,36 +50,35 @@
         color: $textColor25;
       }
     }
-    
   }
-  &-info{
-    display: flex;
-    &_status{
-      font-family: $secondaryFont;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 15px;
-      text-align: right;
-      text-transform: uppercase;
-      color: $textColor50;
-      &__themeUI{
-        margin-bottom: 3px;
-      }
-    }
-    &_text{
-      font-family: $secondaryFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
-      text-transform: uppercase;
-      color: $textColor;
-      &__themeUI{
-        margin-right: 194px;
-        margin-bottom: 5px;
-      }
-    }
-  }
-}
+//   &-info{
+//     display: flex;
+//     &_status{
+//       font-family: $secondaryFont;
+//       font-style: normal;
+//       font-weight: normal;
+//       font-size: 12px;
+//       line-height: 15px;
+//       text-align: right;
+//       text-transform: uppercase;
+//       color: $textColor50;
+//       &__themeUI{
+//         margin-bottom: 3px;
+//       }
+//     }
+//     &_text{
+//       font-family: $secondaryFont;
+//       font-style: normal;
+//       font-weight: bold;
+//       font-size: 12px;
+//       line-height: 15px;
+//       text-transform: uppercase;
+//       color: $textColor;
+//       &__themeUI{
+//         margin-right: 194px;
+//         margin-bottom: 5px;
+//       }
+//     }
+//   }
+ }
 

@@ -1,5 +1,6 @@
 include /components/logo/logo.pug
 include /components/input/input.pug
+include /components/formWrapper/formForWrapper.pug
 
 doctype html
 html
@@ -10,8 +11,10 @@ html
     title Form Elements
    
   body
-  +logo('theme-UI')
+  +logo('white')
   .container
     .container_first-block
-      +input('email', 'Email', 'themeUI', 'TEXT FIELD', 'Default')
+      +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
+        +input('email', 'Email', 'wide')
+      
         

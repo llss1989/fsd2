@@ -1,6 +1,3 @@
-mixin input( inputType, textOfInput, modificator, text, status)
+mixin input( inputType, textOfInput, modificator)
   div(class= `input-${inputType}`)
-    div(class="input-info")
-      span(class= `input-info_text input-info_text__${modificator}`)= text
-      span(class= `input-info_status input-info_status__${modificator}`)= status
     input(class= `input-${inputType}_${inputType} input-${inputType}_${inputType}__${modificator}` type= inputType placeholder= textOfInput)
