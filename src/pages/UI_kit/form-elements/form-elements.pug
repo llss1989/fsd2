@@ -4,12 +4,14 @@ include /components/input/input.pug
 doctype html
 html
   head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
     title Form Elements
-    
+   
   body
-    +logo('theme-UI')
-    .input-email
-      span(class= 'input-form-email__email-text input-form-email__email-text_theme_UIkit') Text field
-      span(class= 'input-form-email__email-status input-form-email__email-status_theme_UIkit') Default
-      +input('email', 'Email', 'theme-UIkit')
-      
+  +logo('theme-UI')
+  .container
+    .container_first-block
+      +input('email', 'Email', 'themeUI', 'TEXT FIELD', 'Default')
+        
