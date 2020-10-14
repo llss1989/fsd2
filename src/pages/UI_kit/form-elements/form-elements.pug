@@ -13,8 +13,12 @@ html
   body
   +logo('white')
   .container
-    .container_first-block
-      +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
-        +input('email', 'Email', 'wide')
+    .first-block
+      .first-block_item
+        +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
+          +input('email', 'Email', 'wide')
+      .first-block_item    
+        +wrapperForForm('input-text', 'Text Field', 'Hover / Focus', 'focused')
+          +input('text', 'This is pretty awesome', 'wide')
       
         

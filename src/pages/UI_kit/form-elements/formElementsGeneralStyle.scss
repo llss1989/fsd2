@@ -3,12 +3,14 @@
     height: 600px;
   }
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   width: 80.5%;
   margin: 0 auto;
 }
-
+.first-block{
+  margin-top: 143px;
+}
 
 
 // .input-form-email__email-text{

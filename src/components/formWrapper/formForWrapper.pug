@@ -2,7 +2,7 @@ mixin wrapperForForm( nameOfForm, textOfForm, statusOfForm, modificator)
   div(class=`wrapper-${nameOfForm}`)
     div(class= `${nameOfForm}-info`)
       span(class=`${nameOfForm}-info_text ${nameOfForm}-info_text__${modificator}`)= textOfForm
-      span(class=`${nameOfForm}-info_text ${nameOfForm}-info_text__${modificator}`)= statusOfForm
-      if block
-        block
-      else  
+      span(class=`${nameOfForm}-info_status ${nameOfForm}-info_status__${modificator}`)= statusOfForm
+    if block
+      block
+    else  

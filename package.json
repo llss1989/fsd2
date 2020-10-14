@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "webpack, pug, sass",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
@@ -46,7 +47,12 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "xml-loader": "^1.2.1"
+    "xml-loader": "^1.2.1",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3"
   },
   "dependencies": {
     "jquery": "^3.5.1",

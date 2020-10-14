@@ -6,14 +6,14 @@
 
 
 .input{
-  &-email{
-    &_email{
+  &-email, &-text{
+    &_email, &_text{
       box-sizing: border-box;
-      &__themeUI{
+      &__wide{
         width: 320px;
         height: 44px;
       }
-      &__themeUI::-webkit-input-placeholder {
+      &__wide::-webkit-input-placeholder {
         padding: 13px 0  13px 15px;
         font-family: $secondaryFont;
         font-style: normal;
@@ -22,7 +22,7 @@
         line-height: 18px; 
         color: $textColor25;
       }
-      &__themeUI::-moz-placeholder          {
+      &__wide::-moz-placeholder          {
         padding: 13px 0  13px 15px;
         font-family: $secondaryFont;
         font-style: normal;
@@ -31,7 +31,7 @@
         line-height: 18px;
         color: $textColor25;
       }
-      &__themeUI:-moz-placeholder{
+      &__wide:-moz-placeholder{
         padding: 13px 0  13px 15px;
         font-family: $secondaryFont;
         font-style: normal;
@@ -40,7 +40,7 @@
         line-height: 18px;
         color: $textColor25;
       }
-      &__themeUI:-ms-input-placeholder {
+      &__wide:-ms-input-placeholder {
         padding: 13px 0  13px 15px;
         font-family: $secondaryFont;
         font-style: normal;
@@ -51,34 +51,6 @@
       }
     }
   }
-//   &-info{
-//     display: flex;
-//     &_status{
-//       font-family: $secondaryFont;
-//       font-style: normal;
-//       font-weight: normal;
-//       font-size: 12px;
-//       line-height: 15px;
-//       text-align: right;
-//       text-transform: uppercase;
-//       color: $textColor50;
-//       &__themeUI{
-//         margin-bottom: 3px;
-//       }
-//     }
-//     &_text{
-//       font-family: $secondaryFont;
-//       font-style: normal;
-//       font-weight: bold;
-//       font-size: 12px;
-//       line-height: 15px;
-//       text-transform: uppercase;
-//       color: $textColor;
-//       &__themeUI{
-//         margin-right: 194px;
-//         margin-bottom: 5px;
-//       }
-//     }
-//   }
+
  }
 

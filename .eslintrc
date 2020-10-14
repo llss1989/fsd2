@@ -1,0 +1,18 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017
+},
+"env": {
+  "browser": true,
+  "node": true,
+},
+  "extends": [
+    "airbnb/base",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+], 
+  "rules": { 
+    "no-debugger": 0,
+    "no-console": 0
+  }
+}
