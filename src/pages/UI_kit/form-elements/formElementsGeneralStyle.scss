@@ -1,12 +1,15 @@
-.container{
-  &_first-block{
-    height: 600px;
-  }
+.mainInner{
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   width: 80.5%;
   margin: 0 auto;
+}
+.inputs{
+  &_first-block{
+    height: 600px;
+  }
+
 }
 .first-block{
   margin-top: 143px;

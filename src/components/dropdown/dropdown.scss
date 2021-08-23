@@ -1,0 +1,141 @@
+// @import "~/node_modules/material-design-icons/iconfont/material-icons.css";
+.dropdown{
+  position: relative;
+  box-sizing: border-box;
+  padding: 0 0;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+    &_guests{
+      width: 320px;
+      height: 44px;
+    }
+    &_rooms{
+      width: 266px;
+      height: 44px;
+    }
+  &__windowInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  &__window{
+    margin-left: 15px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.75);
+  }
+  &__windowButton{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__result{
+    margin-left: 15px;
+  }
+}
+
+.dropdownMenu{
+  text-decoration: none;
+  border: none;
+  background: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+    &_disabled{
+      display: none;
+    }
+    &_active{
+      display: block;
+    }
+  &__display{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1F2041;
+  }
+  &_ml15{
+    margin-left: 15px;
+  }
+  &_mr7{
+    margin-right: 7px;
+  }
+  &_disabled{
+    opacity: 0;
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 7px;
+    margin-right: 7px;
+    &_nameOfItem{
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #1F2041;
+    }
+  }
+  &__minusButton, &__plusButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 22px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+  &__buttons{
+    width: 92px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__disabled{
+      display: none;
+    }
+  }
+}
+
+.dropdownMenuButtons{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  &__button{
+    font-family: Montserrat;
+    &_style{
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: #BC9CFF;
+    }
+  }
+}

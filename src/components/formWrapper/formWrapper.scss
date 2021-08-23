@@ -1,9 +1,10 @@
-@import './src/styles/mixins.scss';
-@import './src/styles/fonts.scss';
-@import './src/styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
 
 .input{
-  &-email, &-text{
+  &-email, &-text, &-dropdown{
     &-info{
       display: flex;
       &_status{

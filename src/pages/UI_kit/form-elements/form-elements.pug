@@ -1,6 +1,7 @@
 include /components/logo/logo.pug
 include /components/input/input.pug
 include /components/formWrapper/formForWrapper.pug
+include /components/dropdown/dropdown.pug
 
 doctype html
 html
@@ -8,17 +9,21 @@ html
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=Edge")
     meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
     title Form Elements
    
   body
-  +logo('white')
-  .container
-    .first-block
-      .first-block_item
+  .mainInner
+    +logo('white')
+    .inputs
+      div(class='inputs_item inputs_item__email')
         +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
           +input('email', 'Email', 'wide')
-      .first-block_item    
+      div(class='inputs_item inputs_item__text')
         +wrapperForForm('input-text', 'Text Field', 'Hover / Focus', 'focused')
           +input('text', 'This is pretty awesome', 'wide')
-      
+      div(class='inputs_item inputs_item__dropdown')
+        +wrapperForForm('input-dropdown', 'Dropdown', '', 'wide')
+          +dropdown('_rooms')
         
