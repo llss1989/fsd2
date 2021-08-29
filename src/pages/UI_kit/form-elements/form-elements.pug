@@ -2,6 +2,7 @@ include /components/logo/logo.pug
 include /components/input/input.pug
 include /components/formWrapper/formForWrapper.pug
 include /components/dropdown/dropdown.pug
+include /components/dateInput/dateInput.pug
 
 doctype html
 html
@@ -15,15 +16,17 @@ html
    
   body
   .mainInner
-    +logo('white')
-    .inputs
-      div(class='inputs_item inputs_item__email')
+    div(class='inputs inputs_ml')
+      +logo('white')
+      div(class='inputs__item inputs__item_ml item inputs__item_email')
         +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
           +input('email', 'Email', 'wide')
-      div(class='inputs_item inputs_item__text')
+      div(class='inputs__item inputs__item_ml inputs__item_text')
         +wrapperForForm('input-text', 'Text Field', 'Hover / Focus', 'focused')
           +input('text', 'This is pretty awesome', 'wide')
-      div(class='inputs_item inputs_item__dropdown')
+      div(class='inputs__item inputs__item_ml inputs__item_dropdown')
         +wrapperForForm('input-dropdown', 'Dropdown', '', 'wide')
-          +dropdown('_rooms')
-        
+          +dropdown('_guests')
+      div(class='inputs__item inputs__item_ml inputs__item_maskedText')
+        +wrapperForForm('input-maskedText', 'masked text field', '', 'wide')
+          +dateInput()           

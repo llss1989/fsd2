@@ -4,7 +4,7 @@
 
 
 .input{
-  &-email, &-text, &-dropdown{
+  &-email, &-text, &-dropdown, &-maskedText{
     &-info{
       display: flex;
       &_status{

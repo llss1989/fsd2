@@ -1,1 +1,1 @@
-.mainInner{display:grid;grid-template-rows:1fr 1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr;width:80.5%;margin:0 auto}.inputs_first-block{height:600px}.first-block{margin-top:143px}
+.mainInner{display:grid;grid-template-rows:1fr 1fr 1fr 1fr;grid-template-columns:1fr 1fr 1fr;width:100%;margin:0 auto;position:relative}.inputs{height:660px}.inputs__item_ml{margin-left:141px}.inputs__item_email{margin-top:143px}.inputs__item_text{margin-top:20px}.inputs__item_dropdown{margin-top:20px}

@@ -2,34 +2,34 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 80.5%;
+  width: 100%;
   margin: 0 auto;
+  position: relative;
 }
+
 .inputs{
-  &_first-block{
-    height: 600px;
+  height: 660px;
+
+  &__item{
+    // margin-left: 20px;
+    // _&_ml121{
+    //   margin-left: 121px;
+    // }
+    &_ml{
+      margin-left: 141px;
+    }
+    &_email{
+      margin-top: 143px;
+    }
+    &_text{
+      margin-top: 20px;
+    }
+    &_dropdown{
+      margin-top: 20px;
+    }
   }
 
-}
-.first-block{
-  margin-top: 143px;
+
 }
 
-
-// .input-form-email__email-text{
-//   display: inline-block;
-// }
-
-
-// .input-form-email__email-text_theme_UIkit{
-//   margin-bottom: 5px;
-//   margin-right: 191px;
-// }
-// .input-form-email__email-status_theme_UIkit{
-//   margin-bottom: 8px;
-// }
-// .input-email__email_theme-UIkit{
-//   width: 320px;
-//   height: 44px;
-// }
 

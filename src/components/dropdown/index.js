@@ -17,6 +17,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
     endings: [['спальня', 'спальни', 'спален'], ['кровать', 'кровати', 'кроватей'], ['ванная комната', 'ванные комнаты', 'ванных комнат']],
     buttons: ['Очистить', 'Применить'],
   };
-  dropdown(dropdownFromFirstBlockGuests, optionsForGuestsDropdown)
-  dropdown(dropdownForRooms, optionsForDropdownRooms)
+  dropdown(dropdownFromFirstBlockGuests, optionsForGuestsDropdown);
+  dropdown(dropdownForRooms, optionsForDropdownRooms);
 });

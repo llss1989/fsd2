@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -62,6 +63,9 @@ module.exports = {
     // alias: {
     // Img: path.join(__dirname, './src/assets/img/')
     // },
+    alias: {
+      jquery: 'jquery/src/jquery',
+    },
     extensions: ['.js'],
   },
 
@@ -99,6 +103,10 @@ module.exports = {
     // }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
   ],
 
