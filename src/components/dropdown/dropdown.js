@@ -3,7 +3,6 @@ const dropdown = (elements, options) => {
     const state = initState(options);
     state.id = index + 1;
     render(el, state);
-    console.log(el)
     const buttonForCloseAndOpen = el.querySelector('.dropdown__windowButton');
     buttonForCloseAndOpen.addEventListener('click', () => {
       state.status = state.status === 'disabled' ? 'active' : 'disabled';
@@ -151,7 +150,6 @@ const createMenu = (el, state) => {
 
 const showDisplay = (el, state) => {
   const display = el.querySelector('.dropdown__window');
-  console.log(state);
   if (state.topic === 'Сколько гостей?') {
     const questsCount = state.valuesOfItemsMenu.reduce((acc, inputState, index) => {
       if (inputState.inputName === 'Взрослые' || inputState.inputName === 'Дети') {

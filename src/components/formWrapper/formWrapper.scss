@@ -7,6 +7,7 @@
   &-email, &-text, &-dropdown, &-maskedText{
     &-info{
       display: flex;
+      white-space: nowrap;
       &_status{
         font-family: $secondaryFont;
         font-style: normal;

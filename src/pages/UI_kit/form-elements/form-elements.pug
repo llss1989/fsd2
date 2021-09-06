@@ -3,6 +3,7 @@ include /components/input/input.pug
 include /components/formWrapper/formForWrapper.pug
 include /components/dropdown/dropdown.pug
 include /components/dateInput/dateInput.pug
+include /components/filterDateDropdown/filterDateDropdown.pug 
 
 doctype html
 html
@@ -29,4 +30,7 @@ html
           +dropdown('_guests')
       div(class='inputs__item inputs__item_ml inputs__item_maskedText')
         +wrapperForForm('input-maskedText', 'masked text field', '', 'wide')
-          +dateInput()           
+          +dateInput()
+      div(class='inputs__item inputs__item_ml')  
+        +wrapperForForm('input-maskedText', 'filter date dropdown', '', 'wide')
+          +filterDateDropdown()          

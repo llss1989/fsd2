@@ -1,56 +1,48 @@
-@import './src/styles/mixins.scss';
-@import './src/styles/fonts.scss';
-@import './src/styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts';
+@import '../../styles/varsColours.scss';
 
 
 
 
 .input{
-  &-email, &-text{
-    &_email, &_text{
-      box-sizing: border-box;
-      &__wide{
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: normal;
+    box-sizing: border-box;
+    &__text{
+      font-size: 14px;
+      line-height: 24px;
+      &_wide{
         width: 320px;
         height: 44px;
       }
-      &__wide::-webkit-input-placeholder {
-        padding: 13px 0  13px 15px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px; 
-        color: $textColor25;
-      }
-      &__wide::-moz-placeholder          {
-        padding: 13px 0  13px 15px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        color: $textColor25;
-      }
-      &__wide:-moz-placeholder{
-        padding: 13px 0  13px 15px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        color: $textColor25;
-      }
-      &__wide:-ms-input-placeholder {
-        padding: 13px 0  13px 15px;
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        color: $textColor25;
+    }
+    &__text_pos::-webkit-input-placeholder{
+      padding: 13px 0  13px 15px;
+    }
+    &__text_pos::-moz-placeholder{
+      padding: 13px 0  13px 15px;
+    }
+    &__text_pos:-ms-input-placeholder{
+      padding: 13px 0  13px 15px;
+    }
+    &__email{
+      font-size: 14px;
+      line-height: 18px;
+      &_wide{
+        width: 320px;
+        height: 44px;
       }
     }
-  }
-
+    &__email_pos::-webkit-input-placeholder{
+      padding: 13px 0  13px 15px;
+    }
+    &__email_pos::-moz-placeholder{
+      padding: 13px 0  13px 15px;
+    }
+    &__email_pos:-ms-input-placeholder{
+      padding: 13px 0  13px 15px;
+    }
  }
 
