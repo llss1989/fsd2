@@ -7,8 +7,11 @@
   &-email, &-text, &-dropdown, &-maskedText{
     &-info{
       display: flex;
+      width: 320px;
+      justify-content: space-between;
       white-space: nowrap;
-      &_status{
+      margin-bottom: 5px;
+      &__status{
         font-family: $secondaryFont;
         font-style: normal;
         font-weight: normal;
@@ -21,7 +24,7 @@
           margin-bottom: 3px;
         }
       }
-      &_text{
+      &__text{
         font-family: $secondaryFont;
         font-style: normal;
         font-weight: bold;
@@ -30,12 +33,15 @@
         text-transform: uppercase;
         color: $textColor;
         &__wide{
-          margin-right: 194px;
+          // margin-right: 194px;
           margin-bottom: 5px;
         }
         &__focused{
           margin-right: 152px;
           margin-bottom: 5px
+        }
+        &_mr31{
+          margin-right: 31px;
         }
       }
     }

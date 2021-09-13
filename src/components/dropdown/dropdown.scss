@@ -1,4 +1,7 @@
 // @import "~/node_modules/material-design-icons/iconfont/material-icons.css";
+@import '../../styles/varsColours.scss';
+@import '../../styles/fonts.scss';
+
 .dropdown{
   position: relative;
   box-sizing: border-box;
@@ -21,19 +24,12 @@
   }
   &__window{
     margin-left: 15px;
-    font-family: Montserrat;
+    font-family: $secondaryFont;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.75);
-  }
-  &__windowButton{
-    width: 44px;
-    height: 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 24px;
+    color: $textColor75;
   }
   &__result{
     margin-left: 15px;
@@ -44,7 +40,7 @@
   text-decoration: none;
   border: none;
   background: none;
-  font-family: Montserrat;
+  font-family: $secondaryFont;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -58,7 +54,7 @@
       display: block;
     }
   &__display{
-    font-family: Montserrat;
+    font-family: $secondaryFont;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
@@ -84,7 +80,7 @@
     margin-top: 7px;
     margin-right: 7px;
     &_nameOfItem{
-      font-family: Montserrat;
+      font-family: $secondaryFont;
       font-style: normal;
       font-weight: bold;
       font-size: 12px;
@@ -102,7 +98,7 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 22px;
-    font-family: Montserrat;
+    font-family: $secondaryFont;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -128,7 +124,7 @@
   height: 100%;
   align-items: center;
   &__button{
-    font-family: Montserrat;
+    font-family: $secondaryFont;
     &_style{
       font-style: normal;
       font-weight: bold;

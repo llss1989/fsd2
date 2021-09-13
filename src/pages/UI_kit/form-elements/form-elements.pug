@@ -3,7 +3,9 @@ include /components/input/input.pug
 include /components/formWrapper/formForWrapper.pug
 include /components/dropdown/dropdown.pug
 include /components/dateInput/dateInput.pug
-include /components/filterDateDropdown/filterDateDropdown.pug 
+include /components/filterDateDropdown/filterDateDropdown.pug
+include /components/dateDropdown/dateDropdown.pug
+
 
 doctype html
 html
@@ -25,12 +27,18 @@ html
       div(class='inputs__item inputs__item_ml inputs__item_text')
         +wrapperForForm('input-text', 'Text Field', 'Hover / Focus', 'focused')
           +input('text', 'This is pretty awesome', 'wide')
-      div(class='inputs__item inputs__item_ml inputs__item_dropdown')
+      div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
         +wrapperForForm('input-dropdown', 'Dropdown', '', 'wide')
           +dropdown('_guests')
       div(class='inputs__item inputs__item_ml inputs__item_maskedText')
         +wrapperForForm('input-maskedText', 'masked text field', '', 'wide')
           +dateInput()
-      div(class='inputs__item inputs__item_ml')  
+      div(class='inputs__item inputs__item_ml inputs__item_dateDropdown') <!-- использованы стили formWrapper компонента-->
+        div(class="wrapper-input-maskedText")
+          div(class="input-maskedText-info")
+            span(class="input-maskedText-info__text input-maskedText-info__text_wide")="DATE DROPDOWN"
+            span(class="input-maskedText-info__text input-maskedText-info__text_wide input-maskedText-info__text_mr31")="DATE DROPDOWN"
+          +dateDropdown()
+      div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
         +wrapperForForm('input-maskedText', 'filter date dropdown', '', 'wide')
-          +filterDateDropdown()          
+          +filterDateDropdown()

@@ -1,8 +1,9 @@
+include /components/expandMore/expandMore.pug 
+
 mixin dropdown(type)
   div(class='dropdown dropdown'+type)
     .dropdown__windowInner
       span.dropdown__window
-      .dropdown__windowButton
-        span(class="material-icons")='expand_more'
+      +expandMore('dropdown')
     .dropdownMenu
     

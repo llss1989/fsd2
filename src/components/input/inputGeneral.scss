@@ -20,16 +20,20 @@
     }
     &__text_pos::-webkit-input-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor75;
     }
     &__text_pos::-moz-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor75;
     }
     &__text_pos:-ms-input-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor75;
     }
     &__email{
       font-size: 14px;
       line-height: 18px;
+
       &_wide{
         width: 320px;
         height: 44px;
@@ -37,12 +41,15 @@
     }
     &__email_pos::-webkit-input-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor25;
     }
     &__email_pos::-moz-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor25;
     }
     &__email_pos:-ms-input-placeholder{
       padding: 13px 0  13px 15px;
+      color: $textColor25;
     }
  }
 

@@ -1,0 +1,21 @@
+@import '../../styles/_varsColours.scss';
+
+.expandMore{
+  color:$textColor50;
+  &__icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    &_dropdown{
+      border: none;
+    }
+    &_dateDropdown{
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      border-left: none;
+
+    }
+  }
+}

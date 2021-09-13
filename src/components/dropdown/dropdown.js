@@ -3,7 +3,7 @@ const dropdown = (elements, options) => {
     const state = initState(options);
     state.id = index + 1;
     render(el, state);
-    const buttonForCloseAndOpen = el.querySelector('.dropdown__windowButton');
+    const buttonForCloseAndOpen = el.querySelector('.expandMore__icon_dropdown');
     buttonForCloseAndOpen.addEventListener('click', () => {
       state.status = state.status === 'disabled' ? 'active' : 'disabled';
       render(el, state);
