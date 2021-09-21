@@ -1,4 +1,4 @@
-.dateInput{
+.date-input{
   &__item{
     &_size{
       width: 320px;
@@ -7,22 +7,22 @@
     }
   }
 }
-.dateInput_item::-webkit-input-placeholder {
-  background-color: red;
-  padding-left: 10px;
-  }
-  :-moz-placeholder { 
-    background-color: red; 
-    padding-left: 10px;
-  }
-  ::-moz-placeholder { 
-    background-color: red;
-    padding-left: 10px;
-  }
-  :-ms-input-placeholder { 
-    background-color: red;
-    padding-left: 10px;
-  }
+// .date-input_item::-webkit-input-placeholder {
+//   background-color: red;
+//   padding-left: 10px;
+//   }
+//   :-moz-placeholder { 
+//     background-color: red; 
+//     padding-left: 10px;
+//   }
+//   ::-moz-placeholder { 
+//     background-color: red;
+//     padding-left: 10px;
+//   }
+//   :-ms-input-placeholder { 
+//     background-color: red;
+//     padding-left: 10px;
+//   }
 
 
 

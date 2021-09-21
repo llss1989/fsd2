@@ -20,7 +20,7 @@
         text-align: right;
         text-transform: uppercase;
         color: $textColor50;
-        &__wide{
+        &_wide{
           margin-bottom: 3px;
         }
       }
@@ -32,11 +32,11 @@
         line-height: 15px;
         text-transform: uppercase;
         color: $textColor;
-        &__wide{
+        &_wide{
           // margin-right: 194px;
           margin-bottom: 5px;
         }
-        &__focused{
+        &_focused{
           margin-right: 152px;
           margin-bottom: 5px
         }

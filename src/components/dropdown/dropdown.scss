@@ -15,7 +15,7 @@
       width: 266px;
       height: 44px;
     }
-  &__windowInner{
+  &__window-inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@
   }
 }
 
-.dropdownMenu{
+.dropdown-menu{
   text-decoration: none;
   border: none;
   background: none;
@@ -46,7 +46,7 @@
   font-size: 12px;
   line-height: 15px;
   text-transform: uppercase;
-  color: #BC9CFF;
+  color: $mainColor;
     &_disabled{
       display: none;
     }
@@ -89,7 +89,7 @@
       color: #1F2041;
     }
   }
-  &__minusButton, &__plusButton{
+  &__minus-button, &__plus-button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@
   }
 }
 
-.dropdownMenuButtons{
+.dropdown-menu-buttons{
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -131,7 +131,7 @@
       font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;
-      color: #BC9CFF;
+      color: $mainColor;
     }
   }
 }

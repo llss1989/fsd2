@@ -12,25 +12,21 @@ $(() => {
     dateFormat: 'd M',
     clearButton: true,
     autoClose: true,
-    // classes: 'datepicker__calendar',
-    // position: 'bottom right',
+    inline: true,
+    // startDate: new Date('September 17, 2021'),
+    prevHtml: '<span class="material-icons">arrow_back</span>',
+    nextHtml: '<span class="material-icons">arrow_forward</span>',
+    navTitles: {
+      days: 'MM yyyy',
+    },
     // offset: 22,
     multipleDatesSeparator: ' - ',
     onRenderCell(date, cellType) {
       if (cellType === 'day') {
         const day = date.getDay();
-        // const isDisabled = disabledDates.indexOf(day) != -1;
-        // return {
-        //   disabled: isDisabled,
-        // };
         return day;
       }
       return null;
     },
-    // onSelect(formattedDate, date, inst) {
-    //   if (date) {
-    //     // alert(date);
-    //   }
-    // },
   }).data('datepicker');
 });

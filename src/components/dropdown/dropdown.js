@@ -3,7 +3,7 @@ const dropdown = (elements, options) => {
     const state = initState(options);
     state.id = index + 1;
     render(el, state);
-    const buttonForCloseAndOpen = el.querySelector('.expandMore__icon_dropdown');
+    const buttonForCloseAndOpen = el.querySelector('.expand-more__icon_dropdown');
     buttonForCloseAndOpen.addEventListener('click', () => {
       state.status = state.status === 'disabled' ? 'active' : 'disabled';
       render(el, state);
@@ -35,14 +35,14 @@ const initState = ({
 };
 
 const render = (el, state) => {
-  const menu = el.querySelector('.dropdownMenu');
+  const menu = el.querySelector('.dropdown-menu');
   if (state.status === 'disabled') {
-    menu.classList.remove('dropdownMenu_active');
-    menu.classList.add('dropdownMenu_disabled');
+    menu.classList.remove('dropdown-menu_active');
+    menu.classList.add('dropdown-menu_disabled');
   }
   if (state.status === 'active') {
-    menu.classList.remove('dropdownMenu_disabled');
-    menu.classList.add('dropdownMenu_active');
+    menu.classList.remove('dropdown-menu_disabled');
+    menu.classList.add('dropdown-menu_active');
   }
   createMenu(el, state);
   showDisplay(el, state);
@@ -50,19 +50,19 @@ const render = (el, state) => {
 
 const buildButtons = (el, state) => {
   const buttonsInner = document.createElement('div');
-  buttonsInner.classList.add('dropdownMenuButtons');
+  buttonsInner.classList.add('dropdown-menu-buttons');
 
   state.listOfButtons.map((inputState) => {
     const button = document.createElement('div');
-    button.classList.add('dropdownMenuButtons__button');
-    button.classList.add('dropdownMenuButtons__button_style');
-    button.classList.add('dropdownMenu__item');
+    button.classList.add('dropdown-menu-buttons__button');
+    button.classList.add('dropdown-menu-buttons__button_style');
+    button.classList.add('dropdown-menu__item');
     if (inputState.visible === false) {
-      button.classList.add('dropdownMenuButtons__button_disabled');
+      button.classList.add('dropdown-menu-buttons__button_disabled');
     }
     if (inputState.nameButton === 'Применить') {
-      button.classList.add('dropdownMenuButtons__button_mr7');
-      button.classList.add('dropdownMenuButtons__button_apply');
+      button.classList.add('dropdown-menu-buttons__button_mr7');
+      button.classList.add('dropdown-menu-buttons__button_apply');
 
       button.addEventListener('click', () => {
         state.status = 'disabled';
@@ -70,8 +70,8 @@ const buildButtons = (el, state) => {
       });
     }
     if (inputState.nameButton === 'Очистить') {
-      button.classList.add('dropdownMenuButtons__button_ml15');
-      button.classList.add('dropdownMenuButtons__button_clear');
+      button.classList.add('dropdown-menu-buttons__button_ml15');
+      button.classList.add('dropdown-menu-buttons__button_clear');
 
       button.addEventListener('click', () => {
         state.valuesOfItemsMenu.map((itemState) => {
@@ -88,19 +88,17 @@ const buildButtons = (el, state) => {
 };
 const createMenu = (el, state) => {
   const resultOrAnswer = el.querySelector('.dropdown__window');
-  const dropdownMenu = el.querySelector('.dropdownMenu');
-  // const dropdownInner = document.createElement('div');
-  // dropdownInner.classList.add('dropdownMenu__inner')
+  const dropdownMenu = el.querySelector('.dropdown-menu');
   resultOrAnswer.innerText = state.topic;
   el.dataset.id = state.id;
 
   dropdownMenu.innerHTML = '';
   state.valuesOfItemsMenu.map((inputState) => {
     const item = document.createElement('div');
-    item.classList.add('dropdownMenu__item');
+    item.classList.add('dropdown-menu__item');
 
     const plusButton = document.createElement('div');
-    plusButton.classList.add('dropdownMenu__plusButton');
+    plusButton.classList.add('dropdown-menu__plus-button');
     plusButton.innerText = '+';
     plusButton.addEventListener('click', (e) => {
       inputState.value += 1;
@@ -112,7 +110,7 @@ const createMenu = (el, state) => {
     });
 
     const minusButton = document.createElement('div');
-    minusButton.classList.add('dropdownMenu__minusButton');
+    minusButton.classList.add('dropdown-menu__minus-button');
     minusButton.innerText = '-';
     minusButton.addEventListener('click', (e) => {
       inputState.value = inputState.value - 1 < 0 ? 0 : inputState.value - 1;
@@ -124,15 +122,15 @@ const createMenu = (el, state) => {
     });
 
     const nameOfItem = document.createElement('div');
-    nameOfItem.classList.add('dropdownMenu__item_nameOfItem');
+    nameOfItem.classList.add('dropdown-menu__item_nameOfItem');
     nameOfItem.innerText = inputState.inputName;
 
     const displayOfItem = document.createElement('span');
-    displayOfItem.classList.add('dropdownMenu__display');
+    displayOfItem.classList.add('dropdown-menu__display');
     displayOfItem.innerText = inputState.value;
 
     const innerButtons = document.createElement('div');
-    innerButtons.classList.add('dropdownMenu__buttons');
+    innerButtons.classList.add('dropdown-menu__buttons');
     innerButtons.appendChild(minusButton);
     innerButtons.appendChild(displayOfItem);
     innerButtons.appendChild(plusButton);
@@ -151,7 +149,7 @@ const createMenu = (el, state) => {
 const showDisplay = (el, state) => {
   const display = el.querySelector('.dropdown__window');
   if (state.topic === 'Сколько гостей?') {
-    const questsCount = state.valuesOfItemsMenu.reduce((acc, inputState, index) => {
+    const questsCount = state.valuesOfItemsMenu.reduce((acc, inputState) => {
       if (inputState.inputName === 'Взрослые' || inputState.inputName === 'Дети') {
         acc += inputState.value;
       }

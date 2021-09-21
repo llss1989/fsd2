@@ -1,6 +1,6 @@
 @import '../../styles/_varsColours.scss';
 
-.expandMore{
+.expand-more{
   color:$textColor50;
   &__icon{
     display: flex;
@@ -12,7 +12,7 @@
     &_dropdown{
       border: none;
     }
-    &_dateDropdown{
+    &_date-dropdown{
       border: 1px solid rgba(31, 32, 65, 0.5);
       border-left: none;
 
