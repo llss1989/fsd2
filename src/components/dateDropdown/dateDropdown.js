@@ -15,6 +15,7 @@ $(() => {
     navTitles: {
       days: 'MM yyyy',
     },
+
     // inline: true,
     // classes: 'extra',
     onRenderCell(date, cellType) {

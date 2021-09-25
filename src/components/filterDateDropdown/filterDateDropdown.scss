@@ -1,3 +1,5 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
 
 .datepicker{
   &__container{
@@ -9,3 +11,122 @@
   width: 100%;
   height: 100%;
 }
+
+.datepicker{
+  min-width: 320px;
+  width: 100%;
+  &--content{
+    padding: 0px 20px;
+  }
+  &--nav{
+    min-height: 52px;
+    justify-content: space-around;
+  }
+  &--nav-title, &--nav-title i{
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    color: #1F2041;
+  }
+  &--nav-action{
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  &--nav-action span{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: $mainColor;
+  }
+  &--days-names{
+    flex-wrap: nowrap;
+  }
+  &--day-name{
+    font-family: $secondaryFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #BC9CFF;
+    width: 100%;
+    max-width: 40px;
+    height: 40px;
+    flex-wrap: nowrap;
+  }
+  &--cell-day{
+    width: 40px;
+    height: 40px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+  &--cell-day.-current-{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 50%;
+  }
+  &--cell-day.-range-from-.-selected-{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 50% 0 0 50%;
+ 
+  }
+  &--cell-day.-range-to-.-selected-{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 0 50% 50% 0;
+  }
+  &--cell-day.-in-range-, &--cell-day.-in-range-.-current-{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    opacity: 0.25;
+    border-radius: 0;
+    color: rgba(31, 32, 65, 0.5);
+  }
+  &--buttons > *{
+    color: #BC9CFF;
+    border: none;
+  }
+}
+//  div.datepicker--cells.datepicker--cells-days > div.datepicker--cell.datepicker--cell-day.-range-from-.-selected-
+// datepicker--cell.datepicker--cell-day.-range-to-.-selected-
+//datepicker--cell.datepicker--cell-day.-in-range-.-current-
+
+
+// #datepickers-container .-selected- {
+//   background: #EF984C;
+//   color: #fff !important;
+// }#datepickers-container .-current- {
+//   color: #EF984C;
+// }
+// #datepickers-container .datepicker--time-sliders > *:not(:first-child) {
+//   margin-top: 9px;
+//   margin-bottom: 6px;
+// }#datepickers-container .datepicker--time-sliders > *:first-child {
+//   margin-top: 6px;
+// }
+// #datepickers-container input[type=range]::-webkit-slider-thumb {
+//   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+//   border: 0px;
+//   height: 22px;
+//   width: 22px;
+//   border-radius: 5px;
+//   background: #EF984Cee;
+//   cursor: pointer;
+//   -webkit-appearance: none;
+//   margin-top: -11px;
+// }
