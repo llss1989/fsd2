@@ -1,3 +1,9 @@
-mixin input( inputType, textOfInput, modificator)
-  form(class= `input`)
-    input(class= `input input__${inputType}_${modificator} input__${inputType}_pos` type= inputType placeholder= textOfInput)
+include /components/headerOfComponent/headerOfComponent.pug
+
+mixin input( inputType, textOfInput, modificator, headerOfComponent, parametersOfHeaderOfComponent)
+  if (headerOfComponent === true)
+    .input-wrapper
+      +headerOfComponent(...parametersOfHeaderOfComponent)
+      input(class= `input input_${modificator} input_${inputType}` type= inputType placeholder= textOfInput)
+  else
+      input(class= `input input_${modificator} input_${inputType}` type= inputType placeholder= textOfInput)        

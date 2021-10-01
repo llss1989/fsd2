@@ -1,9 +1,18 @@
 include /components/expandMore/expandMore.pug 
+include /components/headerOfComponent/headerOfComponent.pug
 
-mixin dropdown(type)
-  div(class='dropdown dropdown'+type)
-    .dropdown__window-inner
-      span.dropdown__window
-      +expandMore('dropdown')
-    .dropdown-menu
-    
+mixin dropdown( type,  headerOfComponent, parametersOfHeaderOfComponent)
+  if (headerOfComponent === true)
+    .dropdown-wrapper
+      +headerOfComponent(...parametersOfHeaderOfComponent)
+      div(class='dropdown dropdown'+type)
+        .dropdown__window-inner
+          span.dropdown__window
+          +expandMore('dropdown')
+        .dropdown-menu
+  else
+    div(class='dropdown dropdown'+type)
+      .dropdown__window-inner
+        span.dropdown__window
+        +expandMore('dropdown')
+      .dropdown-menu

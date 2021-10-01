@@ -1,8 +1,0 @@
-mixin wrapperForForm( nameOfForm, textOfForm, statusOfForm, modificator)
-  div(class=`wrapper-${nameOfForm}`)
-    div(class= `${nameOfForm}-info`)
-      span(class=`${nameOfForm}-info__text ${nameOfForm}-info__text_${modificator}`)= textOfForm
-      span(class=`${nameOfForm}-info__status ${nameOfForm}-info__status_${modificator}`)= statusOfForm
-    if block
-      block
-    else

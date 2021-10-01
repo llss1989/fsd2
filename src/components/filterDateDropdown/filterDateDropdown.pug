@@ -1,3 +1,12 @@
-mixin filterDateDropdown()
-  div(class="datepicker__container")
+include /components/headerOfComponent/headerOfComponent.pug
+
+
+mixin filterDateDropdown(headerContent, parametersOfHeaderOfComponent)
+  if (headerContent == true)
+    .datepicker__wrapper
+      +headerOfComponent(...parametersOfHeaderOfComponent)
+      div(class="datepicker__container")
+        input(type="text" class="js-datepicker" id="datepicker" placeholder="Выбрать дату")
+  else
+    div(class="datepicker__container")
     input(type="text" class="js-datepicker" id="datepicker" placeholder="Выбрать дату")

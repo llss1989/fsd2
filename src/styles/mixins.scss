@@ -1,6 +1,29 @@
+@import './_varsColours.scss';
+@import './_fonts.scss';
+
 @mixin placeholder  {
   &::-webkit-input-placeholder { @content; }
   &:-moz-placeholder           { @content; }
   &::-moz-placeholder          { @content; }
   &:-ms-input-placeholder      { @content; }  
+}
+@mixin placeholderHover  {
+  &::-webkit-input-placeholder:hover { @content; }
+  &:-moz-placeholder:hover { @content; }
+  &::-moz-placeholder:hover { @content; }
+  &:-ms-input-placeholder:hover { @content; }
+  &::-webkit-input-placeholder:active { @content; }
+  &:-moz-placeholder:active  { @content; }
+  &::-moz-placeholder:active  { @content; }
+  &:-ms-input-placeholder:active  { @content; }  
+}
+
+@mixin textField ($fontFamily, $fontStyle, $fontWeight, $fontSize, $lineHeigth, $color, $pad){
+  font-family: $fontFamily;
+  font-style: $fontStyle;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeigth;
+  color:  $color;
+  padding: $pad;
 }

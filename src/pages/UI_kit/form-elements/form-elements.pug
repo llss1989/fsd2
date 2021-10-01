@@ -1,11 +1,18 @@
 include /components/logo/logo.pug
 include /components/input/input.pug
-include /components/formWrapper/formForWrapper.pug
+include /components/headerOfComponent/headerOfComponent.pug
 include /components/dropdown/dropdown.pug
-include /components/dateInput/dateInput.pug
 include /components/filterDateDropdown/filterDateDropdown.pug
 include /components/dateDropdown/dateDropdown.pug
 
+
+
+- const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', 'wide']
+- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', 'wide']
+- const parametersHeaderOfDropdown = ['Dropdown', 'invisible', 'wide']
+- const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', 'wide']
+- const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', 'wide']
+- const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', 'wide']
 
 doctype html
 html
@@ -22,23 +29,16 @@ html
     div(class='inputs inputs_ml')
       +logo('white')
       div(class='inputs__item inputs__item_ml item inputs__item_email')
-        +wrapperForForm('input-email', 'Text Field', 'default', 'wide')
-          +input('email', 'Email', 'wide')
+        +input('email', 'Email', 'wide', true , parametersHeaderOfEmailInput)
       div(class='inputs__item inputs__item_ml inputs__item_text')
-        +wrapperForForm('input-text', 'Text Field', 'Hover / Focus', 'focused')
-          +input('text', 'This is pretty awesome', 'wide')
+        +input('text', 'This is pretty awesome', 'wide', true , parametersHeaderOfTextInput)
       div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
-        +wrapperForForm('input-dropdown', 'Dropdown', '', 'wide')
-          +dropdown('_guests')
+        +dropdown('_guests', true, parametersHeaderOfDropdown)
       div(class='inputs__item inputs__item_ml inputs__item_maskedText')
-        +wrapperForForm('input-maskedText', 'masked text field', '', 'wide')
-          +dateInput()
-      div(class='inputs__item inputs__item_ml inputs__item_dateDropdown') <!-- использованы стили formWrapper компонента-->
-        div(class="wrapper-input-maskedText")
-          div(class="input-maskedText-info")
-            span(class="input-maskedText-info__text input-maskedText-info__text_wide")="DATE DROPDOWN"
-            span(class="input-maskedText-info__text input-maskedText-info__text_wide input-maskedText-info__text_mr31")="DATE DROPDOWN"
-          +dateDropdown()
+        +input('date-text', 'ДД.ММ.ГГГГ', 'wide', true , parametersHeaderOfDateInput)
+      div(class='inputs__item inputs__item_ml inputs__item_dateDropdown')
+        +dateDropdown(true, parametersHeaderOfDateDropdown)
       div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
-        +wrapperForForm('input-maskedText', 'filter date dropdown', '', 'wide')
-          +filterDateDropdown()
+        +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
+      // div(class="inputs__item inputs__item_ml inputs__item_sub-text-field")
+        //- +wrapperForComponentTitles('')    

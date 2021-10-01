@@ -9,8 +9,11 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   box-sizing: border-box;
-  &__wrapper{
+  display: flex;
+  flex-direction: column;
+  &__inputs-wrapper{
     display: flex;
+    justify-content: space-between;
   }
   &__input{
     width: 150px;
@@ -88,7 +91,7 @@
     align-items: center;
     text-align: center;
     color: #FFFFFF;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    background: linear-gradient(180deg, $secondaryColor 0%, #66D2EA 100%);
     border-radius: 50%;
   }
   &--cell-day.-range-from-.-selected-{
@@ -110,7 +113,14 @@
     color: #BC9CFF;
     width: 50%;
     background: white;
-    border: none;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+    
+    text-transform: uppercase;
   }
 }
 //  div.datepicker--cells.datepicker--cells-days > div.datepicker--cell.datepicker--cell-day.-range-from-.-selected-

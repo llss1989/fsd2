@@ -3,15 +3,13 @@
 @import '../../styles/varsColours.scss';
 
 
-.input{
-  &-email, &-text, &-dropdown, &-maskedText{
-    &-info{
-      display: flex;
-      width: 320px;
-      justify-content: space-between;
-      white-space: nowrap;
-      margin-bottom: 5px;
-      &__status{
+.header-component{
+  display: flex;
+  width: 320px;
+  justify-content: space-between;
+  white-space: nowrap;
+  margin-bottom: 5px;
+        &__status{
         font-family: $secondaryFont;
         font-style: normal;
         font-weight: normal;
@@ -22,6 +20,9 @@
         color: $textColor50;
         &_wide{
           margin-bottom: 3px;
+        }
+        &_invisible{
+          display: none;
         }
       }
       &__text{
@@ -44,6 +45,11 @@
           margin-right: 31px;
         }
       }
-    }
-  }
-}
+    //   &__info{
+    //     display: flex;
+    //     width: 320px;
+    //     justify-content: space-between;
+    //     white-space: nowrap;
+    //     margin-bottom: 5px;
+    // }
+}  

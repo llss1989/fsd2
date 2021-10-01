@@ -1,0 +1,22 @@
+ @import '../../styles/mixins.scss';
+ @import '../../styles/fonts';
+ @import '../../styles/varsColours.scss';
+ @import '../../styles/mixins.scss';
+ 
+ 
+ 
+ .input{
+   width: 320px;
+   height: 44px;
+   box-sizing: border-box;
+   background: #FFFFFF;
+   border: 1px solid rgba(31, 32, 65, 0.25);
+   box-sizing: border-box;
+   border-radius: 4px;
+   @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25, 13px 0  13px 15px)}
+  //  @include placeholderHover {@include textField($secondaryFont, normal, normal, 24px, 24px, $textColor25, 13px 0  13px 15px)}
+  &:hover, &:active{
+  color: $textColor75;
+  }
+ }
+
