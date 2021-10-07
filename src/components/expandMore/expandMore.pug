@@ -1,4 +1,6 @@
-
-mixin expandMore(colorTheme, size)      
+mixin expandMore(...modificators)      
   .expand-more
-    span(class=`material-icons expand-more__icon expand-more__icon_${colorTheme} expand-more__icon_${size}`)='expand_more'
+    - let str = 'material-icons expand-more__icon'
+    each modificator in  [...modificators]
+      - str += ` expand-more__icon_${modificator}`
+    span(class=`${str}`)=' expand_more'

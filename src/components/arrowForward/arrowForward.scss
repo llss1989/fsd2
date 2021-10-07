@@ -36,10 +36,12 @@
 };
 
 .material-icons{
+&_main-theme{
   background: $primaryGradient;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 }
 
 

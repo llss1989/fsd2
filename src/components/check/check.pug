@@ -1,4 +1,12 @@
-mixin check (labeltext, mod)
-  label(class="check")=labeltext
-    input(class="check__input" type="checkbox")
-    span(class="check__box")
+mixin check(labeltext, ...modificators)      
+    - var classes = [...modificators]
+    - let labelClassName = 'check'
+    - let inputClassName  = 'check__input'
+    - let checkBoxClassName = 'check__box'
+    each val in classes
+      - labelClassName += ` check_${val} `
+      - inputClassName += ` check__input_${val}`
+      - checkBoxClassName += ` check__box_${val}`
+    label(class=`${labelClassName}`)=labeltext
+      input(class=`${inputClassName}` type="checkbox")
+      span(class=`${checkBoxClassName}`)
