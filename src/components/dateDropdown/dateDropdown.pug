@@ -1,16 +1,15 @@
-include /components/expandMore/expandMore.pug
 include /components/headerOfComponent/headerOfComponent.pug
 
-mixin dateDropdown(headerContent, parametersOfHeaderOfComponent)
+mixin dateDropdown(dateDropdownOptions, headerContent, parametersOfHeaderOfComponent)
   if (headerContent == true)
     div(class="date-dropdown")
       +headerOfComponent(...parametersOfHeaderOfComponent)
       .date-dropdown__inputs-wrapper
-        input(type="text" placeholder="ДД.ММ.ГГГГ" data-range="true" data-multiple-dates-separator=" - " class="date-dropdown date-dropdown__input date-dropdown__input_one")
-        input(type="text" placeholder="ДД.ММ.ГГГГ" class="date-dropdown date-dropdown__input date-dropdown__input_two")
+        input(type="text" placeholder="ДД.ММ.ГГГГ" data-range="true" data-multiple-dates-separator=" - " class=`date-dropdown__input date-dropdown__input_${dateDropdownOptions.theme} date-dropdown__input_one`)
+        input(type="text" placeholder="ДД.ММ.ГГГГ" class=`date-dropdown__input date-dropdown__input_${dateDropdownOptions.theme} date-dropdown__input_two`)
   else  
     div(class="date-dropdown")
       .date-dropdown__wrapper
-        input(type="text" placeholder="ДД.ММ.ГГГГ" data-range="true" data-multiple-dates-separator=" - " class="date-dropdown date-dropdown__input date-dropdown__input_one")
+        input(type="text" placeholder="ДД.ММ.ГГГГ" data-range="true" data-multiple-dates-separator=" - " class=`date-dropdown__input date-dropdown__input_one`)
       .date-dropdown__wrapper
-        input(type="text" placeholder="ДД.ММ.ГГГГ" class="date-dropdown date-dropdown__input date-dropdown__input_two")
+        input(type="text" placeholder="ДД.ММ.ГГГГ" class=`date-dropdown__input date-dropdown__input_${dateDropdownOptions.theme} date-dropdown__input_two`)

@@ -8,11 +8,11 @@ mixin dropdown( type,  headerOfComponent, parametersOfHeaderOfComponent)
       div(class='dropdown dropdown'+type)
         .dropdown__window-inner
           span.dropdown__window
-          +expandMore('dropdown')
+          +expandMore('main-theme', 'main-size')
         .dropdown-menu
   else
     div(class='dropdown dropdown'+type)
       .dropdown__window-inner
         span.dropdown__window
-        +expandMore('dropdown')
+        +expandMore('main-theme', 'main-size')
       .dropdown-menu

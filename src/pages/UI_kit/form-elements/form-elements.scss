@@ -9,12 +9,12 @@
 
 .inputs{
   height: 660px;
-
   &__item{
-    // margin-left: 20px;
-    // _&_ml121{
-    //   margin-left: 121px;
-    // }
+    &_sub-text-field{
+      margin-top: 80px;
+      width: 267px;
+      height: 44px;
+      box-sizing: border-box;}
     &_ml{
       margin-left: 141px;
     }
@@ -39,3 +39,18 @@
     }
   }
 }
+.arrow-icon{
+  font-family: Material Icons;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.checkbox{
+  margin-top: 650px;
+  margin-left: 250px;
+}
+

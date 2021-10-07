@@ -1,4 +1,4 @@
-mixin headerOfComponent(textOfForm, statusOfForm, modificator)
+mixin headerOfComponent( textOfForm, statusOfForm, modificator)
   if (statusOfForm == 'invisible')
     div(class=`header-component`)
         span(class=`header-component__text header-component__text_${modificator}`)= textOfForm

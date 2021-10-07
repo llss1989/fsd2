@@ -6,17 +6,32 @@
  
  
  .input{
-   width: 320px;
-   height: 44px;
-   box-sizing: border-box;
-   background: #FFFFFF;
-   border: 1px solid rgba(31, 32, 65, 0.25);
-   box-sizing: border-box;
-   border-radius: 4px;
-   @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25, 13px 0  13px 15px)}
-  //  @include placeholderHover {@include textField($secondaryFont, normal, normal, 24px, 24px, $textColor25, 13px 0  13px 15px)}
-  &:hover, &:active{
-  color: $textColor75;
+  &_wide{
+    box-sizing: border-box;
+    width: 320px;
+    height: 44px;
   }
- }
+  &_standart{
+    box-sizing: border-box;
+    width: 247px;
+    height: 44px;
+    width: 100%;
+  }
+  &_border-right-none{
+    border-right: none;
+  }
+  &_main-theme{
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25)}
+    padding: 13px 0  13px 15px;
+    &:hover, &:active{
+      @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor75)}
+      border: 1px solid rgba(31, 32, 65, 0.5);
+      }
+   }
+   &_border-right-none{
+     border-right: none;
+   }
+}
 

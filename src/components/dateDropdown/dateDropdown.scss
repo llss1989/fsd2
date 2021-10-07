@@ -1,26 +1,36 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
 
 .date-dropdown{
   position: relative;
   width: 320px;
   height: 44px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-  display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   &__inputs-wrapper{
     display: flex;
     justify-content: space-between;
   }
   &__input{
-    width: 150px;
-    border: 1px solid rgba(31, 32, 65, 0.5);
     box-sizing: border-box;
-    background: url('../../assets/img/expand_more.png') no-repeat;
-    background-position: right 10% bottom 45%;
+    border-radius: 4px;
+    &_main-theme{
+      background: url('../../assets/img/expand_more.png') no-repeat;
+      background-position: right 10% bottom 45%;
+      width: 150px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25)};
+      padding: 13px 0  13px 15px;
+      &:hover, &:focus{
+        @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor75)};
+        padding: 13px 0  13px 15px;
+        border: 1px solid rgba(31, 32, 65, 0.5);
+        background: url('../../assets/img/expand_more_focus.png') no-repeat;
+        background-position: right 10% bottom 45%;
+      }
+    }
   }
 }
 

@@ -4,6 +4,8 @@ include /components/headerOfComponent/headerOfComponent.pug
 include /components/dropdown/dropdown.pug
 include /components/filterDateDropdown/filterDateDropdown.pug
 include /components/dateDropdown/dateDropdown.pug
+include /components/arrowForward/arrowForward.pug
+include /components/check/check.pug
 
 
 
@@ -13,6 +15,14 @@ include /components/dateDropdown/dateDropdown.pug
 - const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', 'wide']
 - const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', 'wide']
 - const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', 'wide']
+- const parametersHeaderOfSubscriptionTextField = ['subscription text field', 'invisible', 'narrower']
+
+- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
+- const optionsOfInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
+- const optionsOfInputText =  { inputName: 'text', inputType: 'text', textOfInput: 'This is pretty awesome', modificator: 'wide', theme: 'main-theme'}
+- const optionsOfInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
+- const optionsOfInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme'}
+
 
 doctype html
 html
@@ -24,21 +34,28 @@ html
       rel="stylesheet")
     title Form Elements
    
-  body
-  .mainInner
-    div(class='inputs inputs_ml')
-      +logo('white')
-      div(class='inputs__item inputs__item_ml item inputs__item_email')
-        +input('email', 'Email', 'wide', true , parametersHeaderOfEmailInput)
-      div(class='inputs__item inputs__item_ml inputs__item_text')
-        +input('text', 'This is pretty awesome', 'wide', true , parametersHeaderOfTextInput)
-      div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
-        +dropdown('_guests', true, parametersHeaderOfDropdown)
-      div(class='inputs__item inputs__item_ml inputs__item_maskedText')
-        +input('date-text', 'ДД.ММ.ГГГГ', 'wide', true , parametersHeaderOfDateInput)
-      div(class='inputs__item inputs__item_ml inputs__item_dateDropdown')
-        +dateDropdown(true, parametersHeaderOfDateDropdown)
-      div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
-        +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
-      // div(class="inputs__item inputs__item_ml inputs__item_sub-text-field")
-        //- +wrapperForComponentTitles('')    
+body
+  // .mainInner
+  //   div(class='inputs inputs_ml')
+  //     +logo('white')
+  //     div(class='inputs__item inputs__item_ml item inputs__item_email')
+  //       +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
+  //     div(class='inputs__item inputs__item_ml inputs__item_text')
+  //       +input(optionsOfInputText, true , parametersHeaderOfTextInput)
+  //     div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
+  //       +dropdown('_guests', true, parametersHeaderOfDropdown)
+  //     div(class='inputs__item inputs__item_ml inputs__item_maskedText')
+  //       +input(optionsOfInputDate,  true , parametersHeaderOfDateInput)
+  //     div(class='inputs__item inputs__item_ml inputs__item_dateDropdown')
+  //       +dateDropdown(optionsForDateDropdown, true, parametersHeaderOfDateDropdown)
+  //     div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
+  //       +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
+  //     div(class="inputs__item inputs__item_ml inputs__item_sub-text-field")
+  //       h2(class="email-form__title")="subscription text field"
+  //       form(class="email-form email-form_main-theme input_border-right-none")
+  //         +input(optionsOfInputEmailStandart, false , parametersHeaderOfSubscriptionTextField)
+  //         +arrowForward('primery-theme', 'main-size')
+  div(class="checkboxs")
+    +check('первый')
+    +check('второй')
+    +check('третий')

@@ -1,9 +1,11 @@
 include /components/headerOfComponent/headerOfComponent.pug
 
-mixin input( inputType, textOfInput, modificator, headerOfComponent, parametersOfHeaderOfComponent)
-  if (headerOfComponent === true)
-    .input-wrapper
+mixin input( inputOptions, headerContent , parametersOfHeaderOfComponent)
+  - var {inputName, inputType, textOfInput, modificator, theme } = inputOptions
+
+  if (headerContent === true)
+    div(class=`input input_${modificator}`)
       +headerOfComponent(...parametersOfHeaderOfComponent)
-      input(class= `input input_${modificator} input_${inputType}` type= inputType placeholder= textOfInput)
+      input(class= `input__${inputName} input_${modificator}  input_${theme}` type=inputType placeholder= textOfInput)
   else
-      input(class= `input input_${modificator} input_${inputType}` type= inputType placeholder= textOfInput)        
+      input(class= `input__${inputName} input_${modificator}  input_${theme}` type=inputType placeholder= textOfInput)

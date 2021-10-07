@@ -1,21 +1,23 @@
 @import '../../styles/_varsColours.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
 
 .expand-more{
-  color:$textColor50;
   &__icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    box-sizing: border-box;
-    &_dropdown{
-      border: none;
+      box-sizing: border-box;
+    &_main-size{
+      width: 44px;
+      height: 44px;
     }
-    &_date-dropdown{
-      border: 1px solid rgba(31, 32, 65, 0.5);
-      border-left: none;
-
+    &_main-theme{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color:$textColor50;
+      border: none;
+        &:active, &:hover {
+          color:$textColor75;
+        }
     }
   }
 }

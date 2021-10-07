@@ -1,0 +1,7 @@
+mixin arrowForward(...modificators)      
+  .arrow-forward
+    - var classes = [...modificators]
+    - let str = 'material-icons material-icons_main-theme' 
+    each val in classes
+      - str += ` arrow-forward__icon_${val} `
+    span(class=`${str}`)="arrow_forward"

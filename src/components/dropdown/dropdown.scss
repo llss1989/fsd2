@@ -1,12 +1,14 @@
 // @import "~/node_modules/material-design-icons/iconfont/material-icons.css";
 @import '../../styles/varsColours.scss';
 @import '../../styles/fonts.scss';
+ @import '../../styles/mixins.scss';
 
 .dropdown{
   position: relative;
   box-sizing: border-box;
   padding: 0 0;
-  border: 1px solid rgba(31, 32, 65, 0.5);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
     &_guests{
       width: 320px;
       height: 44px;
@@ -24,15 +26,16 @@
   }
   &__window{
     margin-left: 15px;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: $textColor75;
+    @include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25);
+    &:hover, &:active{
+      @include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor75);
+    }
   }
   &__result{
     margin-left: 15px;
+  }
+  &:hover,&:active{
+    border: 1px solid rgba(31, 32, 65, 0.50);
   }
 }
 

@@ -116,10 +116,20 @@ module.exports = {
         test: /\.css$/,
         use: cssLoaders(),
       },
+      // {
+      //   test: /\.(png|jpg|gif|svg)$/,
+      //   use: ['file-loader'],
+      //   exclude: /fonts/,
+      // },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader'],
-        exclude: /fonts/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: './assets/img/[name].[ext]',
+            exclude: /fonts/,
+          },
+        }],
       },
       {
         test: /\.(ttf|woff|woff2|eot|svg)$/,

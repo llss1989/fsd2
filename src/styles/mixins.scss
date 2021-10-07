@@ -18,12 +18,13 @@
   &:-ms-input-placeholder:active  { @content; }  
 }
 
-@mixin textField ($fontFamily, $fontStyle, $fontWeight, $fontSize, $lineHeigth, $color, $pad){
+
+
+@mixin textField ($fontFamily, $fontStyle, $fontWeight, $fontSize, $lineHeigth, $color){
   font-family: $fontFamily;
   font-style: $fontStyle;
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeigth;
   color:  $color;
-  padding: $pad;
 }
