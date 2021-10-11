@@ -21,7 +21,7 @@ include /components/check/check.pug
 - const optionsOfInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputText =  { inputName: 'text', inputType: 'text', textOfInput: 'This is pretty awesome', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
-- const optionsOfInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-right-none'}
+- const optionsOfInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
 
 
 doctype html
@@ -36,7 +36,7 @@ html
    
 body
   .mainInner
-    div(class='inputs inputs_ml')
+    div(class='mainInner_item inputs inputs_ml')
       +logo('white')
       div(class='inputs__item inputs__item_ml item inputs__item_email')
         +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
@@ -55,7 +55,11 @@ body
         form(class="email-form email-form_main-theme")
           +input(optionsOfInputEmailStandart, false , parametersHeaderOfSubscriptionTextField)
           +arrowForward('primery-theme', 'main-size')
-  // div(class="checkboxs")
-  //   +check('первый', 'standart', 'position')
-  //   +check('второй', 'standart', 'position')
-  //   +check('третий', 'standart', 'position')
+    div(class="mainInner_item checkboxes")
+      div(class="wrapper checkboxes__wrapper")
+        h2(class="checkboxes_title")
+        div(class="checkboxes_inner")="Checkbox buttons"
+          +check('Можно курить', 'checkbox', 'toogle', 'pd44px')
+          +check('Можно с питомцами', 'checkbox', 'toogle', 'pd44px')
+          +check('Можно пригласить гостей (до 10 человек)', 'checkbox', 'toogle', 'pd44px')
+          // +check('Получать спецпредложения', 'checkbox', 'standart', 'widely')

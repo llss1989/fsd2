@@ -43,13 +43,8 @@
   text-decoration: none;
   border: none;
   background: none;
-  font-family: $secondaryFont;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
+  @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
   text-transform: uppercase;
-  color: $mainColor;
     &_disabled{
       display: none;
     }
@@ -57,14 +52,9 @@
       display: block;
     }
   &__display{
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
     text-align: center;
     text-transform: uppercase;
-    color: #1F2041;
   }
   &_ml15{
     margin-left: 15px;
@@ -83,13 +73,8 @@
     margin-top: 7px;
     margin-right: 7px;
     &_nameOfItem{
-      font-family: $secondaryFont;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
+      @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
       text-transform: uppercase;
-      color: #1F2041;
     }
   }
   &__minus-button, &__plus-button{
@@ -101,12 +86,7 @@
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
     border-radius: 22px;
-    font-family: $secondaryFont;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    color: rgba(31, 32, 65, 0.5);
+    @include textField($secondaryFont, normal, normal, 18px, 22px, $textColor50);
   }
   &__buttons{
     width: 92px;
@@ -127,14 +107,9 @@
   height: 100%;
   align-items: center;
   &__button{
-    font-family: $secondaryFont;
     &_style{
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
+      @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
       text-transform: uppercase;
-      color: $mainColor;
     }
   }
 }

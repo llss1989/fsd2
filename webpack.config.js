@@ -132,7 +132,7 @@ module.exports = {
         }],
       },
       {
-        test: /\.(ttf|woff|woff2|eot|svg)$/,
+        test: /\.(ttf|woff|woff2|eot|svg|)$/,
         use: [{
           loader: 'file-loader',
           options: {

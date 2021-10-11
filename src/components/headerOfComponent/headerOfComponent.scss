@@ -26,13 +26,8 @@
         }
       }
       &__text{
-        font-family: $secondaryFont;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 12px;
-        line-height: 15px;
+        @include textField($secondaryFont, normal, bold, 12px,15px, $textColor);
         text-transform: uppercase;
-        color: $textColor;
         &_wide{
           // margin-right: 194px;
           margin-bottom: 5px;
@@ -44,12 +39,5 @@
         &_mr31{
           margin-right: 31px;
         }
-      }
-    //   &__info{
-    //     display: flex;
-    //     width: 320px;
-    //     justify-content: space-between;
-    //     white-space: nowrap;
-    //     margin-bottom: 5px;
-    // }
+    }
 }  

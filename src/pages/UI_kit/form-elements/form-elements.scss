@@ -5,6 +5,9 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  &_item >:first-child{
+    margin-top: 143px;
+  }
 }
 
 .inputs{
@@ -49,8 +52,5 @@
   align-items: center;
   text-align: center;
 }
-.checkbox{
-  margin-top: 650px;
-  margin-left: 250px;
-}
+
 

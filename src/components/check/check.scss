@@ -1,31 +1,78 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
 .check{
   display: block;
-  padding-left: 30px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(31, 32, 65, 0.5);
+  position: relative;
+  max-width: 222px;
+  @include textField($secondaryFont, normal, normal, 14px, 18px, $textColor50);
   margin-top: 20px;
+  &_toogle{
+    padding-left: 44px;
+  }
+  &_standart{
+    padding-left: 30px;
+  }
   &__input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
-    position: absolute;
-  
-    &:checked + .check__box{
-      background: url('http://localhost:8082/src/assets/img/vector.svg') no-repeat center center;
-      border: 1px solid #BC9CFF;
-      box-sizing: border-box;
-      border-radius: 4px;
-    } 
+    &_standart{
+      position: absolute;
+      &:checked + .check__box{
+        background: url('http://localhost:8082/src/assets/img/vector.svg') no-repeat center center;
+        border: 1px solid #BC9CFF;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+    }
+    &_toogle{
+      position: absolute;
+      left: 0;
+      width: 40px;
+      height: 20px;
+      margin: 0;
+      vertical-align: top;
+      background: #ffffff;
+      border: 1px solid #bbc1e1;
+      border-radius: 30px;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+      &::after{
+        content: "";
+        transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+        position: absolute;
+        left: 3px;
+        top: 1.5px;
+        width: 12px;
+        height: 12px;
+        background-color: blue;
+        border-radius: 50%;
+        transform: translateX(0);
+        background: rgba(31, 32, 65, 0.25);
+        border-radius: 10px;
+      }
+      &:checked::after {
+        transform: translateX(calc(100% + 3px));
+        background-color: #fff;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      }
+    }
   }
   &__box{
-    position: absolute;
-    left: 0%;
-    width: 20px;
-    height: 20px;
-    border: 1px solid rgba(31, 32, 65, 0.25);
-    box-sizing: border-box;
-    border-radius: 4px;
+    &_standart{
+      position: absolute;
+      left: 0%;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+    &_toggle{
+      display: none;
+    }
   }
 }

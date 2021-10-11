@@ -1,3 +1,7 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
 .email-form{
   box-sizing: border-box;
   &_main-theme{
@@ -14,12 +18,7 @@
     width: 44px;
   }
   &__title{
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: #1F2041;
+    @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
+    text-transform: uppercase; 
   }
 }
