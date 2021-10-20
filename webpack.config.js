@@ -93,14 +93,14 @@ module.exports = {
     }),
     new HtmlWebpackPugPlugin(),
     new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, './src/assets/img/bird-icon.png'),
-    //       to: path.resolve(__dirname, 'dist/assets/img'),
-    //     },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/img'),
+          to: path.resolve(__dirname, 'dist/assets/img'),
+        },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
@@ -122,7 +122,7 @@ module.exports = {
       //   exclude: /fonts/,
       // },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -132,7 +132,7 @@ module.exports = {
         }],
       },
       {
-        test: /\.(ttf|woff|woff2|eot|svg|)$/,
+        test: /\.(ttf|woff|woff2|eot|svg)$/,
         use: [{
           loader: 'file-loader',
           options: {

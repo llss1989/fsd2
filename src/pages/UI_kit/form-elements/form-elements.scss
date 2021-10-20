@@ -1,12 +1,23 @@
-.mainInner{
+@import '../../../styles/fonts.scss';
+@import '../../../styles/varsColours.scss';
+@import '../../../styles/mixins.scss';
+
+.main-inner{
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   margin: 0 auto;
   position: relative;
-  &_item >:first-child{
+  &__title{
+    @include textField($secondaryFont, normal, bold, 14px, 24px, $textColor);
+    text-transform: uppercase;
+  }
+  &_items{
     margin-top: 143px;
+  }
+  &_items >:not(:first-child) {
+    margin-top: 50px;
   }
 }
 
@@ -20,9 +31,6 @@
       box-sizing: border-box;}
     &_ml{
       margin-left: 141px;
-    }
-    &_email{
-      margin-top: 143px;
     }
     &_maskedText{
       margin-top: 27px;
@@ -42,6 +50,50 @@
     }
   }
 }
+.radio-buttons__inner{
+  margin-top: 20px;
+}
+
+.rate-buttons__inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 260px;
+  height: 24px;
+}
+.like-buttons__inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90px;
+  height: 20px;
+}
+.buttons{
+  &__inner{
+    display:grid;
+    grid-template-columns: 100px 100px; 
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px 20px; 
+    // width: 218px;
+  }
+  &__inner-without-border-buttons{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    display: flex;
+    flex-direction: row;
+  }
+  &__inner-theme-with-arrow{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 4;
+  }
+  &__inner-without-border-buttons > :not(:first-child){
+    margin-left:20px;
+  }
+}
 .arrow-icon{
   font-family: Material Icons;
   font-style: normal;
@@ -52,5 +104,3 @@
   align-items: center;
   text-align: center;
 }
-
-

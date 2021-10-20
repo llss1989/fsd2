@@ -4,14 +4,20 @@
 
 
 
-.arrow-forward{
-  &__icon{
+
+  .arrow-forward{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     &_primary-theme{
       background: $primaryGradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &_secondary-theme{
+      background: $secondaryColorForButtons;
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -32,16 +38,4 @@
       justify-content: center;
       align-items: center;
     }
-  }
-};
-
-.material-icons{
-&_main-theme{
-  background: $primaryGradient;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-}
-
-
+  };

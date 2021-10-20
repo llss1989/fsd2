@@ -1,0 +1,36 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
+.radio-check {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+ border: 1px solid $textColor25;
+  &:after {
+    content: '';
+    display: block;
+    border: 4px solid white;
+    opacity: 0;
+    left: 0;
+    top: 0;
+  }
+  &:checked {
+    background: linear-gradient(180deg, $mainColor 0%, #8BA4F9 100%);
+    border: 4px solid white;
+    outline: 2px solid $mainColor;
+    border-radius:50% ;
+
+  }
+  & + label {
+    @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor50);
+    font-size: 14px;
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+}

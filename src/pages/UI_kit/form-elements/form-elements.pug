@@ -6,8 +6,10 @@ include /components/filterDateDropdown/filterDateDropdown.pug
 include /components/dateDropdown/dateDropdown.pug
 include /components/arrowForward/arrowForward.pug
 include /components/check/check.pug
-
-
+include /components/radioCheck/radioCheck.pug
+include /components/ratings/ratings.pug
+include /components/like/like.pug
+include /components/button/button.pug
 
 - const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', 'wide']
 - const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', 'wide']
@@ -32,12 +34,15 @@ html
     meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     title Form Elements
    
 body
-  .mainInner
-    div(class='mainInner_item inputs inputs_ml')
-      +logo('white')
+  .main-inner
+    +logo('white')
+    
+    
+    div(class='main-inner_items inputs inputs_ml')
       div(class='inputs__item inputs__item_ml item inputs__item_email')
         +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
       div(class='inputs__item inputs__item_ml inputs__item_text')
@@ -54,12 +59,48 @@ body
         h2(class="email-form__title")="subscription text field"
         form(class="email-form email-form_main-theme")
           +input(optionsOfInputEmailStandart, false , parametersHeaderOfSubscriptionTextField)
-          +arrowForward('primery-theme', 'main-size')
-    div(class="mainInner_item checkboxes")
-      div(class="wrapper checkboxes__wrapper")
-        h2(class="checkboxes_title")
-        div(class="checkboxes_inner")="Checkbox buttons"
-          +check('Можно курить', 'checkbox', 'toogle', 'pd44px')
-          +check('Можно с питомцами', 'checkbox', 'toogle', 'pd44px')
-          +check('Можно пригласить гостей (до 10 человек)', 'checkbox', 'toogle', 'pd44px')
-          // +check('Получать спецпредложения', 'checkbox', 'standart', 'widely')
+          +arrowForward('primary-theme', 'main-size')
+    
+    
+    div(class="main-inner_items")
+      fieldset(class="main-inner_item checkboxes")
+        legend(class="main-inner__title checkboxes_title")="check buttons"
+        div(class="checkboxes_inner")
+          +check('Можно курить', 'checkbox', 'standart', 'pd44px')
+          +check('Можно с питомцами', 'checkbox', 'standart', 'pd44px')
+          +check('Можно пригласить гостей \xa0 (до 10 человек)', 'checkbox','standart', 'pd44px')
+      fieldset(class="main-inner_item main-inner_item_radio-buttons radio-buttons")
+        legend(class="main-inner__title radio-buttons__title")="radio buttons"
+        .radio-buttons__inner
+          +radioCheck("gender" ,"male", "мужчины", "female", "женщины")
+      fieldset(class="main-inner_item main-inner_toogle-buttons")
+        legend(class="main-inner__title toogle-buttons__title")="toogle buttons"
+         .toogle-radioButtons__inner
+          +check('Получать спецпредложения', 'checkbox', 'toogle')
+          +check('Получать спецпредложения', 'checkbox', 'toogle')
+      div(class="main-inner_item main-inner_item_rate-buttons rate-buttons")
+        h2(class="main-inner__title")="rate button"
+        div(class="rate-buttons__inner")
+          +ratings('4')
+          +ratings('5')
+      div(class="main-inner__item main-inner__item_like-buttons like-buttons")    
+          h2(class="main-inner__title like-buttons__title")="like button"
+          div(class="like-buttons__inner")
+            +like('standart-size', 'disabled', '2')
+            +like('standart-size', 'checked', '12')   
+    
+    
+    div(class='main-inner_items')
+      div(class="main-inner_item main-inner_item_buttons buttons")
+        h2(class="main-inner__title")="buttons"
+        div(class="buttons__inner")
+          +button('click me', false, 'standart-size', 'main-theme', '')
+          +button('click me', false, 'standart-size', 'main-theme', 'active')
+          +button('click me', false, 'standart-size', 'secondary-theme', '')
+          +button('click me', false, 'standart-size', 'secondary-theme', 'active')
+          .buttons__inner-without-border-buttons
+            +button('click me', false, 'small-size', 'without-border-theme', '')
+            +button('click me', false, 'small-size', 'without-border-theme', 'active')
+          .buttons__inner-theme-with-arrow
+            +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
+          

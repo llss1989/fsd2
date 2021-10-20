@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts';
+@import '../../styles/varsColours.scss';
+
+
+
+.ratings{
+  display: flex;
+  &__icon{
+    width: 24px;
+    height: 24px;
+   &_star_border{
+    background: url('../../assets/img/svg/star_border.svg') no-repeat;
+   }
+   &_star{
+    background: url('../../assets/img/svg/star.svg') no-repeat;
+   }
+  }
+}

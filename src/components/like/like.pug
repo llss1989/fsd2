@@ -1,0 +1,4 @@
+mixin like (size, state, quantity)
+  div(class=`like like_${size} like_${state}`)
+    span(class=`like__icon like__icon_${size} like__icon_${state}`)
+    span(class=`like__title like__title_${size} like__title_${state}`)=quantity

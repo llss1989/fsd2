@@ -1,0 +1,49 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts';
+@import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+
+
+.like{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  &_standart-size{
+    width: 40px;
+    height: 20px;
+  }
+  &_disabled{
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 10px;
+  }
+  &_checked{
+    background: #FFFFFF;
+    border: 1px solid #BC9CFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  &__icon{
+    width: 50%;
+    &_disabled{
+      background: url('../../assets/img/svg/favorite_border.svg') no-repeat center center;
+    }
+    &_checked{
+      background: url('../../assets/img/svg/favorite.svg') no-repeat center center;
+    }
+  }
+  &__title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &_disabled{
+      @include textField($secondaryFont, normal, normal, 10px, 12px, $textColor25);
+      text-align: center;
+      }
+    &_checked{
+      @include textField($secondaryFont, normal, normal, 10px, 12px, $mainColor);
+      text-align: center;
+    }  
+  }
+}

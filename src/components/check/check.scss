@@ -6,11 +6,15 @@
   display: block;
   position: relative;
   max-width: 222px;
-  @include textField($secondaryFont, normal, normal, 14px, 18px, $textColor50);
+  @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor50);
   margin-top: 20px;
   &_toogle{
     padding-left: 44px;
+    text-transform: lowercase;
   }
+  &_toogle::first-letter{
+    text-transform: uppercase;
+  } 
   &_standart{
     padding-left: 30px;
   }
@@ -21,7 +25,7 @@
     &_standart{
       position: absolute;
       &:checked + .check__box{
-        background: url('http://localhost:8082/src/assets/img/vector.svg') no-repeat center center;
+        background: url('../../assets/img/svg/vector.svg') no-repeat center center;
         border: 1px solid #BC9CFF;
         box-sizing: border-box;
         border-radius: 4px;
@@ -59,6 +63,12 @@
         background-color: #fff;
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       }
+      &:checked{
+        border: 1px solid #BC9CFF;
+      }
+    }
+    &_toogle::first-letter{
+      text-transform: uppercase;
     }
   }
   &__box{
