@@ -10,6 +10,7 @@ include /components/radioCheck/radioCheck.pug
 include /components/ratings/ratings.pug
 include /components/like/like.pug
 include /components/button/button.pug
+include /components/rangeSlider/rangeSlider.pug
 
 - const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', 'wide']
 - const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', 'wide']
@@ -43,18 +44,25 @@ body
     
     
     div(class='main-inner_items inputs inputs_ml')
+      
       div(class='inputs__item inputs__item_ml item inputs__item_email')
         +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
+      
       div(class='inputs__item inputs__item_ml inputs__item_text')
         +input(optionsOfInputText, true , parametersHeaderOfTextInput)
+      
       div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
         +dropdown('_guests', true, parametersHeaderOfDropdown)
+      
       div(class='inputs__item inputs__item_ml inputs__item_maskedText')
         +input(optionsOfInputDate,  true , parametersHeaderOfDateInput)
+      
       div(class='inputs__item inputs__item_ml inputs__item_dateDropdown')
         +dateDropdown(optionsForDateDropdown, true, parametersHeaderOfDateDropdown)
+      
       div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
         +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
+      
       div(class="inputs__item inputs__item_ml inputs__item_sub-text-field")
         h2(class="email-form__title")="subscription text field"
         form(class="email-form email-form_main-theme")
@@ -63,26 +71,31 @@ body
     
     
     div(class="main-inner_items")
+      
       fieldset(class="main-inner_item checkboxes")
         legend(class="main-inner__title checkboxes_title")="check buttons"
         div(class="checkboxes_inner")
           +check('Можно курить', 'checkbox', 'standart', 'pd44px')
           +check('Можно с питомцами', 'checkbox', 'standart', 'pd44px')
           +check('Можно пригласить гостей \xa0 (до 10 человек)', 'checkbox','standart', 'pd44px')
+      
       fieldset(class="main-inner_item main-inner_item_radio-buttons radio-buttons")
         legend(class="main-inner__title radio-buttons__title")="radio buttons"
         .radio-buttons__inner
           +radioCheck("gender" ,"male", "мужчины", "female", "женщины")
+      
       fieldset(class="main-inner_item main-inner_toogle-buttons")
         legend(class="main-inner__title toogle-buttons__title")="toogle buttons"
          .toogle-radioButtons__inner
           +check('Получать спецпредложения', 'checkbox', 'toogle')
           +check('Получать спецпредложения', 'checkbox', 'toogle')
+      
       div(class="main-inner_item main-inner_item_rate-buttons rate-buttons")
         h2(class="main-inner__title")="rate button"
         div(class="rate-buttons__inner")
           +ratings('4')
           +ratings('5')
+      
       div(class="main-inner__item main-inner__item_like-buttons like-buttons")    
           h2(class="main-inner__title like-buttons__title")="like button"
           div(class="like-buttons__inner")
@@ -91,8 +104,13 @@ body
     
     
     div(class='main-inner_items')
+      
+      div(class="main-inner_item main-inner_item_range-slider range-slider") 
+        +headerOfComponent('range slider', '5 000₽ - 10 000₽', 'wide', 'standart-size')
+        +rangeSlider()
+      
       div(class="main-inner_item main-inner_item_buttons buttons")
-        h2(class="main-inner__title")="buttons"
+        +headerOfComponent('buttons', 'invisible', 'wide')
         div(class="buttons__inner")
           +button('click me', false, 'standart-size', 'main-theme', '')
           +button('click me', false, 'standart-size', 'main-theme', 'active')
@@ -103,4 +121,7 @@ body
             +button('click me', false, 'small-size', 'without-border-theme', 'active')
           .buttons__inner-theme-with-arrow
             +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
-          
+    
+      div(class="main-inner_item main-inner_item_pagination pagination") 
+        +headerOfComponent('pagination', 'invisible', 'wide', 'standart-size')
+        

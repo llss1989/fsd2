@@ -5,7 +5,6 @@
 
 .header-component{
   display: flex;
-  width: 320px;
   justify-content: space-between;
   white-space: nowrap;
   margin-bottom: 5px;
@@ -39,5 +38,11 @@
         &_mr31{
           margin-right: 31px;
         }
+    }
+    &_wide{
+      width: 320px;
+    }
+    &_standart-size{
+      width: 266px;
     }
 }  

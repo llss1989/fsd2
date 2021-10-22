@@ -1,12 +1,12 @@
-mixin headerOfComponent( textOfForm, statusOfForm, modificator)
+mixin headerOfComponent( textOfForm, statusOfForm, textModificator, size)
   if (statusOfForm == 'invisible')
-    div(class=`header-component`)
+    div(class=`header-component header-component_${size}`)
         span(class=`header-component__text header-component__text_${modificator}`)= textOfForm
   else if (textOfForm == statusOfForm)
-    div(class=`header-component`)
+    div(class=`header-component header-component_${size}`)
         span(class=`header-component__text header-component__text_${modificator}`)= textOfForm
         span(class=`header-component__text header-component__text_${modificator}`)= textOfForm     
   else
-    div(class=`header-component`)
+    div(class=`header-component header-component_${size}`)
         span(class=`header-component__text header-component__text_${modificator}`)= textOfForm
         span(class=`header-component__status header-component__status_${modificator} header-component__status`)= statusOfForm

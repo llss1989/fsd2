@@ -1,0 +1,36 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+
+.irs--round .irs-line{
+
+  background-color: #FFFFFF !important;
+  border: 1px solid $textColor25;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.irs--round .irs-handle {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  top: 31px;
+  width: 12px;
+  height: 12px;
+}
+.irs--round .irs-bar{
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 3px;
+}
+.slider-wrapper{
+  width: 266px;
+  height: 6px;
+}
+// .irs--flat .irs-handle > * {
+//   display: none;
+// }
+
+// body > div.main-inner > div:nth-child(4) > span > span.irs-handle.from
+
+// .main-inner > div:nth-child(4){
+//   display: none;
+// }
