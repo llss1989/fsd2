@@ -51,14 +51,18 @@ const render = (el, state) => {
 const buildButtons = (el, state) => {
   const buttonsInner = document.createElement('div');
   buttonsInner.classList.add('dropdown-menu-buttons');
-
+  buttonsInner.classList.add('dropdown-menu-buttons_space-between');
+  
   state.listOfButtons.map((inputState) => {
     const button = document.createElement('div');
     button.classList.add('dropdown-menu-buttons__button');
     button.classList.add('dropdown-menu-buttons__button_style');
     button.classList.add('dropdown-menu__item');
+    console.log(inputState);
     if (inputState.visible === false) {
       button.classList.add('dropdown-menu-buttons__button_disabled');
+      buttonsInner.classList.remove('dropdown-menu-buttons_space-between');
+      buttonsInner.classList.add('dropdown-menu-buttons_flex-end');
     }
     if (inputState.nameButton === 'Применить') {
       button.classList.add('dropdown-menu-buttons__button_mr7');
@@ -91,7 +95,6 @@ const createMenu = (el, state) => {
   const dropdownMenu = el.querySelector('.dropdown-menu');
   resultOrAnswer.innerText = state.topic;
   el.dataset.id = state.id;
-
   dropdownMenu.innerHTML = '';
   state.valuesOfItemsMenu.map((inputState) => {
     const item = document.createElement('div');

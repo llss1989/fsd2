@@ -1,0 +1,68 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+
+.pagination{
+  &__controller{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    &.light-theme.simple-pagination > ul > li:nth-child(1) > a{
+      display: none
+    }
+  }
+  &__info{
+    @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    text-decoration: none;
+    margin-top: 10px;
+  }
+}
+.light-themes.current.prev{
+  display: none;
+}
+.light-theme a{
+  padding: 0;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 22px;
+  border: none;
+  background: white;
+  box-shadow:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include textField($secondaryFont, normal, normal, 12px, 15px, $textColor50);
+}
+.light-theme .current{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border: none;
+}
+.pagination__controller.light-theme.simple-pagination > ul > li.disabled > span{
+  display: none;
+}
+.light-theme .page-link.next{
+  background:  linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  &::after{
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-image: url('../../assets/img/svg/arrow_forward_white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 22px;
+  }
+}
+.ellipse{
+  display: flex;
+  justify-content: normal;
+  height: 40px;
+  align-items: center;
+}

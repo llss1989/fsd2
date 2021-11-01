@@ -94,15 +94,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &__disabled{
-      display: none;
-    }
+
   }
 }
 
 .dropdown-menu-buttons{
   display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -111,5 +108,14 @@
       @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
       text-transform: uppercase;
     }
+    &_disabled{
+      display: none;
+    }
   }
+ &_flex-end{
+   justify-content: flex-end;
+ }
+ &_space-between{
+  justify-content: space-between;
+ }
 }
