@@ -12,15 +12,16 @@ include /components/like/like.pug
 include /components/button/button.pug
 include /components/rangeSlider/rangeSlider.pug
 include /components/pagination/pagination.pug
+include /components/bulletList/bulletList.pug
 
 
-- const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', 'wide']
-- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', 'wide']
-- const parametersHeaderOfDropdown = ['Dropdown', 'invisible', 'wide']
-- const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', 'wide']
-- const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', 'wide']
-- const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', 'wide']
-- const parametersHeaderOfSubscriptionTextField = ['subscription text field', 'invisible', 'narrower']
+- const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', '', 'wide']
+- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', '', 'wide']
+- const parametersHeaderOfDropdown = ['Dropdown', 'invisible', '', 'wide']
+- const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', '', 'wide']
+- const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', '', 'wide']
+- const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', '', 'wide']
+- const parametersHeaderOfSubscriptionTextField = ['subscription text field', 'invisible', '', 'wide']
 
 - const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
@@ -54,7 +55,7 @@ body
         +input(optionsOfInputText, true , parametersHeaderOfTextInput)
       
       div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
-        +dropdown('_guests', true, parametersHeaderOfDropdown)
+        +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
       
       div(class='inputs__item inputs__item_ml inputs__item_maskedText')
         +input(optionsOfInputDate,  true , parametersHeaderOfDateInput)
@@ -81,7 +82,7 @@ body
           
           +check('Можно курить', 'checkbox', 'standart', 'pd44px')
           +check('Можно с питомцами', 'checkbox', 'standart', 'pd44px')
-          +check('Можно пригласить гостей \xa0 (до 10 человек)', 'checkbox','standart', 'pd44px')
+          +check('Можно пригласить гостей <br> (до 10 человек)', 'checkbox','standart', 'pd44px')
       
       
       fieldset(class="main-inner_item main-inner_item_radio-buttons radio-buttons")
@@ -93,8 +94,8 @@ body
       
       fieldset(class="main-inner_item main-inner_toogle-buttons")
         legend(class="main-inner__title toogle-buttons__title")="toogle buttons"
-         
-         .toogle-radioButtons__inner
+        
+        .toogle-radioButtons__inner
           +check('Получать спецпредложения', 'checkbox', 'toogle')
           +check('Получать спецпредложения', 'checkbox', 'toogle')
       
@@ -118,11 +119,11 @@ body
     div(class='main-inner_items')
       
       div(class="main-inner_item main-inner_item_range-slider range-slider") 
-        +headerOfComponent('range slider', '5 000₽ - 10 000₽', 'wide', 'standart-size')
+        +headerOfComponent('range slider', '5 000₽ - 10 000₽', '', 'standart-size')
         +rangeSlider()
       
       div(class="main-inner_item main-inner_item_buttons buttons")
-        +headerOfComponent('buttons', 'invisible', 'wide')
+        +headerOfComponent('buttons', 'invisible', '', 'standart-size')
         
         div(class="buttons__inner")
           +button('click me', false, 'standart-size', 'main-theme', '')
@@ -136,5 +137,26 @@ body
             +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
     
       div(class="main-inner_item main-inner_item_pagination pagination") 
-        +headerOfComponent('pagination', 'invisible', 'wide', 'standart-size')
+        +headerOfComponent('pagination', 'invisible', '', 'standart-size')
         +pagination()
+    
+    
+    div(class="main-inner_items")
+      +dropdown('_rooms', 'standart-size', true, [ 'DATEDROPDOWN', 'default', '', 'standart-size'])
+      +dropdown('_rooms_showcase','standart-size', true, [ 'DATEDROPDOWN', 'expanded', '', 'standart-size', 'active'])
+    
+    
+    div(class="main-inner_items")
+      +dropdown('_guests_showcase-one', 'standart-size', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'standart-size'])
+    
+    div(class="main-inner_items")
+      +dropdown('_guests_showcase-two', 'standart-size', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'standart-size'])
+    
+    div(class="main-inner_items")
+      +bulletList('bullet list', ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
+    
+
+    div(class="main-inner_items")
+    
+    
+    div(class="main-inner_items")

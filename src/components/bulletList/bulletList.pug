@@ -1,0 +1,5 @@
+mixin bulletList(title, items)
+  div(class="bulletList__wrapper")
+    ul(class="bulletList")
+      each item in items
+        li(class="bulletList__item")!=item

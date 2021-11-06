@@ -9,14 +9,18 @@
   padding: 0 0;
   border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 4px;
-    &_guests{
-      width: 320px;
-      height: 44px;
+  width: 100%;
+  height: 100%;
+  &__wrapper{
+    &_standart-size{
+      max-width: 266px;
+      max-height:44px;
     }
-    &_rooms{
-      width: 266px;
-      height: 44px;
+    &_wide{
+      max-width: 320px;
+      max-height: 44px;
     }
+  }
   &__window-inner{
     display: flex;
     justify-content: space-between;

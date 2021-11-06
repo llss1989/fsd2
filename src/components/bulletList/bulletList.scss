@@ -1,0 +1,24 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts';
+@import '../../styles/varsColours.scss';
+
+.bulletList{
+  &__item{
+    margin-left: 20px;
+    @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+  }
+  &__item:before{
+    content:"\f111"; 
+    font-family:FontAwesome;
+    position: absolute;
+    left: 0;
+    color:$textColor25;
+    font-size:12px;
+  }
+  // &__item:hover:before{
+  //   color: red;
+  // }
+  &__wrapper{
+    max-width: max-content;
+  }
+}

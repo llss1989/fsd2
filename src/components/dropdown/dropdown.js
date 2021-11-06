@@ -12,18 +12,19 @@ const dropdown = (elements, options) => {
 };
 
 const initState = ({
-  question, options, buttons, endings,
+  question, options, buttons, endings, optionsValues, status = 'disabled',
 }) => {
   const state = {
-    status: 'disabled',
+    status,
     topic: question,
-    generalValue: 0,
+    generalValue: optionsValues.reduce((acc, value) => acc += value, 0) === undefined ? 0 : optionsValues.reduce((acc, value) => acc += value, 0),
     valuesOfItemsMenu: [],
     listOfButtons: [],
     end: endings,
   };
+  console.log(state)
   options.map((nameOfInput, index) => {
-    state.valuesOfItemsMenu.push({ inputName: nameOfInput, value: 0, outputText: endings[index] });
+    state.valuesOfItemsMenu.push({ inputName: nameOfInput, value: optionsValues[index] === undefined ? 0 : optionsValues[index], outputText: endings[index] });
   });
   buttons.map((button) => state.listOfButtons.push({
     nameButton: button,
@@ -52,13 +53,12 @@ const buildButtons = (el, state) => {
   const buttonsInner = document.createElement('div');
   buttonsInner.classList.add('dropdown-menu-buttons');
   buttonsInner.classList.add('dropdown-menu-buttons_space-between');
-  
+
   state.listOfButtons.map((inputState) => {
     const button = document.createElement('div');
     button.classList.add('dropdown-menu-buttons__button');
     button.classList.add('dropdown-menu-buttons__button_style');
     button.classList.add('dropdown-menu__item');
-    console.log(inputState);
     if (inputState.visible === false) {
       button.classList.add('dropdown-menu-buttons__button_disabled');
       buttonsInner.classList.remove('dropdown-menu-buttons_space-between');
