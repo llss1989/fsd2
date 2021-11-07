@@ -80,9 +80,9 @@ body
         
         div(class="checkboxes_inner")
           
-          +check('Можно курить', 'checkbox', 'standart', 'pd44px')
-          +check('Можно с питомцами', 'checkbox', 'standart', 'pd44px')
-          +check('Можно пригласить гостей <br> (до 10 человек)', 'checkbox','standart', 'pd44px')
+          +check('можно курить', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+          +check('можно с питомцами', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+          +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
       
       
       fieldset(class="main-inner_item main-inner_item_radio-buttons radio-buttons")
@@ -96,8 +96,8 @@ body
         legend(class="main-inner__title toogle-buttons__title")="toogle buttons"
         
         .toogle-radioButtons__inner
-          +check('Получать спецпредложения', 'checkbox', 'toogle')
-          +check('Получать спецпредложения', 'checkbox', 'toogle')
+          +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
+          +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
       
       
       div(class="main-inner_item main-inner_item_rate-buttons rate-buttons")
@@ -153,10 +153,16 @@ body
       +dropdown('_guests_showcase-two', 'standart-size', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'standart-size'])
     
     div(class="main-inner_items")
-      +bulletList('bullet list', ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
-    
-
-    div(class="main-inner_items")
     
     
     div(class="main-inner_items")
+      
+      
+      fieldset(class="main-inner_item rich-checkboxes")
+      legend(class="main-inner__title rich-checkboxes_title")="rich checkbox buttons"
+        
+        div(class="rich-checkboxes_inner")
+          +check('широкий коридор', 'ширина коридоров в номере <br> не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+          +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+    div(class="main-inner_items")
+      +bulletList({title: 'bullet list'}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])

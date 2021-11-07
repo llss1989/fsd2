@@ -1,5 +1,6 @@
-mixin bulletList(title, items)
+mixin bulletList(options, items)
   div(class="bulletList__wrapper")
+    h1(class=`bulletList__title bulletList__title_${options.titleMod}`)=options.title
     ul(class="bulletList")
       each item in items
         li(class="bulletList__item")!=item

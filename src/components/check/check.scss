@@ -5,19 +5,37 @@
 .check{
   display: block;
   position: relative;
-  max-width: 222px;
-  @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor50);
+  max-width: max-content;
   margin-top: 20px;
-  &_toogle{
-    padding-left: 44px;
-    text-transform: lowercase;
+  &__subtitle{
+    &_normal{
+      @include textField($secondaryFont, normal, normal, 12px, 14px, $textColor50);
+    }
+    &_pl30px{
+      padding-left: 30px;
+    }
+    &_mt{
+      margin-top: 5px;
+    }
   }
-  &_toogle::first-letter{
+  &__label{
+    &_normal-text{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor50);
+    }
+    &_bold-text{
+      @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor75);
+    }
+    &_pl30px{
+      padding-left: 30px;
+    }
+    &_pl51px{
+      padding-left: 51px;
+    }
+  }
+  &::first-letter{
     text-transform: uppercase;
   } 
-  &_standart{
-    padding-left: 30px;
-  }
+
   &__input{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -52,14 +70,13 @@
         top: 1.5px;
         width: 12px;
         height: 12px;
-        background-color: blue;
         border-radius: 50%;
         transform: translateX(0);
         background: rgba(31, 32, 65, 0.25);
         border-radius: 10px;
       }
       &:checked::after {
-        transform: translateX(calc(100% + 3px));
+        transform: translateX(calc(100% + 8px));
         background-color: #fff;
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       }
@@ -74,6 +91,7 @@
   &__box{
     &_standart{
       position: absolute;
+      top: 0;
       left: 0%;
       width: 20px;
       height: 20px;

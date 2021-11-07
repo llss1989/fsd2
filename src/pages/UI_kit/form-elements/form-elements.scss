@@ -10,7 +10,7 @@
   margin: 0 auto;
   position: relative;
   &__title{
-    @include textField($secondaryFont, normal, bold, 14px, 24px, $textColor);
+    @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
     text-transform: uppercase;
   }
   &_items{
@@ -50,7 +50,7 @@
     }
   }
 }
-.radio-buttons__inner{
+.radio-buttons__inner, .rate-buttons__inner, .like-buttons__inner{
   margin-top: 20px;
 }
 

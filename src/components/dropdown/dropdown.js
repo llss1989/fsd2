@@ -22,7 +22,6 @@ const initState = ({
     listOfButtons: [],
     end: endings,
   };
-  console.log(state)
   options.map((nameOfInput, index) => {
     state.valuesOfItemsMenu.push({ inputName: nameOfInput, value: optionsValues[index] === undefined ? 0 : optionsValues[index], outputText: endings[index] });
   });
