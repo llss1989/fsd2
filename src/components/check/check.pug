@@ -1,13 +1,13 @@
 mixin check(labeltext, subtitle, options)     
   
   if(subtitle == false)
-    .check
+    div(class=`check check_${options.checkPosition}`)
       label(class=`check__label check__label_${options.labelStyle} check__label_${options.labelPosition}`)!=labeltext
         input(class=`check__input check__input_${options.checkType}` type="checkbox")
         span(class=`check__box check__box_${options.checkType}`)
 
   else
-    .check
+    div(class=`check check_${options.checkPosition}`)
       label(class=`check__label check__label_${options.labelStyle} check__label_${options.labelPosition}`)!=labeltext
         input(class=`check__input check__input_${options.checkType}` type="checkbox")
         span(class=`check__box check__box_${options.checkType}`)

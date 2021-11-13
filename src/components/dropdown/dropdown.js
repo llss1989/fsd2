@@ -105,7 +105,7 @@ const createMenu = (el, state) => {
     plusButton.addEventListener('click', (e) => {
       inputState.value += 1;
       state.generalValue += 1;
-      if (state.generalValue > 0) {
+      if (state.generalValue > 0 && state.topic !== 'Какие удобства?') {
         state.listOfButtons[0].visible = true;
       }
       render(el, state);
@@ -117,7 +117,7 @@ const createMenu = (el, state) => {
     minusButton.addEventListener('click', (e) => {
       inputState.value = inputState.value - 1 < 0 ? 0 : inputState.value - 1;
       state.generalValue = state.generalValue - 1 < 0 ? 0 : state.generalValue - 1;
-      if (state.generalValue === 0) {
+      if (state.generalValue === 0 && state.topic !== 'Какие удобства?') {
         state.listOfButtons[0].visible = false;
       }
       render(el, state);

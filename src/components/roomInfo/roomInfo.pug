@@ -1,0 +1,6 @@
+mixin roomInfo(iconOptions, titleOptions, subtitleOptions)
+  .roomInfo
+    div(class=`roomInfo__icon roomInfo__icon_${iconOptions.themeModificator}`)=iconOptions.iconType
+    div(class="roomInfo__wrapper-titles")
+      h3(class=`roomInfo__title roomInfo__title_${titleOptions.themeModificator}`)=titleOptions.title
+      p(class=`roomInfo__subtitle roomInfo__subtitle_${subtitleOptions.themeModificator}`)=subtitleOptions.subtitle

@@ -10,6 +10,7 @@ mixin dropdown( type, dropdownSize, headerOfComponent, parametersOfHeaderOfCompo
           span.dropdown__window
           +expandMore('main-theme', 'main-size')
         .dropdown-menu
+          .dropdown-menu
   else
     div(class=`dropdown__wrapper dropdown__wrapper_${dropdownSize}`)
       div(class='dropdown dropdown'+type)

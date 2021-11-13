@@ -1,0 +1,13 @@
+include ../check/check.pug
+include /components/expandMore/expandMore.pug 
+
+mixin checkboxList(items, listOptions, checkOptions)
+  div(class=`checkboxList checkboxList_${listOptions.checkboxListSizeModificator}`)
+    div(class="checkboxList__window")
+      span(class=`checkboxList__title checkboxList__title_${listOptions.titleStyleModificator}`)=listOptions.nameOfList
+      div(class=`checkboxList__button checkboxList__button_${listOptions.status}`)
+        +expandMore('main-theme', 'main-size')
+    ul(class=`checkboxList__list checkboxList__list_${listOptions.status}`)  
+      each item in items
+        +check(item, false, checkOptions)
+  //- const optionsCheckboxList = { checkboxListSizeModificator: 'wide', nameOfList: 'expandable checkbox list'}

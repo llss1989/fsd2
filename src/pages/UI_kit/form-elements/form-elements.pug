@@ -13,10 +13,13 @@ include /components/button/button.pug
 include /components/rangeSlider/rangeSlider.pug
 include /components/pagination/pagination.pug
 include /components/bulletList/bulletList.pug
+include /components/checkboxList/checkboxList.pug
+include /components/roomInfo/roomInfo.pug
+
 
 
 - const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', '', 'wide']
-- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER', '', 'wide']
+- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER / FOCUS', '', 'wide']
 - const parametersHeaderOfDropdown = ['Dropdown', 'invisible', '', 'wide']
 - const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', '', 'wide']
 - const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', '', 'wide']
@@ -28,7 +31,7 @@ include /components/bulletList/bulletList.pug
 - const optionsOfInputText =  { inputName: 'text', inputType: 'text', textOfInput: 'This is pretty awesome', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
 - const optionsOfInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
-
+- const itemsOfExpandedCheckBoxList = ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]
 
 doctype html
 html
@@ -46,34 +49,34 @@ body
     +logo('white')
     
     
-    div(class='main-inner_items inputs inputs_ml')
+    div(class='main-inner_items main-inner_items_mt143 inputs')
       
-      div(class='inputs__item inputs__item_ml item inputs__item_email')
+      div(class='inputs__item  item inputs__item_email')
         +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
       
-      div(class='inputs__item inputs__item_ml inputs__item_text')
+      div(class='inputs__item inputs__item_text')
         +input(optionsOfInputText, true , parametersHeaderOfTextInput)
       
-      div(class='inputs__item inputs__item_ml inputs__item_dropdownQuests')
+      div(class='inputs__item  inputs__item_dropdownQuests')
         +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
       
-      div(class='inputs__item inputs__item_ml inputs__item_maskedText')
+      div(class='inputs__item  inputs__item_maskedText')
         +input(optionsOfInputDate,  true , parametersHeaderOfDateInput)
       
-      div(class='inputs__item inputs__item_ml inputs__item_dateDropdown')
+      div(class='inputs__item inputs__item_dateDropdown')
         +dateDropdown(optionsForDateDropdown, true, parametersHeaderOfDateDropdown)
       
-      div(class='inputs__item inputs__item_ml inputs__item_filterDropdown')  
+      div(class='inputs__item inputs__item_filterDropdown')  
         +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
       
-      div(class="inputs__item inputs__item_ml inputs__item_sub-text-field")
+      div(class="inputs__item inputs__item_sub-text-field")
         h2(class="email-form__title")="subscription text field"
         form(class="email-form email-form_main-theme")
           +input(optionsOfInputEmailStandart, false , parametersHeaderOfSubscriptionTextField)
           +arrowForward('primary-theme', 'main-size')
     
     
-    div(class="main-inner_items")
+    div(class="main-inner_items main-inner_items_mt143")
       
       fieldset(class="main-inner_item checkboxes")
         legend(class="main-inner__title checkboxes_title")="check buttons"
@@ -93,7 +96,7 @@ body
       
       
       fieldset(class="main-inner_item main-inner_toogle-buttons")
-        legend(class="main-inner__title toogle-buttons__title")="toogle buttons"
+        legend(class="main-inner__title toogle-buttons__title")="toogle"
         
         .toogle-radioButtons__inner
           +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
@@ -116,7 +119,7 @@ body
             +like('standart-size', 'checked', '12')   
     
     
-    div(class='main-inner_items')
+    div(class='main-inner_items main-inner_items_mt143')
       
       div(class="main-inner_item main-inner_item_range-slider range-slider") 
         +headerOfComponent('range slider', '5 000₽ - 10 000₽', '', 'standart-size')
@@ -147,22 +150,27 @@ body
     
     
     div(class="main-inner_items")
-      +dropdown('_guests_showcase-one', 'standart-size', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'standart-size'])
+      +dropdown('_guests_showcase-one', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
     div(class="main-inner_items")
-      +dropdown('_guests_showcase-two', 'standart-size', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'standart-size'])
+      +dropdown('_guests_showcase-two', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
     div(class="main-inner_items")
     
+      +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'closed'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
+      +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'opened'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
     
     div(class="main-inner_items")
-      
       
       fieldset(class="main-inner_item rich-checkboxes")
-      legend(class="main-inner__title rich-checkboxes_title")="rich checkbox buttons"
+        legend(class="main-inner__title rich-checkboxes_title")="rich checkbox buttons"
         
         div(class="rich-checkboxes_inner")
           +check('широкий коридор', 'ширина коридоров в номере <br> не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
           +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
     div(class="main-inner_items")
       +bulletList({title: 'bullet list'}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
+    
+    
+    div(class="main-inner_items")
+      +roomInfo({iconType:'insert_emoticon', themeModificator: 'main-theme'}, { title: 'комфорт', themeModificator: 'main-theme'}, { subtitle: 'шумопоглощающие стены', themeModificator: 'main-theme'})
