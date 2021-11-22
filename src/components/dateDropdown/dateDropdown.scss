@@ -4,22 +4,20 @@
 
 .date-dropdown{
   position: relative;
-  width: 320px;
-  height: 44px;
+  max-width: 320px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   box-sizing: border-box;
-  &__inputs-wrapper{
-    display: flex;
-    justify-content: space-between;
-  }
+  justify-content: space-between;
   &__input{
     box-sizing: border-box;
     border-radius: 4px;
     &_main-theme{
       background: url('../../assets/img/svg/expand_more.svg') no-repeat;
       background-position: right 10% bottom 45%;
-      width: 150px;
+      max-width: 150px;
+      width: 100%;
       border: 1px solid rgba(31, 32, 65, 0.25);
       @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25)};
       padding: 13px 0  13px 15px;
@@ -30,6 +28,15 @@
         background: url('../../assets/img/expand_more_focus.png') no-repeat;
         background-position: right 10% bottom 45%;
       }
+    }
+    &_mt5{
+      margin-top: 5px;
+    }
+  }
+  &__input-name{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px, 15px,  $textColor100);
+      text-transform: uppercase;
     }
   }
 }

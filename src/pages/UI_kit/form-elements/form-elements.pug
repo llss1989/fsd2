@@ -15,6 +15,7 @@ include /components/pagination/pagination.pug
 include /components/bulletList/bulletList.pug
 include /components/checkboxList/checkboxList.pug
 include /components/roomInfo/roomInfo.pug
+include /components/feedback/feedback.pug
 
 
 
@@ -49,7 +50,7 @@ body
     +logo('white')
     
     
-    div(class='main-inner_items main-inner_items_mt143 inputs')
+    div(class='main-inner__items main-inner__items_mt143 inputs')
       
       div(class='inputs__item  item inputs__item_email')
         +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
@@ -76,7 +77,7 @@ body
           +arrowForward('primary-theme', 'main-size')
     
     
-    div(class="main-inner_items main-inner_items_mt143")
+    div(class="main-inner__items main-inner__items_mt143")
       
       fieldset(class="main-inner_item checkboxes")
         legend(class="main-inner__title checkboxes_title")="check buttons"
@@ -119,7 +120,7 @@ body
             +like('standart-size', 'checked', '12')   
     
     
-    div(class='main-inner_items main-inner_items_mt143')
+    div(class='main-inner__items main-inner__items_mt143')
       
       div(class="main-inner_item main-inner_item_range-slider range-slider") 
         +headerOfComponent('range slider', '5 000₽ - 10 000₽', '', 'standart-size')
@@ -144,33 +145,40 @@ body
         +pagination()
     
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       +dropdown('_rooms', 'standart-size', true, [ 'DATEDROPDOWN', 'default', '', 'standart-size'])
       +dropdown('_rooms_showcase','standart-size', true, [ 'DATEDROPDOWN', 'expanded', '', 'standart-size', 'active'])
     
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       +dropdown('_guests_showcase-one', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       +dropdown('_guests_showcase-two', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
     
       +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'closed'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
       +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'opened'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       
       fieldset(class="main-inner_item rich-checkboxes")
         legend(class="main-inner__title rich-checkboxes_title")="rich checkbox buttons"
         
         div(class="rich-checkboxes_inner")
-          +check('широкий коридор', 'ширина коридоров в номере <br> не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+          +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
           +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       +bulletList({title: 'bullet list'}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     
     
-    div(class="main-inner_items")
+    div(class="main-inner__items")
       +roomInfo({iconType:'insert_emoticon', themeModificator: 'main-theme'}, { title: 'комфорт', themeModificator: 'main-theme'}, { subtitle: 'шумопоглощающие стены', themeModificator: 'main-theme'})
+      +roomInfo({iconType:'location_city', themeModificator: 'main-theme'}, { title: 'удобство', themeModificator: 'main-theme'}, { subtitle: 'окно в каждой из спален', themeModificator: 'main-theme'})
+
+    
+    div(class="main-inner__items main-inner__items_feedback")
+      +feedback({modificator: "murad"}, { name: "мурад сарафанов", modificator: "main-theme"}, { date: "5 дней назад", modificator: "main-theme"}, { subtitle: `<span class="feedback__subtitle feedback__subtitle_uppercase">в</span>еликолепный матрас на кровати в основной спальне! <span class="feedback__subtitle feedback__subtitle_uppercase">a</span> пуфик вообще потрясающий.
+<span class="feedback__subtitle feedback__subtitle_uppercase">и</span> стены, действительно, шумоподавляющие. <span class="feedback__subtitle feedback__subtitle_uppercase feedback__subtitle ">в</span>ыкрикивал комплименты повару — никто 
+не жаловался из соседей.`, subtitleStyleModificator: "main-theme", subtitlePositionModificator: "left-top" })

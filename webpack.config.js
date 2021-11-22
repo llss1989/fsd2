@@ -52,7 +52,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/UI_kit/form-elements/form-elements.html',
+    index: './pages/UI_kit/cards/cards.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {
@@ -87,6 +87,13 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: './pages/UI_kit/form-elements/form-elements.html',
       template: './pages//UI_kit/form-elements/form-elements.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/UI_kit/cards/cards.html',
+      template: './pages//UI_kit/cards/cards.pug',
       minify: {
         collapseWhitespace: isProd,
       },

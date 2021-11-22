@@ -1,0 +1,63 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+
+.feedback{
+
+  &__inner-source{
+    display: flex;
+  }
+  &__inner-info{
+    margin-left: 10px;
+  }
+  &__inner-content{
+    display: flex;
+    margin-top: 10px;
+  }
+  &__inner-like{
+    width: 100%;
+    max-width: 48px;
+    display: flex;
+    justify-content: center;
+  }
+  &__avatar{
+    &_murad{
+      background: url('../../assets/img/murad.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+      border-radius: 32px;
+    }
+  }
+  &__name{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor75);
+      text-transform: capitalize;
+      margin-top: 1px;
+    }
+  }
+  &__date{
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    }
+  }
+  &__subtitle{
+    &_mt20{
+      margin-top: -20px;
+    }
+    &_left-top{
+      margin-left: 10px;
+      margin-top: -20px;
+    }
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    }
+    &_uppercase{
+      text-transform: uppercase;
+    }
+  }
+}

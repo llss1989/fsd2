@@ -25,12 +25,7 @@
       text-transform: uppercase;
     }
     &_main-theme{
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 24px;
-      color: rgba(31, 32, 65, 0.75);
+      @include textField($secondaryFont, normal, bold, 14px, 24px, $textColor75);
     }
   }
   &__subtitle{
@@ -38,12 +33,10 @@
       text-transform: uppercase;
     }
     &_main-theme{
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 24px;
-      color: rgba(31, 32, 65, 0.75);
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
     }
+  }
+  &__wrapper-titles{
+    margin-left: 10px;
   }
 }
