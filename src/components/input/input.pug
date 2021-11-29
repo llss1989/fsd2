@@ -1,15 +1,29 @@
 include /components/headerOfComponent/headerOfComponent.pug
 
-mixin input( inputOptions, headerContent , parametersOfHeaderOfComponent)
+mixin input( inputOptions, name=false , status=false)
   - var {inputName, inputType, textOfInput, modificator, theme, additionalModificator} = inputOptions
 
-  if (headerContent === true)
-    div(class=`input input_${modificator}`)
-      +headerOfComponent(...parametersOfHeaderOfComponent)
-      if (additionalModificator)
-        input(class= `input__${inputName} input_${modificator}  input_${theme} input_${additionalModificator}` type=inputType placeholder= textOfInput)
-      else
-          input(class= `input__${inputName} input_${modificator}  input_${theme}` type=inputType placeholder= textOfInput)
+  if (name)
+    if(status)
+      div(class=`input input_${modificator}`)
+        div(class="input__wrapper-for-titles input__wrapper-for-titles_padding-bottom")
+          span(class="input__name")=name
+          span(class="input__status")=status
+        if (additionalModificator)
+          input(class= `input__${inputName} input_${modificator}  input_${theme} input_${additionalModificator}` type=inputType placeholder= textOfInput)
+        else
+            input(class= `input__${inputName} input_${modificator}  input_${theme}` type=inputType placeholder= textOfInput)
+    
+    else
+      div(class=`input input_${modificator}`)
+        div(class="input__wrapper-for-titles input__wrapper-for-titles_padding-bottom")
+          span(class="input__name")=name      
+        if (additionalModificator)
+          input(class= `input__${inputName} input_${modificator}  input_${theme} input_${additionalModificator}` type=inputType placeholder= textOfInput)
+        else
+            input(class= `input__${inputName} input_${modificator}  input_${theme}` type=inputType placeholder= textOfInput)   
+  
+  
   else
     if (additionalModificator)
       input(class= `input__${inputName} input_${modificator}  input_${theme} input_${additionalModificator}` type=inputType placeholder= textOfInput)

@@ -1,0 +1,39 @@
+include /components/input/input.pug
+include /components/radioCheck/radioCheck.pug
+include /components/check/check.pug
+include /components/button/button.pug
+
+- const optionsForInputName =  { inputName: 'text', inputType: 'text', textOfInput: 'имя', modificator: 'wide', theme: 'main-theme'}
+- const optionsForInputSurname = { inputName: 'text', inputType: 'text', textOfInput: 'Фамилия', modificator: 'wide', theme: 'main-theme' }
+- const optionsForInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
+- const optionsForInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
+- const optionsForInputPassword =  { inputName: 'password', inputType: 'password', textOfInput: 'Password', modificator: 'wide', theme: 'main-theme'}
+
+
+mixin registrationForm(titleOptions, nameOptions, surNameOptions, inputRadioOptions, inputDateOptions, loggingMenuOptions, buttonOptions, footerOptions)
+  
+  - const registrationFormTitle = `<span class="registration-form__title registration-form__title_${titleOptions.themeModificator} registration-form__title_uppercase">р</span>егистрация аккаунта`
+  
+  form(class="registration-form")
+    h2(class=`registration-form__title registration-form__title_${titleOptions.themeModificator}`)!=registrationFormTitle
+    div(class=`registration-form__input-name registration-form__input-name_${nameOptions.positionModificator}`)
+      +input(optionsForInputName)
+    div(class=`registration-form__input-surname registration-form__input-surname_${surNameOptions.positionModificator}`)  
+      +input(optionsForInputSurname)
+    div(class=`registration-form__input-radio registration-form__input-radio_${inputRadioOptions.positionModificator}`)
+      +radioCheck("gender" ,"male", "мужчины", "female", "женщины")
+    div(class=`registration-form__input-date registration-form__input-date_${inputDateOptions.positionModificator}`)
+      +input(optionsForInputDate, "дата рождения")  
+    div(class=`registration-form__logging-wrapper registration-form__logging-wrapper_${loggingMenuOptions.wrapperPositionModificator}`)
+      h3(class="registration-form__titleOfInput")="данные для входа в сервис"
+      div(class=`registration-form__email registration-form__email_${loggingMenuOptions.emailPositionModificator}`)
+        +input(optionsForInputEmail)
+      div(class=`registration-form__input-password registration-form__input-password_${loggingMenuOptions.inputPasswordPositionModificator}`)
+        +input(optionsForInputPassword)
+      div(class=`registration-form__input-check registration-form__input-check_${loggingMenuOptions.checkPositionModificator}`)
+        +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
+    div(class=`registration-form__button registration-form__button_${buttonOptions.positionModificator}`)
+      +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
+    div(class=`registration-form__footer registration-form__footer_${footerOptions.positionModificator}`)
+      p(class="registration-form__footer-subtitle")!=`<span class="registration-form__footer-subtitle registration-form__footer-subtitle_uppercase">у</span>же есть аккаунт на <span class="registration-form__footer-subtitle registration-form__footer-subtitle_uppercase">т</span>oxin`
+      +button('click me', false, 'standart-size', 'secondary-theme', '')

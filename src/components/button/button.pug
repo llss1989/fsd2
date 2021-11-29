@@ -7,5 +7,5 @@ mixin button(text,arrow, sizeModificator, themeModificator, state, indentModific
       .button__arrow
         +arrowForward('secondary-theme', 'main-size')
   else
-    div(class=`button__wrapper`)
+    div(class=`button__wrapper button__wrapper_${themeModificator} button__wrapper_${sizeModificator}`)
       button(class=`button button_${sizeModificator} button_${themeModificator} button_${state} button_${indentModificator}`)=text

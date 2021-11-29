@@ -1,7 +1,7 @@
 include /components/logo/logo.pug
 include /components/searchRoom/searchRoom.pug
 include /components/dropdown/dropdown.pug
-
+include /components/registrationForm/registrationForm.pug
 // - const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', '', 'wide']
 // - const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
 
@@ -15,5 +15,7 @@ html
     title Cards
     
 body
+  +logo('white')
   .cards
     +searchRoom({styleModificator: "main-theme"}, {positionModificator: 'mt20'}, {positionModificator: 'mt20'}, {positionModificator: 'mt30'}) 
+    +registrationForm({ themeModificator: "main-theme" }, { positionModificator: "mt20" }, { positionModificator: "mt10" }, { positionModificator: "mt10" },{ positionModificator: "mt22" },{ wrapperPositionModificator: "mt20",emailPositionModificator: "mt5", inputPasswordPositionModificator: "mt10", checkPositionModificator: "mt10"}, {positionModificator: "mt24"},{positionModificator: "mt30"})

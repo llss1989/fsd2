@@ -3,11 +3,11 @@ include /components/arrowForward/arrowForward.pug
 include /components/button/button.pug
 
 - const parametersHeaderOfDropdown = ['гости', 'invisible', '', 'wide']
-- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "Прибытие", secondInputName: "Отбытие", inputPositionModificator: 'mt5'}
+- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "Прибытие", secondInputName: "выезд", inputPositionModificator: 'mt5'}
 - const parametersHeaderOfDateDropdown = [ 'прибытие', 'выезд', '', 'wide']
 
 mixin searchRoom(titleOptions, dropdownOptions, questsDropdownOptions, buttonOptions)
-  div(class="search-room")
+  form(class="search-room")
     div(class="search-room__inner")
       h2(class=`search-room__title search-room__title_${titleOptions.styleModificator}`)="Найдём номера под ваши пожелания"
       div(class=`search-room__date-dropdown search-room__date-dropdown_${dropdownOptions.positionModificator}`)
@@ -15,4 +15,4 @@ mixin searchRoom(titleOptions, dropdownOptions, questsDropdownOptions, buttonOpt
       div(class=`search-room__quests-dropdown search-room__quests-dropdown_${questsDropdownOptions.positionModificator}`)  
         +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
       div(class=`search-room__button search-room__button_${buttonOptions.positionModificator}`)
-        +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
+        +button('подобрать номер', true, 'wide', 'theme-with-arrow', '')

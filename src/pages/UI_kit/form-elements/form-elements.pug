@@ -19,26 +19,23 @@ include /components/feedback/feedback.pug
 
 
 
-- const parametersHeaderOfEmailInput = ['TEXT FIELD', 'DEFAULT', '', 'wide']
-- const parametersHeaderOfTextInput = ['TEXT FIELD', 'HOVER / FOCUS', '', 'wide']
+
 - const parametersHeaderOfDropdown = ['Dropdown', 'invisible', '', 'wide']
-- const parametersHeaderOfDateInput = [ 'masked text field', 'invisible', '', 'wide']
 - const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', '', 'wide']
-- const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', '', 'wide']
 - const parametersHeaderOfSubscriptionTextField = ['subscription text field', 'invisible', '', 'wide']
 
-- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
-- const optionsOfInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
+- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "date dropdown", secondInputName: "date dropdown", inputPositionModificator: 'mt5'}
+- const optionsForInputEmail =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputText =  { inputName: 'text', inputType: 'text', textOfInput: 'This is pretty awesome', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
-- const optionsOfInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
+- const optionsForInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
 - const itemsOfExpandedCheckBoxList = ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]
 
 doctype html
 html
   head
     meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=Edge")
+    meta(http-equiv="X-UA-Compatible" content="IE=E dge")
     meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet")
@@ -53,19 +50,19 @@ body
     div(class='main-inner__items main-inner__items_mt143 inputs')
       
       div(class='inputs__item  item inputs__item_email')
-        +input(optionsOfInputEmail, true , parametersHeaderOfEmailInput)
+        +input(optionsForInputEmail, 'text field' , 'default')
       
       div(class='inputs__item inputs__item_text')
-        +input(optionsOfInputText, true , parametersHeaderOfTextInput)
+        +input(optionsOfInputText, "text field", "hover/focus")
       
       div(class='inputs__item  inputs__item_dropdownQuests')
         +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
       
       div(class='inputs__item  inputs__item_maskedText')
-        +input(optionsOfInputDate,  true , parametersHeaderOfDateInput)
+        +input(optionsOfInputDate, "masked text field")
       
       div(class='inputs__item inputs__item_dateDropdown')
-        +dateDropdown(optionsForDateDropdown, true, parametersHeaderOfDateDropdown)
+        +dateDropdown(optionsForDateDropdown)
       
       div(class='inputs__item inputs__item_filterDropdown')  
         +filterDateDropdown(true,parametersHeaderOfFilterDropdown)
@@ -73,7 +70,7 @@ body
       div(class="inputs__item inputs__item_sub-text-field")
         h2(class="email-form__title")="subscription text field"
         form(class="email-form email-form_main-theme")
-          +input(optionsOfInputEmailStandart, false , parametersHeaderOfSubscriptionTextField)
+          +input(optionsForInputEmailStandart, "subscription text field")
           +arrowForward('primary-theme', 'main-size')
     
     

@@ -21,6 +21,7 @@
     border-right: none;
   }
   &_main-theme{
+    border-radius: 4px;
     background: #FFFFFF;
     border: 1px solid rgba(31, 32, 65, 0.25);
     @include placeholder {@include textField($secondaryFont, normal, normal, 14px, 24px,  $textColor25)}
@@ -31,7 +32,23 @@
       }
    }
    &_border-none{
-     border: none;
+    border: none;
+   }
+   &__wrapper-for-titles{
+    display: flex;
+    justify-content: space-between;
+    &_padding-bottom{
+      padding-bottom: 5px;
+    }
+   }
+   &__name{
+    @include textField($secondaryFont, normal, bold, 12px,15px, $textColor100);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   }
+   &__status{
+    @include textField($secondaryFont, normal, normal, 12px,15px, $textColor50);
+    text-transform: uppercase;
    }
 }
 
