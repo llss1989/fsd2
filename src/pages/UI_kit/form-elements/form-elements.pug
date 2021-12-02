@@ -14,7 +14,7 @@ include /components/rangeSlider/rangeSlider.pug
 include /components/pagination/pagination.pug
 include /components/bulletList/bulletList.pug
 include /components/checkboxList/checkboxList.pug
-include /components/roomInfo/roomInfo.pug
+include /components/roomQuality/roomQuality.pug
 include /components/feedback/feedback.pug
 
 
@@ -171,8 +171,8 @@ body
     
     
     div(class="main-inner__items")
-      +roomInfo({iconType:'insert_emoticon', themeModificator: 'main-theme'}, { title: 'комфорт', themeModificator: 'main-theme'}, { subtitle: 'шумопоглощающие стены', themeModificator: 'main-theme'})
-      +roomInfo({iconType:'location_city', themeModificator: 'main-theme'}, { title: 'удобство', themeModificator: 'main-theme'}, { subtitle: 'окно в каждой из спален', themeModificator: 'main-theme'})
+      +roomQuality({iconType:'insert_emoticon', themeModificator: 'main-theme'}, { title: 'комфорт', themeModificator: 'main-theme'}, { subtitle: 'шумопоглощающие стены', themeModificator: 'main-theme'})
+      +roomQuality({iconType:'location_city', themeModificator: 'main-theme'}, { title: 'удобство', themeModificator: 'main-theme'}, { subtitle: 'окно в каждой из спален', themeModificator: 'main-theme'})
 
     
     div(class="main-inner__items main-inner__items_feedback")

@@ -1,42 +1,174 @@
+@import '../../styles/mixins.scss';
 @import '../../styles/fonts.scss';
 @import '../../styles/varsColours.scss';
-@import '../../styles/mixins.scss';
 
 .roomInfo{
-  display: flex;
-  &__icon{
-    &_main-theme{
-      font-family: Material Icons;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 48px;
-      line-height: 41px;
+  max-width: 380px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding-top: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  &__mainInfo{
+    display: flex;
+    align-items: baseline;
+
+  }
+  &__item{
+    &_horizontal{
       display: flex;
-      align-items: center;
-      text-align: center;
-      background: $primaryGradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    &_vertical{
+      display: flex;
+      flex-direction: column;
+    }
+    &_mt10{
+      margin-top: 10px;
+    }
+    &_mt20{
+      margin-top: 20px;
+    }
+    &_mt40{
+      margin-top: 40px;
     }
   }
-  &__title{
-    &::first-letter{
-      text-transform: uppercase;
+  &__number{
+    &_large{
+      @include textField($secondaryFont, normal, bold, 24px, 29px, #1F2041);
     }
+    &_small{
+      @include textField($secondaryFont, normal, bold, 14px, 17px, #1F2041);
+    }
+    &_ml5{
+      margin-left: 5px;
+    }
+  }
+  &__typeOfRoom{
+    @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
+    text-transform: uppercase;
+    &_ml8{
+      margin-left: 8px;
+    }
+  }
+  &__price{
+   &_large{
+    @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor50);
+   }
+   &_small{
+    @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor50);
+   }
+  }
+  &__major-costs-wrapper, &__fee-wrapper, &__additional-services-wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__additional-services-wrapper{
+    &_mt13{
+      margin-top: 13px;
+    }
+  }
+  &__additional-services-text-wrapper{
+    width: 76%;
+    display: flex;
+    justify-content: space-between;
+    &_horizontal{
+      display: flex;
+    }
+  }
+  &__additional-services-text{
     &_main-theme{
-      @include textField($secondaryFont, normal, bold, 14px, 24px, $textColor75);
+      @include textField($secondaryFont, normal, normal, 14px, 18px, $textColor75);
+      letter-spacing: 1.7px;
     }
   }
-  &__subtitle{
-    &::first-letter{
-      text-transform: uppercase;
-    }
+  &__additional-services-value{
     &_main-theme{
       @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
     }
   }
-  &__wrapper-titles{
-    margin-left: 10px;
+  &__fee-wrapper{
+    &_mt10{
+      margin-top: 10px;
+    }
+  }
+  &__major-costs-text{
+    &_standart-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+      letter-spacing: 0.5px;
+    }
+  }
+  &__major-costs-value{
+    &_standart-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    }
+  }
+  &__fee-name{
+    &_standart-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+      letter-spacing: 1.2px;
+    }
+  }
+  &__fee-value{
+    &_standart-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    }
+  }
+  &__help-link-wrapper{
+    // width: 20px;
+    // height: 20px;
+    // border-radius: 50%;
+    // border: 1px solid rgba(31, 32, 65, 0.25);
+    // box-sizing: border-box;
+    &_ml5{
+      margin-left: 5px;
+    }
+  }
+  &__fee-text-wrapper{
+    display: flex;
+    width: 78%;
+  }
+  &__total-wrapper{
+    &_horizontal{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap;
+    }
+    &_mt30{
+      margin-top: 30px;
+    }
+  }
+  &__total-text{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+      text-transform: capitalize;
+      letter-spacing: 1.8px;
+    }
+  }
+  &__total-value{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+  &__total-border{
+    border: 1px dashed rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      max-width: 100%;
+      width: 100%;
+      height: 1px;
+  }
+  &__button{
+    &_mt23{
+      margin-top: 23px;
+    }
   }
 }

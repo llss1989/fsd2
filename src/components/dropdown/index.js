@@ -48,9 +48,19 @@ window.addEventListener('DOMContentLoaded', (e) => {
     optionsValues: [1, 2, 3],
     status: 'active',
   };
+  const dropdownForGuestsShowcaseExampleforCardsPage = document.querySelectorAll('.dropdown_guests_showcase-three');
+  const optionsForGuestsDropdownShowcaseClosedForCardsPage = {
+    question: 'Сколько гостей?',
+    options: ['Взрослые', 'Дети', 'Младенцы'],
+    endings: [['гость', 'гостя', 'гостей'], ['ребенок', 'ребенка', 'детей'], ['младенец', 'младенца', 'младенцев']],
+    buttons: ['Очистить', 'Применить'],
+    optionsValues: [1, 2, 0],
+  };
   dropdown(dropdownForGuests, optionsForGuestsDropdown);
   dropdown(dropdownForRooms, optionsForDropdownRooms);
   dropdown(dropdownForRoomsShowcase, optionsForDropdownRoomsShowcase);
   dropdown(dropdownForGuestsShowcaseExampleOne, optionsForGuestsDropdownShowcaseOne);
   dropdown(dropdownForGuestsShowcaseExampleTwo, optionsForGuestsDropdownShowcaseTwo);
+  dropdown(dropdownForGuestsShowcaseExampleforCardsPage,
+    optionsForGuestsDropdownShowcaseClosedForCardsPage);
 });

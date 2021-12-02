@@ -1,0 +1,42 @@
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+@import '../../styles/mixins.scss';
+
+.roomQuality{
+  display: flex;
+  &__icon{
+    &_main-theme{
+      font-family: Material Icons;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 48px;
+      line-height: 41px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: $primaryGradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__title{
+    &::first-letter{
+      text-transform: uppercase;
+    }
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 14px, 24px, $textColor75);
+    }
+  }
+  &__subtitle{
+    &::first-letter{
+      text-transform: uppercase;
+    }
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+    }
+  }
+  &__wrapper-titles{
+    margin-left: 10px;
+  }
+}

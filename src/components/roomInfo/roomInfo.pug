@@ -1,6 +1,42 @@
-mixin roomInfo(iconOptions, titleOptions, subtitleOptions)
-  .roomInfo
-    div(class=`roomInfo__icon roomInfo__icon_${iconOptions.themeModificator}`)=iconOptions.iconType
-    div(class=`roomInfo__wrapper-titles`)
-      h3(class=`roomInfo__title roomInfo__title_${titleOptions.themeModificator}`)=titleOptions.title
-      p(class=`roomInfo__subtitle roomInfo__subtitle_${subtitleOptions.themeModificator}`)=subtitleOptions.subtitle
+include /components/dateDropdown/dateDropdown.pug
+include /components/dropdown/dropdown.pug
+include /components/helpLink/helpLink.pug
+include /components/button/button.pug
+
+
+
+// - const parametersHeaderOfDropdown = 
+mixin roomInfo(roomNumber, typeOfRoomOptions, priceOfRoom, roomInfoPrices)
+  div(class="roomInfo")
+    div(class="roomInfo__item roomInfo__item_horizontal")
+      div(class="roomInfo__mainInfo")
+        div(class=`roomInfo__number`)!=`<span class="roomInfo__number_small">№</span><span class="roomInfo__number_large roomInfo__number_ml5">${roomNumber}</span>`
+        if(typeOfRoomOptions.value)
+          h2(class=`roomInfo__typeOfRoom roomInfo__typeOfRoom_${typeOfRoomOptions.positionModificator}`)=typeOfRoomOptions.value
+      p(class="roomInfo__price roomInfo__price_large")!= `${priceOfRoom} &#8381; <span class="roomInfo__price_small">в сутки</span>`
+    div(class="roomInfo__item roomInfo__item_horizontal roomInfo__item_mt20")
+      +dateDropdown({ inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "прибытие", secondInputName: "выезд", inputPositionModificator: 'mt5'})
+    div(class="roomInfo__item roomInfo__item_mt20")
+      +dropdown('_guests_showcase-three', 'wide', true, ['гости', 'invisible', '', 'wide'])
+    div(class="roomInfo__item roomInfo__item_mt40")
+      div(class="roomInfo__major-costs-wrapper")
+        span(class="roomInfo__major-costs-text roomInfo__major-costs-text_standart-theme")=roomInfoPrices.majorCostsText
+        span(class="roomInfo__major-costs-value roomInfo__major-costs-value_standart-theme")!=roomInfoPrices.majorCostsValue
+      div(class="roomInfo__fee-wrapper roomInfo__fee-wrapper_mt10")
+        div(class="roomInfo__fee-text-wrapper")
+          span(class="roomInfo__fee-name roomInfo__fee-name_standart-theme")=roomInfoPrices.feeName
+          div(class="roomInfo__help-link-wrapper roomInfo__help-link-wrapper_ml5")
+            +helpLink()
+        span(class="roomInfo__fee-value roomInfo__fee-value_standart-theme")!=roomInfoPrices.feeValue
+      div(class="roomInfo__additional-services-wrapper roomInfo__additional-services-wrapper_mt13")
+        div(class="roomInfo__additional-services-text-wrapper roomInfo__additional-services-text-wrapper_horizontal")
+          span(class="roomInfo__additional-services-text roomInfo__additional-services-text_main-theme")!=roomInfoPrices.additionalServicesText
+          div(class="roomInfo__help-link-wrapper roomInfo__help-link-wrapper_ml5")
+            +helpLink()
+        span(class="roomInfo__additional-services-value roomInfo__additional-services-value_main-theme")!=roomInfoPrices.additionalServicesValue
+      div(class="roomInfo__total-wrapper roomInfo__total-wrapper_horizontal roomInfo__total-wrapper_mt30")
+        span(class="roomInfo__total-text roomInfo__total-text_main-theme")="итого"
+        div(class="roomInfo__total-border roomInfo__total-border")
+        span(class="roomInfo__total-value roomInfo__total-value_main-theme")=roomInfoPrices.totalValue
+    div(class="roomInfo__button roomInfo__button_mt23")
+      +button('забронировать', true, 'wide', 'theme-with-arrow', '')
