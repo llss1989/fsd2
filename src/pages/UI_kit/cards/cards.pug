@@ -3,6 +3,9 @@ include /components/searchRoom/searchRoom.pug
 include /components/dropdown/dropdown.pug
 include /components/registrationForm/registrationForm.pug
 include /components/roomInfo/roomInfo.pug
+include /components/loginForm/loginForm.pug
+include /components/filterDateDropdown/filterDateDropdown.pug
+include /components/demonstratedCalendar/demonstratedCalendar.pug
 
 
 // - const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', '', 'wide']
@@ -24,4 +27,5 @@ body
     +registrationForm({ themeModificator: "main-theme" }, { positionModificator: "mt20" }, { positionModificator: "mt10" }, { positionModificator: "mt10" },{ positionModificator: "mt22" },{ wrapperPositionModificator: "mt20",emailPositionModificator: "mt5", inputPasswordPositionModificator: "mt10", checkPositionModificator: "mt10"}, {positionModificator: "mt24"},{positionModificator: "mt30"})
     +roomInfo( "888" ,{ value: "люкс", positionModificator: "ml8" }, "9990", { majorCostsText: "9 990₽ х 4 суток", majorCostsValue: "39960₽", feeName: "Сбор за услуги: скидка 2 179₽", feeValue: "0₽", additionalServicesText: `Сбор за дополнительные 
     услуги`, additionalServicesValue: "300₽", totalValue: "38 081₽" })
-    
+    +loginForm()
+    +demonstratedCalendar()

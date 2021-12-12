@@ -1,0 +1,16 @@
+include /components/input/input.pug
+include /components/button/button.pug
+
+mixin loginForm()
+  form(class="login-form login-form_main-theme")
+    h2(class="login-form__title login-form__title_main-theme")="войти"
+    div(class="login-form__inputs-wrapper login-form__inputs-wrapper_mt20")
+      div(class="login-form__input-email")
+        +input({ inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'})
+      div(class="login-form_input-password login-form_input-password_mt10")  
+        +input({ inputName: 'password', inputType: 'password', textOfInput: 'Password', modificator: 'wide', theme: 'main-theme'})
+      div(class="login-form__button login-form__button_mt20")
+        +button('войти', true, 'wide', 'theme-with-arrow', 'ml41perc')
+    div(class=`login-form__footer login-form__footer login-form__footer_mt30`)
+      p(class="login-form__footer-subtitle")!=`<span class="login-form__footer-subtitle login-form__footer-subtitle_uppercase">у</span>же есть аккаунт на <span class="login-form__footer-subtitle login-form__footer-subtitle_uppercase">т</span>oxin`
+      +button('click me', false, 'standart-size', 'secondary-theme', '')

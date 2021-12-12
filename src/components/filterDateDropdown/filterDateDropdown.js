@@ -2,20 +2,22 @@ import 'air-datepicker';
 import $ from 'jquery';
 
 $(() => {
-  $('.js-datepicker').datepicker({
-    // todayButton: new Date(),
+  $('.filter-date-dropdown__datepicker').datepicker({
     dateFormat: 'd M',
     clearButton: true,
     multipleDatesSeparator: '-',
+    startDate: new Date(),
+    prevHtml: '<span class="material-icons">arrow_back</span>',
+    nextHtml: '<span class="material-icons">arrow_forward</span>',
     navTitles: {
       days: 'MM yyyy',
     },
     range: true,
     onShow(dp, animationCompleted) {
       if (!animationCompleted) {
-        if (dp.$datepicker.find('button').html() === undefined) { /* ONLY when button don't existis */
+        if (dp.$datepicker.find('button').html() === undefined) {
           const boxWithButtons = dp.$datepicker.find('.datepicker--buttons');
-          boxWithButtons.append('<button type="button" class="uk-button uk-button-default uk-button-small uk-width-1-1 uk-margin-small-bottom" disabled="disabled"><i class="fas fa-check"></i> Применить</button>');
+          boxWithButtons.append('<button type="button" class="filter-date-dropdown__apply-button" disabled="disabled">Применить</button>');
           dp.$datepicker.find('button').click((event) => {
             dp.hide();
           });

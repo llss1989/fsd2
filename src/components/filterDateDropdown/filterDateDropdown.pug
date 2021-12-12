@@ -1,12 +1,13 @@
 include /components/headerOfComponent/headerOfComponent.pug
 
 
-mixin filterDateDropdown(headerContent, parametersOfHeaderOfComponent)
+mixin filterDateDropdown(headerContent, parametersOfHeaderOfComponent, demonstrated = false)
+  - const demo = demonstrated
   if (headerContent == true)
-    .datepicker__wrapper
+    div(class=demo ? 'filter-date-dropdown filter-date-dropdown_demonstrated' : 'filter-date-dropdown')
       +headerOfComponent(...parametersOfHeaderOfComponent)
-      div(class="datepicker__container")
-        input(type="text" class="js-datepicker" id="datepicker" placeholder="Выбрать дату")
+      div(class="filter-date-dropdown__container")
+        input(type="text" class="filter-date-dropdown__datepicker" id="datepicker" placeholder="Выбрать дату")
   else
-    div(class="datepicker__container")
-      input(type="text" class="js-datepicker" id="datepicker" placeholder="Выбрать дату")
+    div(class=demo ? 'filter-date-dropdown filter-date-dropdown_demonstrated' : 'filter-date-dropdown')
+      input(type="text" class="filter-date-dropdown__datepicker" id="datepicker" placeholder="Выбрать дату")

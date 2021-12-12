@@ -43,12 +43,17 @@
   }
   &_theme-with-arrow{
     @include textField($secondaryFont,normal, bold, 12px, 15px, $secondaryColorForButtons);
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
     text-align: center;
     text-transform: uppercase;
     background: linear-gradient(180deg, $mainColor 0%, #8BA4F9 100%);
     border: none;
+  }
+  &_ml29perc{
     margin-left: 29%;
+  }
+  &_ml41perc{
+    margin-left: 41%;
   }
   &__wrapper{
     &_theme-with-arrow{
@@ -79,4 +84,5 @@
   &__arrow{
     margin-left: auto;
   }
+
 }

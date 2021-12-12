@@ -18,7 +18,7 @@ $(() => {
       if (!animationCompleted) {
         if (dp.$datepicker.find('button').html() === undefined) { /* ONLY when button don't existis */
           const boxWithButtons = dp.$datepicker.find('.datepicker--buttons');
-          boxWithButtons.append('<button type="button" class="uk-button uk-button-default uk-button-small uk-width-1-1 uk-margin-small-bottom" disabled="disabled"><i class="fas fa-check"></i> Применить</button>');
+          boxWithButtons.append('<button type="button" class="date-dropdown__apply-button" disabled="disabled">Применить</button>');
           dp.$datepicker.find('button').click((event) => {
             dp.hide();
           });
