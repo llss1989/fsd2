@@ -52,7 +52,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/UI_kit/form-elements/form-elements.html',
+    index: './pages/UI_kit/cards/cards.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {

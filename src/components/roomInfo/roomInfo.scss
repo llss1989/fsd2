@@ -62,7 +62,7 @@
     @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor50);
    }
    &_small{
-    @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor50);
+    @include textField($secondaryFont, normal, normal, 12px, 18px, $textColor50);
    }
   }
   &__major-costs-wrapper, &__fee-wrapper, &__additional-services-wrapper{

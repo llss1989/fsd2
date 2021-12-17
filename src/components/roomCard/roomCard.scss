@@ -1,0 +1,161 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
+.room-card{
+  width: 100%;
+  &_main-theme{
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+  }
+  &_standart-size{
+    max-width: 270px;
+  }
+  &__room-info{
+    &_horizontal{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+  &__room-info-wrapper{
+    &_horizontal{
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+  }
+  &__footer-inner{
+    &_paddings{
+      padding-left: 20px;
+      padding-right: 16px;
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+  }
+  &__footer-inner > :not(:first-child){
+    margin-top: 10px;
+  }
+  &__room-number{
+    &_large{
+      @include textField($secondaryFont, normal, bold, 24px, 29px, $textColor);
+    }
+    &_standart{
+      @include textField($secondaryFont, normal, bold, 14px, 17px, $textColor);
+    }
+  }
+  &__room-type{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
+      text-transform: uppercase;
+    }
+  }
+  &__price{
+    letter-spacing: 0.8px;
+    &_main-theme_large{
+      @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor50);
+    }
+    &_main-theme_small{
+      @include textField($secondaryFont, normal, normal, 12px, 18px, $textColor50);
+    }
+  }
+  &__count-of-reviews{
+    letter-spacing: 1.1px;
+    max-width: max-content;
+    width: 100%;
+    margin-bottom: 5px;
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 18px, $textColor50);
+      text-transform: capitalize;
+    }
+    &_bold{
+      font-weight: bold;
+    }
+  }
+  &__reviews{
+    &_horizontal{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__border{
+    &_standart{
+      background: rgba(31, 32, 65, 0.1);
+      height: 1px;
+    }
+  }
+  &__slick-arrow{
+    background: transparent;
+    border: none;
+    position: absolute;
+    z-index: 9999;
+    color: white;
+    &_prev{
+      transform: rotate(90deg);
+      top: 39%;
+      left: 2%;
+    }
+    &_next{
+      transform: rotate(90deg);
+      top: 39%;
+      right: 2%;
+    }
+  }
+}
+.element{
+  width:100%;
+  heigth:100%;
+  &_one{
+    background: red;
+  }
+  &_two{
+    background: rebeccapurple;
+  }
+  &_three{
+    background: salmon;
+  }
+}
+.slick-dots{
+  position: absolute;
+  bottom: 18px;
+  right: 14px;
+  width: 100%;
+  max-width: max-content;
+}
+.slick-dots li button:before{
+  font-family: 'slick';
+    /* font-size: 9px; */
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border: 1px solid white;
+    content: '';
+    text-align: center;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 50%;
+    opacity: 1;
+
+}
+.slick-dots li.slick-active button:before {
+  background: white;
+}
+.slick-dots li {
+  width: auto;
+  height: auto;
+  margin: 0 0 0 0;
+  margin-left: 1px;
+}
+.slick-dots li button{
+  width: auto;
+  height: auto;
+}
+.slick-dotted.slick-slider{
+  margin-bottom: 0px;
+}

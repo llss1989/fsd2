@@ -32,6 +32,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
   }
   &__cell-inner{
     width: 100%;
@@ -90,6 +91,7 @@
     @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
     align-items: center;
     text-align: center;
+    text-transform: capitalize;
   }
   &__day{
     &_inactive{
@@ -100,6 +102,21 @@
     }
     &_current{
       @include textField($secondaryFont, normal, bold, 12px, 15px, $secondaryColorForButtons);
+    }
+  }
+  &__button{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
+      text-transform: uppercase;
+    }
+  }
+  &__footer{
+    &_mt20{
+      margin-top: 20px;
+    }
+    &_horizontal{
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

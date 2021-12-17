@@ -6,7 +6,7 @@ include /components/roomInfo/roomInfo.pug
 include /components/loginForm/loginForm.pug
 include /components/filterDateDropdown/filterDateDropdown.pug
 include /components/demonstratedCalendar/demonstratedCalendar.pug
-
+include /components/roomCard/roomCard.pug
 
 // - const parametersHeaderOfDateDropdown = [ 'DATEDROPDOWN', 'DATEDROPDOWN', '', 'wide']
 // - const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme'}
@@ -29,3 +29,8 @@ body
     услуги`, additionalServicesValue: "300₽", totalValue: "38 081₽" })
     +loginForm()
     +demonstratedCalendar()
+    .room-cards
+    - const itemsForLuxeRoomCard = [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
+      - const itemsForStandartRoomCard = [{className:"one", path: "../../assets/img/rooms/room-two.jpg"}, {className:"two", path: "../../assets/img/rooms/room-ten.jpg"}, {className:"three", path: "../../assets/img/rooms/room-seven.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
+      +roomCard(itemsForLuxeRoomCard,"888", "9990", "5", "145", "люкс")
+      +roomCard(itemsForStandartRoomCard, "840", "9900", "4", "65")
