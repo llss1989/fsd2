@@ -1,3 +1,7 @@
-mixin logo(position)
+mixin logo(title=false)
   .logo
-    img(class=`logo_icon-bird logo__icon-bird_${position}` src="../../../assets/img/svg/bird-icon.svg" alt="icon-bird")
+    if(title===false)
+      img(class="logo" src="../../../assets/img/svg/bird-icon.svg" alt="icon-bird")
+    else
+      img(class="logo" src="../../../assets/img/svg/LogoPrimaryGradient.svg" alt="icon-bird")
+    

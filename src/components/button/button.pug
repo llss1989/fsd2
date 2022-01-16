@@ -1,6 +1,6 @@
 include /components/arrowForward/arrowForward.pug
 
-mixin button(text,arrow, sizeModificator, themeModificator, state, indentModificator)
+mixin button(text,arrow, sizeModificator, themeModificator, state = '', indentModificator)
   if(arrow===true)
     div(class=`button__wrapper button__wrapper_${themeModificator} button__wrapper_${sizeModificator}`)
       button(class=`button button_${sizeModificator} button_${themeModificator} button_${state}`)=text

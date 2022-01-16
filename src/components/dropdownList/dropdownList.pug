@@ -1,0 +1,24 @@
+include ../check/check.pug
+include /components/expandMore/expandMore.pug
+include /components/link/link.pug
+
+mixin dropdownList(items, listOptions, itemOptions)
+  div(class=`dropdown-list dropdown-list_${listOptions.itemSize}`)
+    div(class="dropdown-list__window")
+      span(class=`dropdown-list__title dropdown-list__title_${listOptions.titleStyleModificator}`)!=listOptions.nameOfList
+      div(class=`dropdown-list__button dropdown-list__button_${listOptions.status}`)
+        +expandMore('main-theme', 'size-small')
+    ul(class=`dropdown-list__list dropdown-list__list_${listOptions.status} dropdown-list__list_${listOptions.position}`)  
+      each item in items.items
+        if(items.type === "check")
+          div(class="dropdown-list__item")
+            +check(item, false, itemOptions)
+        if(items.type === "link")
+          div(class="dropdown-list__item")
+            +link(item, "main-theme")
+
+  //- const optionsdropdown-list = { dropdown-listSizeModificator: 'wide', nameOfList: 'expandable checkbox list'}
+
+
+  //- +dropdown-list(itemsOfExpandeddropdown-list, { dropdown-listSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'closed'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
+  //- - const itemsOfExpandeddropdown-list = ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]

@@ -1,0 +1,45 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
+
+.nav-list{
+  &_horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  &_ml20{
+    margin-left: 20px;
+  }
+  &__button{
+    border: none;
+    outline: none;
+    margin: 0;
+    background: #FFFFFF;
+    &_main-theme{
+      @include textField(Material Icons, normal, normal, 24px, 20px, $textColor50);
+      padding: 0;
+    }
+  }
+  &__dropdown{
+    &_center{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+  }
+  &__dropdown-name{
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 17px, $textColor50);
+    }
+    &_uppercase{
+      text-transform: uppercase;
+    }
+  }
+}
+.nav-list>:not(:first-child){
+  margin-left: 20px;
+}

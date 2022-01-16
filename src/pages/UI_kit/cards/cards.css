@@ -1,1 +1,1 @@
-.cards{background:#e5e5e5}.cards>*{margin:25px 25px}
+.cards{background:#e5e5e5;padding-left:115px;padding-right:115px;padding-top:150px;display:flex;flex-wrap:wrap}.cards__logo-wrapper{background:red;position:absolute}.cards__logo-wrapper_ml30{margin-left:30px}.cards__logo-wrapper_mt30{margin-top:30px}.cards>*:not(:first-child){margin-left:40px}

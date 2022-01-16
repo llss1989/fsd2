@@ -1,0 +1,12 @@
+include ../link/link.pug
+include ../dropdownList/dropdownList.pug
+
+mixin navList(items, navListModificator)
+  div(class=`nav-list nav-list_${navListModificator}`)
+    each item in items
+      if(item.sublinks)
+        div(class="nav-list__item nav-list__item_center ")
+          +dropdownList(item.sublinks,{ itemSize: 'standart-size', nameOfList: item.linkName, titleStyleModificator: 'secondary-theme', status: 'closed', position:"absolute"})
+      else
+        div(class="nav-list__item nav-list__item_center ")
+          +link(item.linkName, "main-theme")

@@ -13,12 +13,32 @@
     box-sizing: border-box;
     border-radius: 4px;
   };
-  &_standart-size{
-    width: 247px;
-    width: 44px;
+  &_size-standart{
+    max-width: 260px;
   }
   &__title{
     @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
     text-transform: uppercase; 
+  }
+  &__submit{
+    background: $primaryGradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Material Icons;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 44px;
+    line-height: 44px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
   }
 }

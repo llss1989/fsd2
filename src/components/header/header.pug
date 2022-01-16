@@ -1,0 +1,22 @@
+include ../logo/logo.pug
+include ../dropdownList/dropdownList.pug
+include ../navList/navList.pug
+include ../button/button.pug
+
+
+
+mixin header(headerOptions, loggingStatus=false)
+  div(class=`header header_${headerOptions.headerModificator}`)
+    div(class="header__logo-wrapper header__logo-wrapper_ml30 header__logo-wrapper_mt30")
+     +logo(true)
+    div(class="header__main-content")
+      +navList(headerOptions.menuItems, headerOptions.navListModificator)
+      if(loggingStatus)
+        div(class="header__border")
+        +link(loggingStatus, "main-theme")
+      else
+        div(class="header__buttons")
+          div(class="header__button")
+            +button('войти', false, 'size-small', 'secondary-theme', '')
+          div(class="header__button")
+            +button('зарегистрироваться', false, 'size-small', 'main-theme', '')

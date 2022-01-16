@@ -13,9 +13,10 @@ include /components/button/button.pug
 include /components/rangeSlider/rangeSlider.pug
 include /components/pagination/pagination.pug
 include /components/bulletList/bulletList.pug
-include /components/checkboxList/checkboxList.pug
+include /components/dropdownList/dropdownList.pug
 include /components/roomQuality/roomQuality.pug
 include /components/feedback/feedback.pug
+include /components/emailForm/emailForm.pug
 
 
 
@@ -29,7 +30,7 @@ include /components/feedback/feedback.pug
 - const optionsOfInputText =  { inputName: 'text', inputType: 'text', textOfInput: 'This is pretty awesome', modificator: 'wide', theme: 'main-theme'}
 - const optionsOfInputDate = { inputName:'date-text', inputType: 'text', textOfInput: 'ДД.ММ.ГГГГ', modificator:'wide', theme: 'main-theme'}
 - const optionsForInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
-- const itemsOfExpandedCheckBoxList = ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]
+- const itemsOfExpandedCheckBoxList = {type: "check", items: ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]}
 
 doctype html
 html
@@ -43,11 +44,11 @@ html
     title Form Elements
    
 body
-  .main-inner
-    +logo('white')
+  .form-elements
+    span(class="form-elements__logo-wrapper form-elements__logo-wrapper_ml30 form-elements__logo-wrapper_mt30")
+      +logo()
     
-    
-    div(class='main-inner__items main-inner__items_mt143 inputs')
+    div(class='form-elements__items form-elements__items_mt143 inputs')
       
       div(class='inputs__item  item inputs__item_email')
         +input(optionsForInputEmail, 'text field' , 'default')
@@ -69,15 +70,13 @@ body
       
       div(class="inputs__item inputs__item_sub-text-field")
         h2(class="email-form__title")="subscription text field"
-        form(class="email-form email-form_main-theme")
-          +input(optionsForInputEmailStandart)
-          +arrowForward('primary-theme', 'main-size')
+        +emailForm(optionsForInputEmailStandart)
     
     
-    div(class="main-inner__items main-inner__items_mt143")
+    div(class="form-elements__items form-elements__items_mt143")
       
-      fieldset(class="main-inner_item checkboxes")
-        legend(class="main-inner__title checkboxes_title")="check buttons"
+      fieldset(class="form-elements_item checkboxes")
+        legend(class="form-elements__title checkboxes_title")="check buttons"
         
         div(class="checkboxes_inner")
           
@@ -86,96 +85,100 @@ body
           +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
       
       
-      fieldset(class="main-inner_item main-inner_item_radio-buttons radio-buttons")
-        legend(class="main-inner__title radio-buttons__title")="radio buttons"
+      fieldset(class="form-elements_item form-elements_item_radio-buttons radio-buttons")
+        legend(class="form-elements__title radio-buttons__title")="radio buttons"
         
         .radio-buttons__inner
           +radioCheck("gender" ,"male", "мужчины", "female", "женщины")
       
       
-      fieldset(class="main-inner_item main-inner_toogle-buttons")
-        legend(class="main-inner__title toogle-buttons__title")="toogle"
+      fieldset(class="form-elements_item form-elements_toogle-buttons")
+        legend(class="form-elements__title toogle-buttons__title")="toogle"
         
         .toogle-radioButtons__inner
           +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
           +check('Получать спецпредложения', false, {checkType: 'toogle', labelStyle: 'normal-text', labelPosition: 'pl51px'})
       
       
-      div(class="main-inner_item main-inner_item_rate-buttons rate-buttons")
-        h2(class="main-inner__title")="rate button"
+      div(class="form-elements_item form-elements_item_rate-buttons rate-buttons")
+        h2(class="form-elements__title")="rate button"
         
         div(class="rate-buttons__inner")
           +ratings('4')
           +ratings('5')
       
       
-      div(class="main-inner__item main-inner__item_like-buttons like-buttons")    
-          h2(class="main-inner__title like-buttons__title")="like button"
+      div(class="form-elements__item form-elements__item_like-buttons like-buttons")    
+          h2(class="form-elements__title like-buttons__title")="like button"
           
           div(class="like-buttons__inner")
             +like('standart-size', 'disabled', '2')
             +like('standart-size', 'checked', '12')   
     
     
-    div(class='main-inner__items main-inner__items_mt143')
+    div(class='form-elements__items form-elements__items_mt143')
       
-      div(class="main-inner_item main-inner_item_range-slider range-slider") 
+      div(class="form-elements_item form-elements_item_range-slider range-slider") 
         +headerOfComponent('range slider', '5 000₽ - 10 000₽', '', 'standart-size')
         +rangeSlider()
       
-      div(class="main-inner_item main-inner_item_buttons buttons")
+      div(class="form-elements_item form-elements_item_buttons buttons")
         +headerOfComponent('buttons', 'invisible', '', 'standart-size')
         
         div(class="buttons__inner")
-          +button('click me', false, 'standart-size', 'main-theme', '')
-          +button('click me', false, 'standart-size', 'main-theme', 'active')
-          +button('click me', false, 'standart-size', 'secondary-theme', '')
-          +button('click me', false, 'standart-size', 'secondary-theme', 'active')
+          +button('click me', false, 'size-standart', 'main-theme', '')
+          +button('click me', false, 'size-standart', 'main-theme', 'active')
+          +button('click me', false, 'size-standart', 'secondary-theme', '')
+          +button('click me', false, 'size-standart', 'secondary-theme', 'active')
           .buttons__inner-without-border-buttons
             +button('click me', false, 'small-size', 'without-border-theme', '')
-            +button('click me', false, 'small-size', 'without-border-theme', 'active')
+            +button('click me', false, 'small-size', 'without-border-theme', 'without-border-theme-active')
           .buttons__inner-theme-with-arrow
-            +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', '')
+            +button('Перейти к оплате', true, 'wide', 'theme-with-arrow', 'ml29perc')
     
-      div(class="main-inner_item main-inner_item_pagination pagination") 
+      div(class="form-elements_item form-elements_item_pagination pagination") 
         +headerOfComponent('pagination', 'invisible', '', 'standart-size')
         +pagination()
     
     
-    div(class="main-inner__items")
-      +dropdown('_rooms', 'standart-size', true, [ 'DATEDROPDOWN', 'default', '', 'standart-size'])
-      +dropdown('_rooms_showcase','standart-size', true, [ 'DATEDROPDOWN', 'expanded', '', 'standart-size', 'active'])
+    div(class="form-elements__items form-elements__items_mt100")
+      .form-elements__item
+        +dropdown('_rooms', 'standart-size', true, [ 'DATEDROPDOWN', 'default', '', 'standart-size'])
+      .form-elements__item
+        +dropdown('_rooms_showcase','standart-size', true, [ 'DATEDROPDOWN', 'expanded', '', 'standart-size', 'active'])
     
     
-    div(class="main-inner__items")
-      +dropdown('_guests_showcase-one', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
+    div(class="form-elements__items form-elements__items_mt100")
+      .form-elements__item
+        +dropdown('_guests_showcase-one', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
-    div(class="main-inner__items")
-      +dropdown('_guests_showcase-two', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
+    div(class="form-elements__items form-elements__items_mt100")
+      .form-elements__item
+        +dropdown('_guests_showcase-two', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
     
-    div(class="main-inner__items")
+    div(class="form-elements__items form-elements__items_mt170")
     
-      +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'closed'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
-      +checkboxList(itemsOfExpandedCheckBoxList, { checkboxListSizeModificator: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'opened'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
+      +dropdownList(itemsOfExpandedCheckBoxList, { itemSize: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'closed'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
+      +dropdownList(itemsOfExpandedCheckBoxList, { itemSize: 'standart-size', nameOfList: 'expandable checkbox list', titleStyleModificator: 'main-theme', status: 'opened'}, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px', checkPosition: 'mt12'})
     
-    div(class="main-inner__items")
+    div(class="form-elements__items form-elements__items_mt170")
       
-      fieldset(class="main-inner_item rich-checkboxes")
-        legend(class="main-inner__title rich-checkboxes_title")="rich checkbox buttons"
+      fieldset(class="form-elements_item rich-checkboxes")
+        legend(class="form-elements__title rich-checkboxes_title")="rich checkbox buttons"
         
         div(class="rich-checkboxes_inner")
           +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
           +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
-    div(class="main-inner__items")
+    div(class="form-elements__items form-elements__items_mt170")
       +bulletList({title: 'bullet list'}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     
     
-    div(class="main-inner__items")
+    div(class="form-elements__items form-elements__items_mt44")
       +roomQuality({iconType:'insert_emoticon', themeModificator: 'main-theme'}, { title: 'комфорт', themeModificator: 'main-theme'}, { subtitle: 'шумопоглощающие стены', themeModificator: 'main-theme'})
       +roomQuality({iconType:'location_city', themeModificator: 'main-theme'}, { title: 'удобство', themeModificator: 'main-theme'}, { subtitle: 'окно в каждой из спален', themeModificator: 'main-theme'})
 
     
-    div(class="main-inner__items main-inner__items_feedback")
+    div(class="form-elements__items form-elements__items_feedback")
       +feedback({modificator: "murad"}, { name: "мурад сарафанов", modificator: "main-theme"}, { date: "5 дней назад", modificator: "main-theme"}, { subtitle: `<span class="feedback__subtitle feedback__subtitle_uppercase">в</span>еликолепный матрас на кровати в основной спальне! <span class="feedback__subtitle feedback__subtitle_uppercase">a</span> пуфик вообще потрясающий.
 <span class="feedback__subtitle feedback__subtitle_uppercase">и</span> стены, действительно, шумоподавляющие. <span class="feedback__subtitle feedback__subtitle_uppercase feedback__subtitle ">в</span>ыкрикивал комплименты повару — никто 
 не жаловался из соседей.`, subtitleStyleModificator: "main-theme", subtitlePositionModificator: "left-top" })

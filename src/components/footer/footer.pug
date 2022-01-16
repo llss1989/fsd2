@@ -1,0 +1,63 @@
+include ../logo/logo.pug
+include ../link/link.pug
+include ../emailForm/emailForm.pug
+
+- const title = `Бронирование номеров в лучшем <br>отеле 2019 года по версии <br>ассоциации «Отельные взгляды»`
+- const optionsForInputEmailStandart =  { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'standart', theme: 'main-theme', additionalModificator: 'border-none'}
+
+
+mixin footer(bottomSidePosition, onlyBottomSide = false)
+  if(onlyBottomSide)
+    div(class="footer footer_small")
+      div(class="footer__main-content footer__main-content_size-small footer__main-content_indent-average")
+        div(class="footer__logo")  
+          +logo(true)
+        div(class="footer__copyright-wpapper footer__copyright-wpapper_mt20")
+          p(class="footer__copyright footer__copyright_text-standart")="Copyright © 2018 Toxin отель. Все права защищены."
+        div(class="footer__social-media-wrapper footer__social-media-wrapper_mt25")
+          i(class="footer__icon  footer__icon_size-standart footer__icon_primary-gradient fa fa-twitter")
+          i(class="footer__icon footer__icon_ml20 footer__icon_size-standart footer__icon_primary-gradient fab fa-facebook-square share")
+          i(class="footer__icon  footer__icon_ml20 footer__icon_size-standart footer__icon_primary-gradient fa fa-instagram")
+  else
+    div(class="footer")
+      div(class="footer__main-content footer__main-content_horizontal footer__main-content_indent-full-screen")
+        div(class="footer__logo-wrapper footer__box")
+          +logo(true)
+          p(class="footer__subtitle footer__subtitle_main-theme")!=title
+        div(class="footer__navigation-block footer__box footer__box_vertical footer__box_ml21 footer__box_pt4")
+          h3(class="footer__title footer__title_main-theme")="навигация"
+          +link("О нас", "main-theme")
+          +link("новости", "main-theme")
+          +link("служба поддержки", "main-theme")
+          +link("услуги", "main-theme")
+        div(class="footer__about-us-block footer__box footer__box_vertical footer__box_ml15 footer__box_pt4")
+          h3(class="footer__title footer__title_main-theme")="о нас"
+          +link("о сервисе", "main-theme")
+          +link("наша команда", "main-theme")
+          +link("вакансии", "main-theme")
+          +link("инвесторы", "main-theme")
+        div(class="footer__help-desk footer__box footer__box_vertical footer__box_ml96 footer__box_pt4")
+          h3(class="footer__title footer__title_main-theme")="cлужба поддержки"
+          +link("соглашения", "main-theme")
+          +link("сообщества", "main-theme")
+          +link("связь с нами", "main-theme")
+        div(class="footer__subscription footer__box footer__box_vertical footer__box_ml54 footer__box_pt4")
+          h3(class="footer__title footer__title_main-theme")="подписка"
+          p(class="footer__subtitle footer__subtitle_main-theme footer__subtitle_pd15")!="получайте специальные <br>предложения и новости сервиса"
+          +emailForm(optionsForInputEmailStandart)
+      div(class="footer__spacer")
+      div(class=`footer__bottom-side footer__bottom-side_${bottomSidePosition}`)
+        if(bottomSidePosition=="horizontal")
+          p(class="footer__copyright footer__copyright_text-standart")="Copyright © 2018 Toxin отель. Все права защищены."
+          div(class="footer__social-media-wrapper")
+            i(class="footer__icon footer__icon_size-standart footer__icon_primary-gradient fa fa-twitter")
+            i(class="footer__icon footer__icon_ml20 footer__icon_size-standart footer__icon_primary-gradient fab fa-facebook-square share")
+            i(class="footer__icon footer__icon_ml20 footer__icon_size-standart footer__icon_primary-gradient fa fa-instagram")
+        if(bottomSidePosition=="vertical")
+          div(class="footer__logo-wrapper")
+            +logo(true)
+          p(class="footer__copyright footer__copyright_text-standart")="Copyright © 2018 Toxin отель. Все права защищены."
+          div(class="footer__social-media-wrapper")
+            i(class="footer__icon footer__icon_size-standart footer__icon_primary-gradient fa fa-twitter")
+            i(class="footer__icon footer__icon_size-standart footer__icon_primary-gradient fab fa-facebook-square share")
+            i(class="footer__icon  footer__icon_size-standart footer__icon_primary-gradient fa fa-instagram")

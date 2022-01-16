@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/varsColours.scss';
+
+
+.link{
+  &_main-theme{
+    @include textField($secondaryFont, normal, normal, 14px, 17px, $textColor50);
+    letter-spacing: 1.7px;
+    text-decoration: none;
+    white-space: nowrap;
+    
+  }
+  &__first-letter{
+    &_uppercase{
+      text-transform: uppercase;
+    }
+  }
+}

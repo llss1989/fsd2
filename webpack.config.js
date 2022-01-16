@@ -1,4 +1,4 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -11,6 +11,7 @@ const HtmlWebpackPugPlugin = require('html-webpack-pug-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+
 const optimization = () => {
   const config = {
     splitChunks: {
@@ -25,6 +26,7 @@ const optimization = () => {
   }
   return config;
 };
+
 const cssLoaders = (extra) => {
   const loaders = [
     {
@@ -52,7 +54,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/UI_kit/cards/cards.html',
+    index: './pages/UI_kit/headersAndFooters/headersAndFooters.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {
@@ -85,8 +87,8 @@ module.exports = {
       },
     }),
     new HTMLWebpackPlugin({
-      filename: './pages/UI_kit/form-elements/form-elements.html',
-      template: './pages//UI_kit/form-elements/form-elements.pug',
+      filename: './pages/UI_kit/formElements/formElements.html',
+      template: './pages//UI_kit/formElements/formElements.pug',
       minify: {
         collapseWhitespace: isProd,
       },
@@ -94,6 +96,13 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: './pages/UI_kit/cards/cards.html',
       template: './pages//UI_kit/cards/cards.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/UI_kit/headersAndFooters/headersAndFooters.html',
+      template: './pages//UI_kit/headersAndFooters/headersAndFooters.pug',
       minify: {
         collapseWhitespace: isProd,
       },

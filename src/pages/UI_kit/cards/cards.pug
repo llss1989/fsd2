@@ -19,18 +19,30 @@ html
     meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     title Cards
-    
+
+- const itemsForLuxeRoomCard = [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
+- const itemsForStandartRoomCard = [{className:"one", path: "../../assets/img/rooms/room-two.jpg"}, {className:"two", path: "../../assets/img/rooms/room-ten.jpg"}, {className:"three", path: "../../assets/img/rooms/room-seven.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
 body
-  +logo('white')
   .cards
-    +searchRoom({styleModificator: "main-theme"}, {positionModificator: 'mt20'}, {positionModificator: 'mt20'}, {positionModificator: 'mt30'}) 
-    +registrationForm({ themeModificator: "main-theme" }, { positionModificator: "mt20" }, { positionModificator: "mt10" }, { positionModificator: "mt10" },{ positionModificator: "mt22" },{ wrapperPositionModificator: "mt20",emailPositionModificator: "mt5", inputPasswordPositionModificator: "mt10", checkPositionModificator: "mt10"}, {positionModificator: "mt24"},{positionModificator: "mt30"})
-    +roomInfo( "888" ,{ value: "люкс", positionModificator: "ml8" }, "9990", { majorCostsText: "9 990₽ х 4 суток", majorCostsValue: "39960₽", feeName: "Сбор за услуги: скидка 2 179₽", feeValue: "0₽", additionalServicesText: `Сбор за дополнительные 
+  
+    span(class="cards__logo-wrapper cards__logo-wrapper_ml30 cards__logo-wrapper_mt30")
+      +logo('white')
+    .cards__search-room-wrapper
+      +searchRoom({styleModificator: "main-theme"}, {positionModificator: 'mt20'}, {positionModificator: 'mt20'}, {positionModificator: 'mt30'}) 
+    
+    .cards__registration-form-wrapper
+      +registrationForm({ themeModificator: "main-theme" }, { positionModificator: "mt20" }, { positionModificator: "mt10" }, { positionModificator: "mt10" },{ positionModificator: "mt22" },{ wrapperPositionModificator: "mt20",emailPositionModificator: "mt5", inputPasswordPositionModificator: "mt10", checkPositionModificator: "mt10"}, {positionModificator: "mt24"},{positionModificator: "mt30"})
+    
+    .cards__room-info-wrapper
+      +roomInfo( "888" ,{ value: "люкс", positionModificator: "ml8" }, "9990", { majorCostsText: "9 990₽ х 4 суток", majorCostsValue: "39960₽", feeName: "Сбор за услуги: скидка 2 179₽", feeValue: "0₽", additionalServicesText: `Сбор за дополнительные 
     услуги`, additionalServicesValue: "300₽", totalValue: "38 081₽" })
-    +loginForm()
-    +demonstratedCalendar()
+    
+    .cards__login-form-wrapper
+      +loginForm()
+    
+    .cards__demonstrated-calendar-wrapper
+      +demonstratedCalendar()
+    
     .room-cards
-    - const itemsForLuxeRoomCard = [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
-      - const itemsForStandartRoomCard = [{className:"one", path: "../../assets/img/rooms/room-two.jpg"}, {className:"two", path: "../../assets/img/rooms/room-ten.jpg"}, {className:"three", path: "../../assets/img/rooms/room-seven.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}]
       +roomCard(itemsForLuxeRoomCard,"888", "9990", "5", "145", "люкс")
       +roomCard(itemsForStandartRoomCard, "840", "9900", "4", "65")

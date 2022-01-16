@@ -1,0 +1,7 @@
+include ../input/input.pug
+include ../arrowForward/arrowForward.pug
+
+mixin emailForm(inputOptions)
+  form(class="email-form email-form_main-theme email-form_size-standart")
+    +input(inputOptions)
+    button(class="material-icons email-form__submit" type="submit")="arrow_forward"

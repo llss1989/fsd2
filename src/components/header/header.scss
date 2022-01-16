@@ -1,0 +1,35 @@
+.header{
+  max-width: 100%;
+  background: #FFFFFF;
+  // &__logo-wrapper{
+
+  // }
+  &_wide{
+    padding-left: 140px;
+    padding-right: 140px;
+    padding-top: 15px;
+    padding-bottom: 11px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__main-content{
+    display: flex;
+    align-items: center;
+  }
+  &__main-content>:not(:first-child){ 
+    margin-left: 20px;
+  }
+  &__buttons{
+    display: flex;
+  }
+  &__buttons>:not(:first-child){
+    margin-left: 20px;
+  }
+  &__border{
+    width: 1px;
+    height: 30px;
+    background: rgba(31, 32, 65, 0.1);
+  }
+}
