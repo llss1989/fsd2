@@ -1,0 +1,17 @@
+@import '../../../styles/mixins.scss';
+@import '../../../styles/fonts.scss';
+@import '../../../styles/varsColours.scss';
+
+.search-room{
+  &__title{
+    width: 100%;
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 24px, 29px, #1F2041);
+      letter-spacing: 3px;
+    }
+  }
+}
+.search-room__parameters>*{
+  margin-left: 70px;
+  margin-top: 150px;
+}

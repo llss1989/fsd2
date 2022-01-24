@@ -1,6 +1,6 @@
 include /components/ratings/ratings.pug
 
-mixin roomCard(items, numberOfRoom, priceOfRoom, rate, counOfReviews,typeOfRoom=false)
+mixin roomCard(items, numberOfRoom, priceOfRoom, rate, countOfReviews,typeOfRoom=false)
    div(class="room-card room-card_main-theme room-card_standart-size")
     div(class="room-card__slick-slider")
       each item in items
@@ -24,4 +24,4 @@ mixin roomCard(items, numberOfRoom, priceOfRoom, rate, counOfReviews,typeOfRoom=
         div(class="room-card__border room-card__border_standart")
         div(class="room-card__reviews room-card__reviews_horizontal")
           +ratings(rate)
-          span(class="room-card__count-of-reviews room-card__count-of-reviews_main-theme room-card__count-of-reviews_bold")!=`${counOfReviews} <span class="room-card__count-of-reviews room-card__count-of-reviews_main-theme">отзывов</span>`
+          span(class="room-card__count-of-reviews room-card__count-of-reviews_main-theme room-card__count-of-reviews_bold")!=`${countOfReviews} <span class="room-card__count-of-reviews room-card__count-of-reviews_main-theme">отзывов</span>`

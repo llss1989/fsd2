@@ -41,13 +41,20 @@
   &:hover,&:active{
     border: 1px solid rgba(31, 32, 65, 0.50);
   }
+  &_mt4{
+    margin-top: 4px;
+  }
 }
 
 .dropdown-menu{
   padding: 7px;
   text-decoration: none;
-  border: none;
-  background: none;
+  background: #ffffff;
+  border-top: 1px solid $textColor50;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
+  // border: none;
+  // background: none;
   @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
   text-transform: uppercase;
     &_disabled{

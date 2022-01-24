@@ -18,7 +18,7 @@
   &__title{
     &_main-theme{
       @include textField($secondaryFont, normal, bold, 24px, 29px, $textColor100);
-      letter-spacing: 2.5px;
+      // letter-spacing: 2.5px;
     }
     &_uppercase{
       text-transform: uppercase;

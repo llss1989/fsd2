@@ -1,3 +1,12 @@
-mixin rangeSlider()
-  .slider-wrapper
-    input(type="text" class="js-range-slider" name="my_range" value="")
+mixin rangeSlider(nameOfRange, valueRange, subtitle=false)
+  .range-slider
+    if(nameOfRange)
+      div(class=`range-slider__titles`)
+        h2(class="range-slider__title range-slider__title_main-theme")=nameOfRange
+        if(valueRange)
+        p(class="range-slider__values range-slider__values_main-theme")=valueRange
+      input(type="text" class="js-range-slider" name="my_range" value="")
+    else
+      input(type="text" class="js-range-slider" name="my_range" value="")
+    if(subtitle)
+      p(class="range-slider__subtitle")=subtitle

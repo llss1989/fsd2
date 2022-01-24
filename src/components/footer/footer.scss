@@ -3,13 +3,17 @@
 @import '../../styles/mixins.scss';
 
 .footer{
-  &_small{
-    width: 768px;
-    height: 367px;
-    display: flex;
-    flex-direction: column;
+  &_center{
     justify-content: center;
     align-items: center;
+  }
+  &_vertical{
+    display: flex;
+    flex-direction: column;
+  }
+  &_size-small{
+    width: 768px;
+    height: 367px;
   }
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -121,16 +125,16 @@
     &_vertical{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       padding: 104px 120px;
     }
     &_horizontal{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
       padding: 24px 140px;
+    }
+    &_center{
+      align-items: center;
     }
   }
   &__copyright{

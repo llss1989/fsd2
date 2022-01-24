@@ -3,7 +3,7 @@
 @import '../../styles/mixins.scss';
 
 .irs--round .irs-line{
-
+  margin-top: -11px;
   background-color: #FFFFFF !important;
   border: 1px solid $textColor25;
   box-sizing: border-box;
@@ -21,9 +21,32 @@
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
   border-radius: 3px;
 }
-.slider-wrapper{
+.range-slider{
   width: 266px;
   height: 6px;
+  &__titles{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor100);
+      text-transform: uppercase;
+    }
+  }
+  &__values{
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 12px, 15px, $textColor50);
+      text-align: right;
+      text-transform: uppercase;
+    }
+  }
+  &__subtitle{
+    @include textField($secondaryFont, normal, normal, 12px, 14px, $textColor50);
+    letter-spacing: 1.39px;
+  }
 }
 // .irs--flat .irs-handle > * {
 //   display: none;

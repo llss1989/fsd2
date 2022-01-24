@@ -54,7 +54,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/UI_kit/headersAndFooters/headersAndFooters.html',
+    index: './pages/UI_kit/formElements/formElements.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {
@@ -103,6 +103,20 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: './pages/UI_kit/headersAndFooters/headersAndFooters.html',
       template: './pages//UI_kit/headersAndFooters/headersAndFooters.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/webpages/landingPage/landingPage.html',
+      template: './pages/webpages/landingPage/landingPage.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/webpages/searchRoom/searchRoom.html',
+      template: './pages/webpages/searchRoom/searchRoom.pug',
       minify: {
         collapseWhitespace: isProd,
       },

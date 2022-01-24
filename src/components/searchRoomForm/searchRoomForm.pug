@@ -1,18 +1,19 @@
 include /components/dateDropdown/dateDropdown.pug
 include /components/arrowForward/arrowForward.pug
 include /components/button/button.pug
+include /components/dropdown/dropdown.pug
 
 - const parametersHeaderOfDropdown = ['гости', 'invisible', '', 'wide']
 - const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "Прибытие", secondInputName: "выезд", inputPositionModificator: 'mt5'}
 - const parametersHeaderOfDateDropdown = [ 'прибытие', 'выезд', '', 'wide']
 
-mixin searchRoom(titleOptions, dropdownOptions, questsDropdownOptions, buttonOptions)
-  form(class="search-room")
-    div(class="search-room__inner")
-      h2(class=`search-room__title search-room__title_${titleOptions.styleModificator}`)="Найдём номера под ваши пожелания"
-      div(class=`search-room__date-dropdown search-room__date-dropdown_${dropdownOptions.positionModificator}`)
+mixin searchRoomForm(titleOptions, dropdownOptions, questsDropdownOptions, buttonOptions)
+  form(class="search-room-form")
+    div(class="search-room-form__inner")
+      h2(class=`search-room-form__title search-room-form__title_${titleOptions.styleModificator}`)="Найдём номера под ваши пожелания"
+      div(class=`search-room-form__date-dropdown search-room-form__date-dropdown_${dropdownOptions.positionModificator}`)
         +dateDropdown(optionsForDateDropdown)
-      div(class=`search-room__quests-dropdown search-room__quests-dropdown_${questsDropdownOptions.positionModificator}`)  
+      div(class=`search-room-form__quests-dropdown search-room-form__quests-dropdown_${questsDropdownOptions.positionModificator}`)  
         +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
-      div(class=`search-room__button search-room__button_${buttonOptions.positionModificator}`)
+      div(class=`search-room-form__button search-room-form__button_${buttonOptions.positionModificator}`)
         +button('подобрать номер', true, 'wide', 'theme-with-arrow', 'ml29perc')

@@ -1,0 +1,36 @@
+@import '../../../styles/fonts.scss';
+@import '../../../styles/varsColours.scss';
+@import '../../../styles/mixins.scss';
+
+.landing-page{
+  &__search-room{
+
+  }
+  &__main-section{
+    &_size-full-screen{
+      box-sizing: border-box;
+      background-image: url('../../../assets/img/sofa.png');
+      background-repeat: no-repeat;
+      background-size: cover; 
+      height: 830px;
+      background-position: bottom;
+      padding-top: 70px;
+      padding-left: 140px;
+      padding-right: 134px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__slogan{
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+      text-align: right;
+      letter-spacing: 1.65px;
+    }
+    &_bottom{
+      align-self: flex-end;
+    }
+  }
+}
