@@ -1,9 +1,10 @@
 const dropdown = (elements, options) => {
   [...elements].map((el, index) => {
     const state = initState(options);
+    const dropdownWindow = el.querySelector('.dropdown__main-inner');
     state.id = index + 1;
-    render(el, state);
-    const buttonForCloseAndOpen = el.querySelector('.expand-more__icon');
+    render(dropdownWindow, state);
+    const buttonForCloseAndOpen = dropdownWindow.querySelector('.expand-more__icon');
     buttonForCloseAndOpen.addEventListener('click', () => {
       state.status = state.status === 'disabled' ? 'active' : 'disabled';
       render(el, state);

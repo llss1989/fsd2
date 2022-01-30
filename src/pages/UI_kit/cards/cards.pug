@@ -44,5 +44,5 @@ body
       +demonstratedCalendar()
     
     .room-cards
-      +roomCard(itemsForLuxeRoomCard,"888", "9990", "5", "145", "люкс")
-      +roomCard(itemsForStandartRoomCard, "840", "9900", "4", "65")
+      +roomCard({ items: itemsForLuxeRoomCard, numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true })
+      +roomCard({ items:itemsForStandartRoomCard, numberOfRoom: "840", priceOfRoom: "9900", rate: "4", countOfReviews:"65", isLuxe: false })

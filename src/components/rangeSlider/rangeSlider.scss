@@ -23,7 +23,7 @@
 }
 .range-slider{
   width: 266px;
-  height: 6px;
+  // height: 6px;
   &__titles{
     display: flex;
     flex-direction: row;
@@ -45,7 +45,6 @@
   }
   &__subtitle{
     @include textField($secondaryFont, normal, normal, 12px, 14px, $textColor50);
-    letter-spacing: 1.39px;
   }
 }
 // .irs--flat .irs-handle > * {

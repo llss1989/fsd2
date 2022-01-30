@@ -54,7 +54,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/UI_kit/formElements/formElements.html',
+    index: './pages/webpages/searchRoom/searchRoom.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {

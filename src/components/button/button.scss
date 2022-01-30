@@ -90,6 +90,12 @@
     &_center{
       margin: 0 auto;
     }
+    &_size{
+      &-small{
+        max-width: 87px;
+        width: 100%;
+      }
+    }
   }
   &__arrow{
     margin-left: auto;

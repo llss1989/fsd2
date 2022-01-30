@@ -43,4 +43,4 @@ const paginator = () => {
     });
   }
 };
-paginator()
+paginator();

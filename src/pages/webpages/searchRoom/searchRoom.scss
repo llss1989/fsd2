@@ -3,6 +3,20 @@
 @import '../../../styles/varsColours.scss';
 
 .search-room{
+  &__main-section{
+    padding:  30px 140px 0 140px ;
+    &_horizontal{
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__rooms{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
   &__title{
     width: 100%;
     &_main-theme{
@@ -10,8 +24,37 @@
       letter-spacing: 3px;
     }
   }
+  &__checkboxes-title{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px, 15px, #1F2041);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+  &__rich-checkboxes-title{
+    @include textField($secondaryFont, normal, bold, 12px, 15px, #1F2041);
+    text-transform: uppercase;
+    letter-spacing: -0.6px;
+  }
+  &__checkboxes-inner, &__rich-checkboxes-inner{
+    margin-top: 15px;
+    padding-left: 1px;
+  }
+  &__checkboxes-inner>*:not(:first-child), &__rich-checkboxes-inner>*:not(:first-child){
+    margin-top: 12px;
+  }
+  &__item-of-parameters{
+    &_mt30{
+      margin-top: 30px;
+    }
+    &_mt20{
+      margin-top: 20px;
+    }
+  }
 }
-.search-room__parameters>*{
-  margin-left: 70px;
-  margin-top: 150px;
+
+.test{
+  min-width: 100%;
+  min-height: 100%;
+  background: red;
 }

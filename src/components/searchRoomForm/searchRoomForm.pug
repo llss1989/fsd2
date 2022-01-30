@@ -3,9 +3,9 @@ include /components/arrowForward/arrowForward.pug
 include /components/button/button.pug
 include /components/dropdown/dropdown.pug
 
-- const parametersHeaderOfDropdown = ['гости', 'invisible', '', 'wide']
-- const optionsForDateDropdown = { inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "Прибытие", secondInputName: "выезд", inputPositionModificator: 'mt5'}
-- const parametersHeaderOfDateDropdown = [ 'прибытие', 'выезд', '', 'wide']
+- const parametersHeaderOfDropdown = ["гости", "invisible", "", "wide"]
+- const optionsForDateDropdown = { inputName: "email", inputType: "text", textOfInput: "Email", modificator: "wide", theme: "main-theme",firstInputName: "Прибытие", secondInputName: "выезд", inputPositionModificator: "mt5"}
+- const parametersHeaderOfDateDropdown = [ "прибытие", "выезд", "", "wide"]
 
 mixin searchRoomForm(titleOptions, dropdownOptions, questsDropdownOptions, buttonOptions)
   form(class="search-room-form")
@@ -14,6 +14,6 @@ mixin searchRoomForm(titleOptions, dropdownOptions, questsDropdownOptions, butto
       div(class=`search-room-form__date-dropdown search-room-form__date-dropdown_${dropdownOptions.positionModificator}`)
         +dateDropdown(optionsForDateDropdown)
       div(class=`search-room-form__quests-dropdown search-room-form__quests-dropdown_${questsDropdownOptions.positionModificator}`)  
-        +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
+        +dropdown("guests", "wide", { name: "гости"})
       div(class=`search-room-form__button search-room-form__button_${buttonOptions.positionModificator}`)
-        +button('подобрать номер', true, 'wide', 'theme-with-arrow', 'ml29perc')
+        +button("подобрать номер", true, "wide", "theme-with-arrow", "ml29perc")

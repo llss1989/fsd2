@@ -1,27 +1,28 @@
 include /components/ratings/ratings.pug
 
-mixin roomCard(items, numberOfRoom, priceOfRoom, rate, countOfReviews,typeOfRoom=false)
+//- mixin roomCard(items, numberOfRoom, priceOfRoom, rate, countOfReviews,typeOfRoom=false)
+mixin roomCard(roomCardOptions)
    div(class="room-card room-card_main-theme room-card_standart-size")
     div(class="room-card__slick-slider")
-      each item in items
+      each item in roomCardOptions.items
         div(class=`room-card__slick-slider-item room-card__slick-slider-item_${item.className}` )
           img(src=item.path)
     div(class="room-card room-card__footer room-card__footer__paddings")
       div(class="room-card__footer-inner room-card__footer-inner_paddings")
         div(class="room-card__room-info room-card__room-info_horizontal")
-          if(typeOfRoom)
+          if(roomCardOptions.typeOfRoom)
             div(class="room-card__room-info-wrapper room-card__room-info-wrapper_horizontal")
               div(class="room-card__room-number-wrapper")
                 span(class="room-card__room-number room-card__room-number_standart")="№ "
-                span(class="room-card__room-number room-card__room-number_large")=numberOfRoom
-              span(class="room-card__room-type room-card__room-type_main-theme")=typeOfRoom
-            span(class="room-card__price  room-card__price_main-theme_large")!=`${priceOfRoom}₽ <span class="room-card__price_main-theme_small">в сутки</span>`
+                span(class="room-card__room-number room-card__room-number_large")=roomCardOptions.numberOfRoom
+              span(class="room-card__room-type room-card__room-type_main-theme")=roomCardOptions.typeOfRoom
+            span(class="room-card__price  room-card__price_main-theme_large")!=`${roomCardOptions.priceOfRoom}₽ <span class="room-card__price_main-theme_small">в сутки</span>`
           else
             div(class="room-card__room-number-wrapper")
               span(class="room-card__room-number room-card__room-number_standart")="№"
-              span(class="room-card__room-number room-card__room-number_large")=numberOfRoom
-            span(class="room-card__price room-card__price_padding-right room-card__price_main-theme_large")!=`${priceOfRoom}₽ <span class="room-card__price_main-theme_small">в сутки</span>`
+              span(class="room-card__room-number room-card__room-number_large")=roomCardOptions.numberOfRoom
+            span(class="room-card__price room-card__price_padding-right room-card__price_main-theme_large")!=`${roomCardOptions.priceOfRoom}₽ <span class="room-card__price_main-theme_small">в сутки</span>`
         div(class="room-card__border room-card__border_standart")
         div(class="room-card__reviews room-card__reviews_horizontal")
-          +ratings(rate)
-          span(class="room-card__count-of-reviews room-card__count-of-reviews_main-theme room-card__count-of-reviews_bold")!=`${countOfReviews} <span class="room-card__count-of-reviews room-card__count-of-reviews_main-theme">отзывов</span>`
+          +ratings(roomCardOptions.rate)
+          span(class="room-card__count-of-reviews room-card__count-of-reviews_main-theme room-card__count-of-reviews_bold")!=`${roomCardOptions.countOfReviews} <span class="room-card__count-of-reviews room-card__count-of-reviews_main-theme">отзывов</span>`

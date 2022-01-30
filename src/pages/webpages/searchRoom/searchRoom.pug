@@ -5,7 +5,8 @@ include /components/filterDateDropdown/filterDateDropdown.pug
 include /components/dropdown/dropdown.pug
 include /components/rangeSlider/rangeSlider.pug
 include /components/check/check.pug
-
+include /components/dropdownList/dropdownList.pug
+include /components/pagination/pagination.pug
 
 doctype html
 html
@@ -24,17 +25,36 @@ body
     section(class="search-room__header")
       - const headerOptions = { headerModificator: "wide", menuPositionModificator: "horizontal", navListModificator: "horizontal", navListInternalIndent: "mr20", menuItems: [ { linkName: "<span class='link__first-letter link__first-letter_uppercase'>о</span> нас" , sublinks: false },  { linkName: "<span class='nav-list nav-list__dropdown-name_uppercase'>у</span>слуги" , sublinks: { type: "link", items:[ "услуга1", "услуга2", "услуга3", "услуга4" ]} },  { linkName: "<span class='link__first-letter link__first-letter_uppercase'>в</span>акансии" , sublinks: false },  { linkName: "<span class='link__first-letter link__first-letter_uppercase's>н</span>овости" , sublinks: false }, { linkName: "<span class='nav-list__dropdown-name_uppercase'>с</span>оглашения" , sublinks: {type: "link", items:[ "соглашение1", "соглашение2", "соглашение3" ]} }] }
       +header(headerOptions)
-    section(class="search-room__main-section")
-      div(class="search-room__parameters")
-        +filterDateDropdown(true, ['даты пребывания в отеле', 'invisible', '', 'wide'])
-        +dropdown("_guests", "standart-size", true, [ "гости", "invisible", "mt4", "active", "wide"])
-        +rangeSlider("диапозон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
-        fieldset(class="form-elements_item checkboxes")
-          legend(class="form-elements__title checkboxes_title")="check buttons"
-          div(class="checkboxes_inner")
-            +check('можно курить', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
-            +check('можно с питомцами', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
-            +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+    section(class="search-room__main-section search-room__main-section_horizontal")
+      form(class="search-room__parameters")
+        div(class="search-room__item-of-parameters")
+          +filterDateDropdown(true, ['даты пребывания в отеле', 'invisible', '', 'wide'])
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt20")
+          +dropdown("guests", "size-standart", { name: "гости"})
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+          +rangeSlider("диапозон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+          fieldset(class="search-room__checkboxes")
+            legend(class="search-room__checkboxes-title search-room__checkboxes-title_main-theme")="правила дома"
+            div(class="search-room__checkboxes-inner")
+              +check('можно курить', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+              +check('можно с питомцами', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+              +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+          fieldset(class="search-room__rich-checkboxes")
+            legend(class="search-room__rich-checkboxes-title search-room__rich-checkboxes-title_main-theme")="доступность"
+            div(class="search-room__rich-checkboxes-inner")            
+              +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+              +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+          +dropdown("rooms", "size-standart", { name: "удобства номера"})
+        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+          - const itemsOfExpandedCheckBoxList = {type: "check", items: ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]}
+          +dropdownList(itemsOfExpandedCheckBoxList, { itemSize: "standart-size", nameOfList: "дополнительные удобства", titleStyleModificator: "main-theme", status: "closed"}, {checkType: "standart", labelStyle: "normal-text", labelPosition: "pl30px", checkPosition: "mt12"})
       div(class="search-room__rooms")
+        - const firstRoom = { items: [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true }
+        - const secondRoom = { items: [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true }
+        - const pageOne = [ firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom ]
+        +pagination(  pageOne   )
     section(class="search-room__footer")
       +footer("horizontal")

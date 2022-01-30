@@ -19,9 +19,6 @@ include /components/feedback/feedback.pug
 include /components/emailForm/emailForm.pug
 
 
-
-
-- const parametersHeaderOfDropdown = ['Dropdown', 'invisible', '', 'wide']
 - const parametersHeaderOfFilterDropdown = ['filter date dropdown', 'invisible', '', 'wide']
 - const parametersHeaderOfSubscriptionTextField = ['subscription text field', 'invisible', '', 'wide']
 
@@ -57,7 +54,7 @@ body
         +input(optionsOfInputText, "text field", "hover/focus")
       
       div(class='inputs__item  inputs__item_dropdownQuests')
-        +dropdown('_guests', 'wide', true, parametersHeaderOfDropdown)
+        +dropdown('guests', 'size-wide', { name: "dropdown"})
       
       div(class='inputs__item  inputs__item_maskedText')
         +input(optionsOfInputDate, "masked text field")
@@ -143,18 +140,18 @@ body
     
     div(class="form-elements__items form-elements__items_mt100")
       .form-elements__item
-        +dropdown('_rooms', 'standart-size', true, [ 'DATEDROPDOWN', 'default', '', 'standart-size'])
+        +dropdown('rooms', 'size-standart', { name: "dropdown", status: "default", positionModificator: "space-between"})
       .form-elements__item
-        +dropdown('_rooms_showcase','standart-size', true, [ 'DATEDROPDOWN', 'expanded', '', 'standart-size', 'active'])
+        +dropdown('rooms_showcase','size-standart', { name: "dropdown", status: "expanded", positionModificator: "space-between"})
     
     
     div(class="form-elements__items form-elements__items_mt100")
       .form-elements__item
-        +dropdown('_guests_showcase-one', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
+        +dropdown('guests_showcase-one', 'size-wide', { name: "dropdown"})
     
     div(class="form-elements__items form-elements__items_mt100")
       .form-elements__item
-        +dropdown('_guests_showcase-two', 'wide', true, [ 'DATEDROPDOWN', 'invisible', '', 'active', 'wide'])
+        +dropdown('guests_showcase-two', 'size-wide', { name: "dropdown"})
     
     div(class="form-elements__items form-elements__items_mt170")
     

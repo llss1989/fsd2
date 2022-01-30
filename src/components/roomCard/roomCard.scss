@@ -11,6 +11,7 @@
   }
   &_standart-size{
     max-width: 270px;
+    max-height: 257px;
   }
   &__room-info{
     &_horizontal{
@@ -40,9 +41,12 @@
   &__room-number{
     &_large{
       @include textField($secondaryFont, normal, bold, 24px, 29px, $textColor);
+      margin-left: 4px;
+      letter-spacing: -3px;
     }
     &_standart{
       @include textField($secondaryFont, normal, bold, 14px, 17px, $textColor);
+      letter-spacing: 1px;
     }
   }
   &__room-type{
@@ -98,7 +102,7 @@
       left: 2%;
     }
     &_next{
-      transform: rotate(90deg);
+      transform: rotate(270deg);
       top: 39%;
       right: 2%;
     }
@@ -106,7 +110,7 @@
 }
 .element{
   width:100%;
-  heigth:100%;
+  // height: 100%;
   &_one{
     background: red;
   }

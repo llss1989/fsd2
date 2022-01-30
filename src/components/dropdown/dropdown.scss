@@ -4,29 +4,32 @@
  @import '../../styles/mixins.scss';
 
 .dropdown{
-  position: relative;
-  box-sizing: border-box;
-  padding: 0 0;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  border-radius: 4px;
-  width: 100%;
-  &__wrapper{
-    width: 100%;
-    &_standart-size{
+    &_size-standart{
+      width: 100%;
       max-width: 266px;
-      max-height:44px;
+      // max-height:44px;
       
     }
-    &_wide{
+    &_size-wide{
+      width: 100%;
       max-width: 320px;
-      max-height: 44px;
+      // max-height: 44px;
     }
-  }
+  
   &__window-inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 44px;
+    // position: relative;
+    box-sizing: border-box;
+    padding: 0 0;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px 4px 0 0;
     width: 100%;
+    &:hover,&:active{
+      border: 1px solid rgba(31, 32, 65, 0.50);
+    }
   }
   &__window{
     margin-left: 15px;
@@ -38,21 +41,50 @@
   &__result{
     margin-left: 15px;
   }
-  &:hover,&:active{
-    border: 1px solid rgba(31, 32, 65, 0.50);
-  }
+
   &_mt4{
     margin-top: 4px;
+  }
+  &__menu{
+    
+  }
+  &__titles-wrapper{
+    margin-bottom: 4px;
+    &_space-between{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__name{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 12px,15px, $textColor);
+      text-transform: uppercase;
+    }
+  }
+  &__status{
+    &_main-theme{
+      @include textField($secondaryFont, normal, normal, 12px,15px, $textColor50);
+      text-align: right;
+      text-transform: uppercase;
+    }
   }
 }
 
 .dropdown-menu{
-  padding: 7px;
+  padding-right: 6px;
+  padding-top: 4px;
+  padding-left: 13px;
+  padding-bottom: 3px;
   text-decoration: none;
   background: #ffffff;
   border-top: 1px solid $textColor50;
+  border: 1px solid rgba(31, 32, 65, 0.25);
   border-radius: 0 0 4px 4px;
+  border-top: none;
   box-shadow: 0px 10px 20px 0px rgba(31, 32, 65, 0.05);
+  // padding-left: 12px;
+  // padding-top: 4px;
+  // padding-right: 6px;
   // border: none;
   // background: none;
   @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
@@ -75,7 +107,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom:5px;
+    padding-bottom:6px;
     &_nameOfItem{
       @include textField($secondaryFont, normal, bold, 12px, 15px, $textColor);
       text-transform: uppercase;
@@ -98,7 +130,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 }
 
@@ -106,7 +137,8 @@
   display: flex;
   width: 100%;
   align-items: center;
-  padding: 9px 0;
+  padding-top: 18px;
+  padding-bottom: 3px;
   &__button{
     &_style{
       @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
