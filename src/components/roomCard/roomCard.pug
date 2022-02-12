@@ -10,12 +10,12 @@ mixin roomCard(roomCardOptions)
     div(class="room-card room-card__footer room-card__footer__paddings")
       div(class="room-card__footer-inner room-card__footer-inner_paddings")
         div(class="room-card__room-info room-card__room-info_horizontal")
-          if(roomCardOptions.typeOfRoom)
+          if(roomCardOptions.isLuxe)
             div(class="room-card__room-info-wrapper room-card__room-info-wrapper_horizontal")
               div(class="room-card__room-number-wrapper")
                 span(class="room-card__room-number room-card__room-number_standart")="№ "
-                span(class="room-card__room-number room-card__room-number_large")=roomCardOptions.numberOfRoom
-              span(class="room-card__room-type room-card__room-type_main-theme")=roomCardOptions.typeOfRoom
+                span(class="room-card__room-number room-card__room-number_medium")=roomCardOptions.numberOfRoom
+              span(class="room-card__room-type room-card__room-type_main-theme room-card__room-type_ml8")="люкс"
             span(class="room-card__price  room-card__price_main-theme_large")!=`${roomCardOptions.priceOfRoom}₽ <span class="room-card__price_main-theme_small">в сутки</span>`
           else
             div(class="room-card__room-number-wrapper")

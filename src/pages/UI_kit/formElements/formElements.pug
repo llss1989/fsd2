@@ -167,7 +167,7 @@ body
           +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
           +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
     div(class="form-elements__items form-elements__items_mt170")
-      +bulletList({title: 'bullet list'}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
+      +bulletList({title: 'bullet list',  titleMod: "size-standart", additionalTitleMod: "uppercase"}, ['нельзя с питомцами', 'без вечеринок и мероприятий', 'Время прибытия — после 13:00, <br> а выезд до 12:00'])
     
     
     div(class="form-elements__items form-elements__items_mt44")

@@ -54,7 +54,7 @@ module.exports = {
   devServer: {
     port: 8082,
     hot: isDev,
-    index: './pages/webpages/searchRoom/searchRoom.html',
+    index: './pages/webpages/roomDetails/roomDetails.html',
     // openPage:['/different/page1', '../dist/']
   },
   output: {
@@ -117,6 +117,27 @@ module.exports = {
     new HTMLWebpackPlugin({
       filename: './pages/webpages/searchRoom/searchRoom.html',
       template: './pages/webpages/searchRoom/searchRoom.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/webpages/roomDetails/roomDetails.html',
+      template: './pages/webpages/roomDetails/roomDetails.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/webpages/registration/registration.html',
+      template: './pages/webpages/registration/registration.pug',
+      minify: {
+        collapseWhitespace: isProd,
+      },
+    }),
+    new HTMLWebpackPlugin({
+      filename: './pages/webpages/signPage/signPage.html',
+      template: './pages/webpages/signPage/signPage.pug',
       minify: {
         collapseWhitespace: isProd,
       },

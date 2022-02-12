@@ -1,6 +1,9 @@
-mixin roomQuality(iconOptions, titleOptions, subtitleOptions)
-  .roomQuality
-    div(class=`roomQuality__icon roomQuality__icon_${iconOptions.themeModificator}`)=iconOptions.iconType
-    div(class=`roomQuality__wrapper-titles`)
-      h3(class=`roomQuality__title roomQuality__title_${titleOptions.themeModificator}`)=titleOptions.title
-      p(class=`roomQuality__subtitle roomQuality__subtitle_${subtitleOptions.themeModificator}`)=subtitleOptions.subtitle
+mixin roomQuality(iconOptions, titleOptions, subtitleOptions, border = false)
+  div(class="roomQuality roomQuality_vertical")
+    div(class="roomQuality__content-wpapper roomQuality__content-wpapper_horizontal")
+      div(class=`roomQuality__icon roomQuality__icon_${iconOptions.themeModificator}`)=iconOptions.iconType
+      div(class=`roomQuality__wrapper-titles`)
+        h3(class=`roomQuality__title roomQuality__title_${titleOptions.themeModificator}`)=titleOptions.title
+        p(class=`roomQuality__subtitle roomQuality__subtitle_${subtitleOptions.themeModificator}`)=subtitleOptions.subtitle
+    if(border)
+      div(class="roomQuality__border roomQuality__border_main-theme roomQuality__border_mt20 roomQuality__border_pr25")

@@ -32,26 +32,26 @@ mixin footer(bottomSidePosition, onlyBottomSide = false)
           +logo(true)
           p(class="footer__subtitle footer__subtitle_main-theme")!=title
         
-        div(class="footer__navigation-block footer__box footer__box_vertical footer__box_pt4")
+        div(class="footer__navigation-block footer__box footer__box_vertical footer__box_pt4 footer__box_ml13")
           h3(class="footer__title footer__title_main-theme")="навигация"
           +link("О нас", "main-theme")
           +link("новости", "main-theme")
           +link("служба поддержки", "main-theme")
           +link("услуги", "main-theme")
         
-        div(class="footer__about-us-block footer__box footer__box_vertical footer__box_ml8 footer__box_pt4")
+        div(class="footer__about-us-block footer__box footer__box_vertical footer__box_ml12 footer__box_pt4")
           h3(class="footer__title footer__title_main-theme")="о нас"
           +link("о сервисе", "main-theme")
           +link("наша команда", "main-theme")
           +link("вакансии", "main-theme")
           +link("инвесторы", "main-theme")
         
-        div(class="footer__help-desk footer__box footer__box_vertical footer__box_ml17 footer__box_pt4")
+        div(class="footer__help-desk footer__box footer__box_vertical footer__box_ml11 footer__box_pt4")
           h3(class="footer__title footer__title_main-theme")="cлужба поддержки"
           +link("соглашения", "main-theme")
           +link("сообщества", "main-theme")
           +link("связь с нами", "main-theme")
-        div(class="footer__subscription footer__box footer__box_vertical footer__box_ml16 footer__box_pt4")
+        div(class="footer__subscription footer__box footer__box_vertical footer__box_ml8 footer__box_pt4")
           h3(class="footer__title footer__title_main-theme")="подписка"
           p(class="footer__subtitle footer__subtitle_main-theme footer__subtitle_pd15")!="получайте специальные <br>предложения и новости сервиса"
           +emailForm(optionsForInputEmailStandart)

@@ -1,0 +1,86 @@
+include /components/header/header.pug
+include /components/roomInfo/roomInfo.pug
+include /components/roomQuality/roomQuality.pug
+include /components/feedback/feedback.pug 
+include /components/bulletList/bulletList.pug
+include /components/footer/footer.pug
+include /components/donutChart/donutChart.pug
+
+
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=E dge")
+    meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    title roomDetails
+   
+  body
+    
+    
+    div(class="room-details room-details_vertical")
+      
+      div(class="room-details__header")
+        - const headerOptions = { headerModificator: "wide", menuPositionModificator: "horizontal", navListModificator: "horizontal", navListInternalIndent: "mr20", menuItems: [ { linkName: "<span class='link__first-letter link__first-letter_uppercase'>о</span> нас" , sublinks: false },  { linkName: "<span class='nav-list nav-list__dropdown-name_uppercase'>у</span>слуги" , sublinks: { type: "link", items:[ "услуга1", "услуга2", "услуга3", "услуга4" ]} },  { linkName: "<span class='link__first-letter link__first-letter_uppercase'>в</span>акансии" , sublinks: false },  { linkName: "<span class='link__first-letter link__first-letter_uppercase's>н</span>овости" , sublinks: false }, { linkName: "<span class='nav-list__dropdown-name_uppercase'>с</span>оглашения" , sublinks: {type: "link", items:[ "соглашение1", "соглашение2", "соглашение3" ]} }] }
+        +header(headerOptions)
+      
+      
+      section(class="room-details__photos room-details__photos_horizontal room-details__photos_center")
+        img(class="room-details__photo" src="../../../assets/img/roomDetails/mainPhoto.jpg" alt="main-photo")
+        div(class="room-details__photos-inner")
+          img(class="" src="../../../assets/img/roomDetails/image-two.jpg" alt="second-photo")
+          img(class="room-details__photo room-details__photo_mt1"  src="../../../assets/img/roomDetails/image-three.jpg" alt="three-photo")
+      
+      
+      section(class="room-details__main-content  room-details__main-content_horizontal room-details__main-content_padding-full-screen")
+        
+        div(class="room-details__room-info room-details__room-info_vertical room-details__room-info_width-wide")
+          
+          div(class="room-details__qualities room-details__qualities_vertical")
+            h2(class="room-details__qualities-title room-details__qualities-title_main-theme")!="сведения о номере"
+            
+            +roomQuality({iconType:"insert_emoticon", themeModificator: "main-theme"}, { title: "комфорт", themeModificator: "main-theme"}, { subtitle: "шумопоглощающие стены", themeModificator: "main-theme"}, true)
+            +roomQuality({iconType:"location_city", themeModificator: "main-theme"}, { title: "удобство", themeModificator: "main-theme"}, { subtitle: "окно в каждой из спален", themeModificator: "main-theme"}, true)
+            +roomQuality({iconType:"whatshot", themeModificator: "main-theme"}, { title: "уют", themeModificator: "main-theme"}, { subtitle: "номер оснащен камином", themeModificator: "main-theme"})
+          
+          div(class="room-details__room-stat")
+            h2(class="room-details__room-stat-title room-details__room-stat-title_main-theme room-details__room-stat-title_pl7")="впечатления от номера"
+            div(class="room-details__donut-chart")
+            +donutChart({perfect: 130, good: 65, satisfactorily: 65, bad: 0})
+          
+          div(class="room-details__reviews room-details__reviews_pt2")
+            div(class="room-details__reviews-titles-inner")
+              h2(class="room-details__reviews-title room-details__reviews-title_main-theme")="отзывы посетителей номера"
+              p(class="room-details__reviews-subtitle room-details__reviews-subtitle_main-theme")="2 отзыва"
+            div(class="room-details__feedback")  
+              +feedback({modificator: "murad"}, { name: "мурад сарафанов", modificator: "main-theme"}, { date: "5 дней назад", modificator: "main-theme"}, { subtitle: `<span class="feedback__subtitle feedback__subtitle_uppercase">в</span>еликолепный матрас на кровати в основной спальне! <span class="feedback__subtitle feedback__subtitle_uppercase">a</span> пуфик вообще потрясающий.
+<span class="feedback__subtitle feedback__subtitle_upprcase">и</span> стены, действительно, шумоподавляющие. <span class="feedback__subtitle feedback__subtitle_uppercase feedback__subtitle ">в</span>ыкрикивал комплименты повару — никто 
+не жаловался из соседей.`, subtitleStyleModificator: "main-theme", subtitlePositionModificator: "left-top" }, 12)
+            div(class="room-details__feedback")
+              +feedback({modificator: "patricia"}, { name: "патрисия стеклышкова", modificator: "main-theme"}, { date: "неделю назад", modificator: "main-theme"}, { subtitle: `<span class="feedback__subtitle feedback__subtitle_uppercase">о</span>бслуживание на высоте! <span class="feedback__subtitle feedback__subtitle_uppercase">в</span>сё аккуратно, чисто. завтраки в номер советую заказать, 
+каждый день новое блюдо и десерт как комплимент`, subtitleStyleModificator: "main-theme", subtitlePositionModificator: "left-top" }, 2)
+
+          div(class="room-details__rules")
+            +bulletList({title: "правила", titleMod: "size-standart", additionalTitleMod: "capitalize", positionMod: "ml21"}, ["нельзя с питомцами", "без вечеринок и мероприятий", "Время прибытия — после 13:00, <br> а выезд до 12:00"])
+          div(class="room-details__cancel-wrapper")
+            h3(class="room-details__cancel-title room-details__cancel-title_main-theme room-details__cancel-title_ml8")="отмена"
+            p(class="room-details__cancel-info room-details__cancel-info_main-theme room-details__cancel-info_mt21")=`Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.`
+          
+          
+        
+        
+        div(class="room-details__form-inner room-details__form-inner_width-small room-details__form-inner_flex-end")
+          
+          div(class="room-details__form")
+            +roomInfo( "888" ,{ value: "люкс", positionModificator: "ml8" }, "9990", { majorCostsText: "9 990₽ х 4 суток", majorCostsValue: "39960₽", feeName: "Сбор за услуги: скидка 2 179₽", feeValue: "0₽", additionalServicesText: `Сбор за дополнительные 
+    услуги`, additionalServicesValue: "300₽", totalValue: "38 081₽" })
+
+      div(class="room-details_border")
+       
+
+      section(class="room-details__footer")
+        +footer("horizontal")

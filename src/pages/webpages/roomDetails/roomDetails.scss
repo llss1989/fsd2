@@ -1,0 +1,169 @@
+@import '../../../styles/fonts.scss';
+@import '../../../styles/varsColours.scss';
+@import '../../../styles/mixins.scss';
+
+
+.room-details{
+  &_vertical{
+    display: flex;
+    flex-direction: column;
+  }
+  &__photos{
+    // display: grid;
+    // grid-template-columns: 1.05fr 1fr;
+
+    &-inner{
+      display: flex;
+      flex-direction: column;
+    }
+    &_horizontal{
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    &_center{
+      justify-content: center;
+    }
+  }
+  &__main-content{
+    &_horizontal{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+    &_padding-full-screen{
+      padding:  70px 140px 70px 140px;
+    }
+  }
+  &__room-info{
+    &_width-wide{
+      width: 61%;
+    }
+    &_vertical{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 1fr 1fr max-content;
+    }
+  }
+  &__form-inner{
+    &_width-small{
+      width: 39%;
+    }
+    &_flex-end{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  &__photo{
+    &_mt1{
+      margin-top: -1px;
+    }
+  }
+  &__qualities>:not(:first-child), &__reviews>:not(:first-child){
+    margin-top: 20px;
+  }
+  &__qualities{
+    &_vertical{
+      display: flex;
+      flex-direction: column;
+    }
+    &-title{
+      &_main-theme{
+        @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+        letter-spacing: 1.1px;
+      }
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__reviews{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    &-title{
+      &_main-theme{
+        @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+        letter-spacing: 1px;
+      }
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+    &-subtitle{
+      &_main-theme{
+        @include textField($secondaryFont, normal, normal, 14px, 14px, $textColor50);
+        letter-spacing: 0.4px;
+      }
+    }
+    &_pt2{
+      padding-top: 2px;
+    }
+    &-titles-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+  }
+  &__cancel{
+    &-info{
+      &_main-theme{
+        @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+        letter-spacing: 0.8px;
+      }
+      &_mt21{
+        margin-top: 16px;
+        margin-left: 8px;
+      }
+    }
+    &-title{
+      &_main-theme{
+        @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+        letter-spacing: 1px;
+      }
+      &::first-letter{
+        text-transform: uppercase;
+      }
+      &_ml8{
+        margin-left: 9px;
+      }
+    }
+    &-wrapper{
+      padding-top: 39px;
+    }
+  }
+ 
+  &__room-stat{
+    &-title{
+      &_main-theme{
+        @include textField($secondaryFont, normal, bold, 19px, 23px, #1F2041);
+        letter-spacing: 1px;
+      }
+      &::first-letter{
+        text-transform: uppercase;
+      }
+      &_pl7{
+        padding-left: 7px;
+      }
+    }
+    // width: 100%;
+    // height: 100%;
+    // background: grey;
+  }
+  &__rules{
+    padding-top: 38px;
+  }
+  &_border{
+    height: 1px;
+    width: 100%;
+    background: #E5E5E5;
+  }
+  &__footer{
+    margin-top: 3px;
+  }
+  &__donut-chart{
+    margin-top: 20px;
+  }
+}
+

@@ -19,10 +19,24 @@
     max-width: 48px;
     display: flex;
     justify-content: center;
+    &_pt2{
+      padding-top: 2px;
+    }
   }
   &__avatar{
     &_murad{
       background: url('../../assets/img/murad.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 48px;
+      height: 48px;
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+      border-radius: 32px;
+    }
+    &_patricia{
+      background: url('../../assets/img/patricia.jpg');
       background-position: center;
       background-repeat: no-repeat;
       width: 48px;
@@ -37,24 +51,27 @@
     &_main-theme{
       @include textField($secondaryFont, normal, bold, 14px, 18px, $textColor75);
       text-transform: capitalize;
-      margin-top: 1px;
+      margin-top: 2px;
+      letter-spacing: 0.7px;
     }
   }
   &__date{
     &_main-theme{
       @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+      letter-spacing: 0.7px;
+      margin-top: 2px;
     }
   }
   &__subtitle{
-    &_mt20{
-      margin-top: -20px;
-    }
+    // &_mt20{
+    //   margin-top: -20px;
+    // }
     &_left-top{
-      margin-left: 10px;
-      margin-top: -20px;
+      margin-left: 12px;
     }
     &_main-theme{
       @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
+      letter-spacing: 0.9px;
     }
     &_uppercase{
       text-transform: uppercase;

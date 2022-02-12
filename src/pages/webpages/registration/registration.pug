@@ -1,0 +1,26 @@
+include /components/header/header.pug
+include /components/footer/footer.pug
+include /components/registrationForm/registrationForm.pug
+
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=E dge")
+    meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    title registration
+   
+  body
+    div(class="registration registration")
+      div(class="registration__header")
+        - const headerOptions = { headerModificator: "wide", menuPositionModificator: "horizontal", navListModificator: "horizontal", navListInternalIndent: "mr20", menuItems: [ { linkName: "<span class='link__first-letter link__first-letter_uppercase'>о</span> нас" , sublinks: false },  { linkName: "<span class='nav-list nav-list__dropdown-name_uppercase'>у</span>слуги" , sublinks: { type: "link", items:[ "услуга1", "услуга2", "услуга3", "услуга4" ]} },  { linkName: "<span class='link__first-letter link__first-letter_uppercase'>в</span>акансии" , sublinks: false },  { linkName: "<span class='link__first-letter link__first-letter_uppercase's>н</span>овости" , sublinks: false }, { linkName: "<span class='nav-list__dropdown-name_uppercase'>с</span>оглашения" , sublinks: {type: "link", items:[ "соглашение1", "соглашение2", "соглашение3" ]} }] }
+        +header(headerOptions)
+      section(class="registration__main-section registration__main-section_center")
+        div(class="registration__form registration__form_indents-small")
+          +registrationForm({ themeModificator: "main-theme" }, { positionModificator: "mt20" }, { positionModificator: "mt10" }, { positionModificator: "mt10" },{ positionModificator: "mt22" },{ wrapperPositionModificator: "mt20",emailPositionModificator: "mt5", inputPasswordPositionModificator: "mt10", checkPositionModificator: "mt10"}, {positionModificator: "mt24"},{positionModificator: "mt30"})
+      section(class="registration__footer")
+        +footer("horizontal")

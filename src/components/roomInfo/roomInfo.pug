@@ -17,8 +17,8 @@ mixin roomInfo(roomNumber, typeOfRoomOptions, priceOfRoom, roomInfoPrices)
     div(class="roomInfo__item roomInfo__item_horizontal roomInfo__item_mt20")
       +dateDropdown({ inputName: 'email', inputType: 'text', textOfInput: 'Email', modificator: 'wide', theme: 'main-theme',firstInputName: "прибытие", secondInputName: "выезд", inputPositionModificator: 'mt5'})
     div(class="roomInfo__item roomInfo__item_mt20")
-      +dropdown('_guests_showcase-three', 'wide', true, ['гости', 'invisible', '', 'wide'])
-    div(class="roomInfo__item roomInfo__item_mt40")
+      +dropdown('guests_showcase-three', 'wide',{ name: "гости"})
+    div(class="roomInfo__item roomInfo__item_mt20")
       div(class="roomInfo__major-costs-wrapper")
         span(class="roomInfo__major-costs-text roomInfo__major-costs-text_standart-theme")=roomInfoPrices.majorCostsText
         span(class="roomInfo__major-costs-value roomInfo__major-costs-value_standart-theme")!=roomInfoPrices.majorCostsValue

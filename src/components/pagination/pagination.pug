@@ -1,6 +1,6 @@
 include ../roomCard/roomCard.pug
 
-mixin pagination(pages =  false)
+mixin pagination(size, pages =  false)
   if(items === false)
     .pagination
       div(class="pagination__list-wrapper")
@@ -176,7 +176,7 @@ mixin pagination(pages =  false)
         .test
         .test
         .test
-      div(class="pagination__controller")
+      div(class=`pagination__controller pagination__controller_padding-${size}`)
   else
   .pagination
     div(class="pagination__list-wrapper")
@@ -184,4 +184,4 @@ mixin pagination(pages =  false)
         +roomCard(page)
       //- +roomCard()
 
-    div(class="pagination__controller")
+    div(class=`pagination__controller pagination__controller_padding-${size}`)

@@ -1,6 +1,6 @@
 include /components/like/like.pug
 
-mixin feedback(avatarOptions, nameOptions, dateOptions, contentOptions)
+mixin feedback(avatarOptions, nameOptions, dateOptions, contentOptions, countOfLikes)
   div(class="feedback")
     div(class="feedback__inner-source")
       div(class=`feedback__avatar feedback__avatar_${avatarOptions.modificator}`)
@@ -8,7 +8,6 @@ mixin feedback(avatarOptions, nameOptions, dateOptions, contentOptions)
         h3(class=`feedback__name feedback__name_${nameOptions.modificator}`)=nameOptions.name
         p(class=`feedback__date feedback__date_${dateOptions.modificator}`)=dateOptions.date
     div(class="feedback__inner-content")
-      .feedback__inner-like 
-        +like('standart-size', 'checked', '12')
-      pre
-        p(class=`feedback__subtitle feedback__subtitle_${contentOptions.subtitleStyleModificator} feedback__subtitle_${contentOptions.subtitlePositionModificator}`)!=contentOptions.subtitle
+      div(class="feedback__inner-like feedback__inner-like_ml3") 
+        +like('standart-size', 'checked', `${countOfLikes}`)
+      p(class=`feedback__subtitle feedback__subtitle_${contentOptions.subtitleStyleModificator} feedback__subtitle_${contentOptions.subtitlePositionModificator}`)!=contentOptions.subtitle

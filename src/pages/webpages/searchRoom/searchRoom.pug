@@ -16,45 +16,74 @@ html
     meta(name="viewport" content="width=device-width,initial-scale=1, maximum-scale= 1.0, user-scalable=0")
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet")
-    //- link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css")
-    //- link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     title searchRoom
    
-body
-  div(class="search-room")
-    section(class="search-room__header")
-      - const headerOptions = { headerModificator: "wide", menuPositionModificator: "horizontal", navListModificator: "horizontal", navListInternalIndent: "mr20", menuItems: [ { linkName: "<span class='link__first-letter link__first-letter_uppercase'>о</span> нас" , sublinks: false },  { linkName: "<span class='nav-list nav-list__dropdown-name_uppercase'>у</span>слуги" , sublinks: { type: "link", items:[ "услуга1", "услуга2", "услуга3", "услуга4" ]} },  { linkName: "<span class='link__first-letter link__first-letter_uppercase'>в</span>акансии" , sublinks: false },  { linkName: "<span class='link__first-letter link__first-letter_uppercase's>н</span>овости" , sublinks: false }, { linkName: "<span class='nav-list__dropdown-name_uppercase'>с</span>оглашения" , sublinks: {type: "link", items:[ "соглашение1", "соглашение2", "соглашение3" ]} }] }
-      +header(headerOptions)
-    section(class="search-room__main-section search-room__main-section_horizontal")
-      form(class="search-room__parameters")
-        div(class="search-room__item-of-parameters")
-          +filterDateDropdown(true, ['даты пребывания в отеле', 'invisible', '', 'wide'])
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt20")
-          +dropdown("guests", "size-standart", { name: "гости"})
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
-          +rangeSlider("диапозон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
-          fieldset(class="search-room__checkboxes")
-            legend(class="search-room__checkboxes-title search-room__checkboxes-title_main-theme")="правила дома"
-            div(class="search-room__checkboxes-inner")
-              +check('можно курить', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
-              +check('можно с питомцами', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
-              +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
-          fieldset(class="search-room__rich-checkboxes")
-            legend(class="search-room__rich-checkboxes-title search-room__rich-checkboxes-title_main-theme")="доступность"
-            div(class="search-room__rich-checkboxes-inner")            
-              +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
-              +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
-          +dropdown("rooms", "size-standart", { name: "удобства номера"})
-        div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
-          - const itemsOfExpandedCheckBoxList = {type: "check", items: ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]}
-          +dropdownList(itemsOfExpandedCheckBoxList, { itemSize: "standart-size", nameOfList: "дополнительные удобства", titleStyleModificator: "main-theme", status: "closed"}, {checkType: "standart", labelStyle: "normal-text", labelPosition: "pl30px", checkPosition: "mt12"})
-      div(class="search-room__rooms")
-        - const firstRoom = { items: [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true }
-        - const secondRoom = { items: [{className:"one", path: "../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true }
-        - const pageOne = [ firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom ]
-        +pagination(  pageOne   )
-    section(class="search-room__footer")
-      +footer("horizontal")
+  body
+    
+    
+    div(class="search-room")
+      
+      section(class="search-room__header")
+        
+        - const headerOptions = { headerModificator: "wide", menuPositionModificator: "horizontal", navListModificator: "horizontal", navListInternalIndent: "mr20", menuItems: [ { linkName: "<span class='link__first-letter link__first-letter_uppercase'>о</span> нас" , sublinks: false },  { linkName: "<span class='nav-list nav-list__dropdown-name_uppercase'>у</span>слуги" , sublinks: { type: "link", items:[ "услуга1", "услуга2", "услуга3", "услуга4" ]} },  { linkName: "<span class='link__first-letter link__first-letter_uppercase'>в</span>акансии" , sublinks: false },  { linkName: "<span class='link__first-letter link__first-letter_uppercase's>н</span>овости" , sublinks: false }, { linkName: "<span class='nav-list__dropdown-name_uppercase'>с</span>оглашения" , sublinks: {type: "link", items:[ "соглашение1", "соглашение2", "соглашение3" ]} }] }
+        +header(headerOptions)
+      
+      section(class="search-room__main-section search-room__main-section_horizontal")
+        
+        form(class="search-room__parameters")
+          
+          div(class="search-room__item-of-parameters")
+            +filterDateDropdown(true, ['даты пребывания в отеле', 'invisible', '', 'wide'])
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt20")
+            +dropdown("guests", "size-standart", { name: "гости"})
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+            +rangeSlider("диапозон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+            fieldset(class="search-room__checkboxes")
+              legend(class="search-room__checkboxes-title search-room__checkboxes-title_main-theme")="правила дома"
+              div(class="search-room__checkboxes-inner")
+                +check('можно курить', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+                +check('можно с питомцами', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+                +check('можно пригласить гостей <br> (до 10 человек)', false, {checkType: 'standart', labelStyle: 'normal-text', labelPosition: 'pl30px'})
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+            fieldset(class="search-room__rich-checkboxes")
+              legend(class="search-room__rich-checkboxes-title search-room__rich-checkboxes-title_main-theme")="доступность"
+              div(class="search-room__rich-checkboxes-inner")            
+                +check('широкий коридор', 'ширина коридоров в номере <br>не менее 91 см.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+                +check('помощник для инвалидов', 'на 1 этаже вас встретит специалист <br> и проводит до номера.', {checkType: 'standart', labelStyle: 'bold-text', labelPosition: 'pl30px', subtitleStyle: 'normal', subtitlePosition: 'pl30px'})(class="check__subtitle_mt")
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+            +dropdown("rooms", "size-standart", { name: "удобства номера"})
+          
+          div(class="search-room__item-of-parameters search-room__item-of-parameters_mt30")
+            - const itemsOfExpandedCheckBoxList = {type: "check", items: ['завтрак', "письменный стол", "стул для кормления", "кроватка", "телевизор", "шампунь"]}
+            +dropdownList(itemsOfExpandedCheckBoxList, { itemSize: "standart-size", nameOfList: "дополнительные удобства", titleStyleModificator: "main-theme", status: "closed"}, {checkType: "standart", labelStyle: "normal-text", labelPosition: "pl30px", checkPosition: "mt12"})
+        
+        div(class="search-room__rooms search-room__rooms_pl60")
+          
+          h2(class="search-room__rooms-title search-room__rooms-title_main-theme search-room__rooms-title_flex-start")!=`<span class="search-room__rooms-title_uppercase">н</span>омера, которые мы для вас подобрали`
+          - const firstRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-one.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "888", priceOfRoom: "9990", rate: "5", countOfReviews: "145", isLuxe: true }
+          - const secondRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "840", priceOfRoom: "9990", rate: "4", countOfReviews: "65", isLuxe: false }
+          - const thirdRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "980", priceOfRoom: "8500", rate: "3", countOfReviews: "35", isLuxe: true }
+          - const fourthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-four.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "856", priceOfRoom: "7300", rate: "5", countOfReviews: "19", isLuxe: false }
+          - const fifthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-five.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "740", priceOfRoom: "6000", rate: "4", countOfReviews: "44", isLuxe: false }
+          - const sixthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-six.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "982", priceOfRoom: "5800", rate: "3", countOfReviews: "56", isLuxe: false }
+          - const seventhRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-seven.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "678", priceOfRoom: "5500", rate: "5", countOfReviews: "45", isLuxe: false }
+          - const eighthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-eight.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "450", priceOfRoom: "5300", rate: "4", countOfReviews: "39", isLuxe: false }
+          - const ninthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-nine.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "350", priceOfRoom: "5000", rate: "3", countOfReviews: "77", isLuxe: false }
+          - const tenthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-ten.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "666", priceOfRoom: "5000", rate: "5", countOfReviews: "25", isLuxe: false }
+          - const eleventhRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-eleven.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "444", priceOfRoom: "5000", rate: "3", countOfReviews: "15", isLuxe: false }
+          - const twelfthRoom = { items: [{className:"one", path: "../../../assets/img/rooms/room-twelve.jpg"}, {className:"two", path: "../../../assets/img/rooms/room-two.jpg"}, {className:"three", path: "../../../assets/img/rooms/room-three.jpg"}, {className:"four", path: "../../../assets/img/rooms/room-four.jpg"}], numberOfRoom: "352", priceOfRoom: "5000", rate: "3", countOfReviews: "55", isLuxe: false }
+          - const pageOne = [ firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom ,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom, firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,firstRoom, secondRoom, thirdRoom, fourthRoom, fifthRoom,sixthRoom,seventhRoom,eighthRoom,ninthRoom,tenthRoom,eleventhRoom,twelfthRoom, firstRoom, secondRoom, secondRoom, secondRoom, secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom,secondRoom]
+          
+          +pagination( "standart", pageOne   )
+      
+      
+      section(class="search-room__footer")
+        +footer("horizontal")

@@ -1,0 +1,19 @@
+.sign-page{
+  &_vertical{
+    display: flex;
+    flex-direction: column;
+  }
+  &__main-section{
+    box-sizing: border-box;
+    background: url('../../../assets/img/backgroundRegistrationPage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 683px;
+    background-position: bottom;
+    &_center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

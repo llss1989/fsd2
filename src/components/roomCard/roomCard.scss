@@ -31,7 +31,7 @@
     &_paddings{
       padding-left: 20px;
       padding-right: 16px;
-      padding-top: 12px;
+      padding-top: 8px;
       padding-bottom: 20px;
     }
   }
@@ -40,8 +40,11 @@
   }
   &__room-number{
     &_large{
-      @include textField($secondaryFont, normal, bold, 24px, 29px, $textColor);
-      margin-left: 4px;
+      @include textField($secondaryFont, normal, bold, 24px, 30px, $textColor);
+      letter-spacing: -3px;
+    }
+    &_medium{
+      @include textField($secondaryFont, normal, bold, 21px, 30px, $textColor);
       letter-spacing: -3px;
     }
     &_standart{
@@ -53,6 +56,9 @@
     &_main-theme{
       @include textField($secondaryFont, normal, bold, 12px, 15px, $mainColor);
       text-transform: uppercase;
+    }
+    &_ml8{
+      margin-left: 8px;
     }
   }
   &__price{

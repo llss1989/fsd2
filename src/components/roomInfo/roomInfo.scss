@@ -113,6 +113,7 @@
     &_standart-theme{
       @include textField($secondaryFont, normal, normal, 14px, 24px, $textColor75);
       letter-spacing: 1.2px;
+      white-space: nowrap;
     }
   }
   &__fee-value{

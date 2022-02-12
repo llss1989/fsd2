@@ -16,6 +16,9 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    &_pl60{
+      padding-left: 60px;
+    }
   }
   &__title{
     width: 100%;
@@ -51,10 +54,18 @@
       margin-top: 20px;
     }
   }
+  &__rooms-title{
+    &_main-theme{
+      @include textField($secondaryFont, normal, bold, 24px, 29px, #1F2041);
+      letter-spacing: 1.19px;
+    }
+    &_flex-start{
+      align-self: flex-start;
+    }
+    &_uppercase{
+      text-transform: uppercase;
+    }
+  }
 }
 
-.test{
-  min-width: 100%;
-  min-height: 100%;
-  background: red;
-}
+
